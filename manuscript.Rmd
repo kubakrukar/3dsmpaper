@@ -2006,7 +2006,7 @@ While our data comes from controlled VR environments, generalisation to real-wor
 
 # Data and Software Availability Statement
 
-Raw data (including all sketch maps), video demonstrations of the experimental procedure, and an R markdown file containing the statistical analyses are available at: 
+Raw data (including all sketch maps), video demonstrations of the experimental procedure, and an R markdown file containing the statistical analyses are available at: https://anonymous.4open.science/r/3dsmpaper-anonym/README.md
 
 
 (the repository has been anonymised for peer-review and will be completed with all remaining material after acceptance)

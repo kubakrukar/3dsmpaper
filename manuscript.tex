@@ -194,14 +194,14 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={3D Environments Require 3D Visualisations: The Limitations of 2D Sketch Maps in Capturing Spatial Knowledge},
-  pdfauthor={Jakub Krukar1, Ahmed Aly1, Lukas Baecker1, Lea Heming1, Jiayan Zhao2, \& Angela Schwering1},
+  pdfauthor={anonymous1},
   pdflang={en-GB},
   pdfkeywords={3D visualisation, spatial cognition, sketch maps, virtual reality, vertical spatial relations},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{3D Environments Require 3D Visualisations: The Limitations of 2D Sketch Maps in Capturing Spatial Knowledge}
-\author{Jakub Krukar\textsuperscript{1}, Ahmed Aly\textsuperscript{1}, Lukas Baecker\textsuperscript{1}, Lea Heming\textsuperscript{1}, Jiayan Zhao\textsuperscript{2}, \& Angela Schwering\textsuperscript{1}}
+\author{anonymous\textsuperscript{1}}
 \date{}
 
 
@@ -209,11 +209,11 @@
 
 \authornote{
 
-Correspondence concerning this article should be addressed to Jakub Krukar, Institute for Geoinformatics, University of Muenster, Heisenbergstr. 2, 48149 Muenster, Germany. E-mail: \href{mailto:krukar@uni-muenster.de}{\nolinkurl{krukar@uni-muenster.de}}
+Correspondence concerning this article should be addressed to anonymous, anynymised.
 
 }
 
-\affiliation{\vspace{0.5cm}\textsuperscript{1} Institute for Geoinformatics, University of Muenster, Germany\\\textsuperscript{2} Laboratory of Geo-information Science and Remote Sensing, Wageningen University, Netherlands}
+\affiliation{\vspace{0.5cm}\textsuperscript{1} anonymised}
 
 \abstract{%
 Sketch maps are a widely utilized method for assessing how participants encode and externalize knowledge of large-scale environments. Even though many such spaces include an important vertical component, participants tend to omit, or distort vertical information when drawing 2D sketch maps. Recent advancement in Virtual Reality sketching interfaces open the question whether sketch maps could be realised in 3D. Here we show that when tasked with drawing vertically-complex spaces on traditional 2D pen-and-paper medium, participants omit a lot of (mostly vertical) information that they do in fact store in their cognitive model of that space and can externalise in a Virtual Reality-based 3D sketch map. Although 3D sketch maps induced high cognitive load in some situations, so did the most complete 2D sketch maps. This indicates that 2D sketch maps may be a bottleneck for expressing valid parts of participants' spatial knowledge of vertically-complex spaces, while 3D sketch maps offer a promising alternative.
@@ -226,38 +226,15 @@ Sketch maps are a widely utilized method for assessing how participants encode a
 
 \section{Introduction}\label{introduction}
 
-An important component of spatial knowledge is \emph{survey} knowledge - the understanding of
-spatial configuration of objects in the environment including approximate distanced and angles between them (Ishikawa \& Montello, 2006; Montello, 1998; Siegel \& White, 1975). This knowledge is key for environmental-scale spaces like buildings or city districts (Montello, 1993). Individuals greatly differ
-in their ability to integrate survey knowledge from distant sub-parts of
-an environmental-scale spaces into a coherent representation
-(Ishikawa \& Montello, 2006; Weisberg \& Newcombe, 2018). For this reason researchers require
-tools for assessing survey knowledge of individuals in
-environmental-scale spaces.
+A fundamental challenge in geographic information science is understanding how humans mentally represent spatial environments and how these cognitive representations can be accurately externalised and formalised (Mark \& Frank, 1996). While much progress has been made in understanding how people encode and communicate spatial relations in the horizontal dimension, the vertical dimension remains comparatively understudied (Jeffery, 2011). This is particularly problematic given that the spaces humans navigate are inherently three-dimensional, yet the methods we use to assess spatial knowledge, remain predominantly two-dimensional. The current study investigates whether this methodological reliance on 2D representations creates a bottleneck in capturing human spatial knowledge of vertically-complex environments.
 
-There are many methods that allow participants to express the remembered
-configuration of objects in environmental space (Montello, 2016). One
-are sketch maps - simplified drawings of the environmental configurations (Appleyard, 1970; Lynch, 1960; Simonet et al., 2025). Sketch maps are valued because they allow relatively unrestricted visualization of thought, making them a natural and easy tool for expressing imperfect spatial knowledge (Manivannan, Krukar, \& Schwering, 2022; Schwering, Krukar, Manivannan, Chipofya, \& Jan, 2022; Tversky, 1993, 2002).
+Understanding survey knowledge--how people mentally represent the spatial configuration of objects, including distances and angles between landmarks (Montello, 1998; Siegel \& White, 1975)--is fundamental to the integration of spatial cognition research and geographic information science. This knowledge type is particularly critical for environmental-scale spaces like buildings and urban districts , where individuals must integrate spatial information from distributed locations into coherent mental representations (Montello, 1993). From a GIS perspective, the challenge is twofold: theoretically, we need to understand how humans encode vertical spatial relations in vertically-complex environments. Methodologically, we require tools that can capture and formalise these cognitive representations in ways that preserve their inherent three-dimensionality.
 
-One problem that so far did not attract much attention in the literature
-is the fact that sketch maps are drawn and analysed in two-dimensional
-form, even though the spaces we experience are three-dimensional
-(Kim et al., 2022). Disregarding the information on the
-vertical dimension can be justified in some navigational scenarios in
-which vertical dimension is irrelevant to path choice, i.e., when
-navigational decisions only need to be taken on the horizontal plane.
-However, in some situations spatial knowledge of vertical information is
-important for one's ability to successfully perform the task at hand. In such cases 2D sketch maps have significant limitations as a research tool.
+Sketch maps--simplified drawings of environmental configurations (Lynch, 1960)--have emerged as a valuable method for externalising survey knowledge, particularly because they permit relatively unrestricted visualisation of thought (Tversky, 2002), even when memory is generalised (Manivannan, Krukar, \& Schwering, 2022) or incomplete (Schwering, Krukar, Manivannan, Chipofya, \& Jan, 2022). This flexibility makes them suitable for capturing imperfect spatial knowledge and has led to their widespread adoption in realistic, real-world research contexts (Simonet et al., 2025). From a GIS methodological standpoint, sketch maps represent an analytical challenge because they must contain metric information (distances, angles) even though the underlying cognitive representation of space may store it incorrectly (Wang \& Worboys, 2017), or in approximation (Ishikawa \& Montello, 2006). In order to tackle this, researchers have developed systematic approaches to extract and analyse qualitative spatial relations from sketch maps--such as topological (e.g., ``inside/outside''), directional (e.g., ``right of''), and sequential relations (e.g., ``before/after'')--enabling the translation of hand-drawn cognitive maps into formal spatial representations that can be computationally processed and compared against ground truth (Schwering et al., 2014).
 
-For example, navigational studies of multi-level buildings show that vertical misrepresentations can lead to systematic wayfinding errors, such as underestimating detours between floors or failing to integrate staircases and elevators into a coherent route plan (Hölscher, Meilinger, Vrachliotis, Brösamle, \& Knauff, 2006). Understanding the vertical structure of buildings, e.g., whether separate floors have the same layout, and how they are aligned with regard to each other, is a known human factor issue of modern architecture (Dalton \& Hölscher, 2016; Gath-Morad et al., 2021). These examples show that our understanding of how vertical information is perceived and understood might be yet insufficient and potentially lag behind the horizontal dimensions.
+However, a critical methodological limitation has received insufficient attention: sketch maps are predominantly drawn and analysed in two-dimensional form, despite the three-dimensional nature of the environments they represent (Kim et al., 2022). Whilst this simplification may be justified for navigation scenarios where vertical dimensions are irrelevant to path choices, it becomes problematic in vertically-complex environments where elevation changes significantly affect wayfinding and spatial understanding. For example, navigational studies of multi-level buildings show that vertical misrepresentations can lead to systematic wayfinding errors, such as underestimating detours between floors or failing to integrate staircases and elevators into a coherent route plan (Hölscher, Meilinger, Vrachliotis, Brösamle, \& Knauff, 2006). Understanding the vertical structure of buildings, e.g., whether separate floors have the same layout, and how they are aligned with regard to each other, is a known human factor issue of modern architecture (Dalton \& Hölscher, 2016). These examples show that our understanding of how vertical information is perceived and understood might be yet insufficient and potentially lag behind the horizontal dimensions. The current study addresses this limitation by investigating whether extending established qualitative spatial reasoning methods from 2D sketch map analysis into three dimensions can better capture human spatial knowledge of vertically-complex spaces. This represents both a theoretical contribution--examining how humans mentally encode vertical relations in buildings and urban environments--and a methodological advancement in GIS, by demonstrating how qualitative spatial relations can be applied to 3D sketch maps created in virtual reality environments.
 
-The question investigated in this manuscript is whether sketch maps traditionally limited to 2D representation can be realized in 3D. Consumer-grade VR devices now enable sketching directly in three dimensions, allowing participants--even without drawing expertise--to externalize complex 3D spatial information without relying on symbolic conventions (Kim et al., 2022).
-
-This manuscript investigates the limitations of 2D sketch maps in scenarios where vertical information is crucial and explores the potential of 3D sketch maps
-created using a VR-based drawing interface. We have tasked
-participants with drawing 2D and 3D sketch maps representing two
-environmental-scale spaces. We evaluated
-sketch maps with regard to the \emph{visibility} and \emph{correctness} of spatial
-information conveyed in them. Inspired by the method of aligning sketch maps with metric maps based on qualitative spatial relations between landmarks (Manivannan et al., 2022; Schwering et al., 2014; Wang \& Schwering, 2015), we define \emph{visibility} as the proportion of spatial relations interpretable from the sketch and \emph{correctness} as the accuracy of these relations when compared to the ground-truth environment. The assumption motivating this work is that 2D pen-and-paper sketch maps create a bottleneck for extracting human spatial knowledge of three-dimensional environments, while VR-based 3D sketching enables participants to externalize knowledge they possess but struggle to fully communicate in 2D.
+The question investigated in this manuscript is whether sketch maps, traditionally limited to 2D representation, can be realised in 3D. Consumer-grade VR devices now enable sketching directly in three dimensions, allowing participants--even without drawing expertise--to externalise complex 3D spatial information without relying on symbolic conventions (Kim et al., 2022). This manuscript investigates the limitations of 2D sketch maps in scenarios where vertical information is crucial and explores the potential of 3D sketch maps created using a VR-based drawing interface. We tasked participants with drawing 2D and 3D sketch maps representing two environmental-scale spaces. We evaluated sketch maps with regard to the visibility and correctness of spatial information conveyed in them. Our analysis method is inspired by the major contribution of geographical information science--the formal analysis of qualitative spatial relations (Frank, 1996)--and the subsequently developed method of aligning sketch maps with metric maps based on qualitative spatial relations between landmarks (Chipofya, Schultz, \& Schwering, 2016). We evaluated sketch maps with regard to the \emph{visibility} and \emph{correctness} of spatial information conveyed in them. We define \emph{visibility} as the proportion of spatial relations interpretable from the sketch and \emph{correctness} as the qualitative accuracy of these relations when compared to the ground-truth environment. The assumption motivating this work is that 2D pen-and-paper sketch maps create a bottleneck for extracting human spatial knowledge of three-dimensional environments, whilst VR-based 3D sketching enables participants to externalise knowledge they possess but struggle to fully communicate in 2D.
 
 \subsection{Spatial relations in sketch maps}\label{spatial-relations-in-sketch-maps}
 
@@ -270,7 +247,7 @@ analysing qualitative relations between two types of
 features depicted in sketch maps: landmarks in the surrounding
 environment and the shape of the travelled path.
 
-Unlike quantitative metrics such as bidimensional regression (Friedman \& Kohler, 2003; Tobler, 2010), qualitative relations emphasize relative order and topology, aligning with how humans encode spatial knowledge and often remaining valid even when metric accuracy is distorted (Ishikawa \& Montello, 2006; Krukar et al., 2018; Meilinger, 2008; Wang \& Schwering, 2015; Warren, Rothman, Schnapp, \& Ericson, 2017). Thus, analysing sketch maps with regard to qualitative
+Unlike quantitative metrics such as bidimensional regression (Friedman \& Kohler, 2003; Tobler, 2010), qualitative relations emphasize relative order and topology, aligning with how humans encode spatial knowledge and often remaining valid even when metric accuracy is distorted (Wang \& Schwering, 2015; Warren, Rothman, Schnapp, \& Ericson, 2017). Thus, analysing sketch maps with regard to qualitative
 relations carries relevance to how humans mentally
 represent spatial knowledge.
 
@@ -279,8 +256,8 @@ twofold. First, 2D sketch maps might be particularly well-suited for
 communicating information in a single plane (e.g.~only horizontal plane
 in top-down drawings) and thus their evaluation should not be based
 solely on joint analyses of all dimensions. Second, there is a
-well-established horizontal-vertical anisotropy in how people perceive,
-store, and communicate spatial information (Du \& Mou, 2022; Krukar, Manivannan, Bhatt, \& Schultz, 2021). This may affect the quality
+well-established horizontal-vertical anisotropy in how people perceive (Krukar, Manivannan, Bhatt, \& Schultz, 2021),
+store, and communicate spatial information (Du \& Mou, 2022). This may affect the quality
 of 3D sketch maps but would not be captured in analyses that combine all
 dimensions.
 
@@ -315,7 +292,7 @@ Individual spatial abilities might play a role in one's ability to encode, store
 architecture students (Figure \ref{fig:berkowitztests}). The tests were validated by showing that advanced architecture students
 outperformed beginners.
 
-We chose this battery because it captures cognitive processes that are central for representing survey knowledge of buildings and urban configurations, such as switching between perspectives, composing 3D volumes, and performing 2D-to-3D transformations. Prior work shows that such domain-specific tests better distinguish expertise and predict design-related performance than general measures like visuospatial working memory (Berkowitz et al., 2021; Cho \& Suh, 2019, 2022). As the focus of our study is on sketch map construction, a test battery capturing design-related processes related to visualising 3D shapes is likely to isolate and capture individual differences more specific to this task. A possible downside of this choice is that such tests may be less comparable across disciplines and may share variance with prior design or drawing training.
+We chose this battery because it captures cognitive processes that are central for representing survey knowledge of buildings and urban configurations, such as switching between perspectives, composing 3D volumes, and performing 2D-to-3D transformations. Prior work shows that such domain-specific tests better distinguish expertise and predict design-related performance than general measures like visuospatial working memory (Cho \& Suh, 2019, 2022). As the focus of our study is on sketch map construction, a test battery capturing design-related processes related to visualising 3D shapes is likely to isolate and capture individual differences more specific to this task. A possible downside of this choice is that such tests may be less comparable across disciplines and may share variance with prior design or drawing training.
 
 The Indoor Perspective Test consists of ten questions, each of which shows a 3D object from the
 outside, with four corners marked as positions A, B, C, and D. The participant has
@@ -329,7 +306,7 @@ indoor views are provided as potential answers. The participant's task is to sel
 \subsection{Vertical information in different types of spaces}\label{vertical-information-in-different-types-of-spaces}
 
 The differences between 2D and 3D sketch maps might depend on the type
-of space that is being depicted. The type of movement a space allows for affects how it is cognitively processed (Hölscher, Büchner, \& Strube, 2013; Jeffery, 2011, 2021). With
+of space that is being depicted. The type of movement a space allows for affects how it is cognitively processed (Hölscher, Büchner, \& Strube, 2013; Jeffery, 2011). With
 respect to this, we focus on two types of space: \emph{volumetric environmental spaces} and \emph{multi-layered environmental spaces}
 (Jeffery, Jovalekic, Verriotis, \& Hayman, 2013). The former makes it possible to explore the vertical
 dimension freely (e.g., through flying), while the latter consists of
@@ -349,7 +326,7 @@ Laypersons are not trained to represent 3D spatial relations effectively on 2D s
 A 2D medium necessitates that information from one of the three
 dimensions is either ignored, distorted, or represented with a different
 convention than the remaining two dimensions. 3D sketch maps allow for the representation of information from all three dimensions within a single, consistent drawing convention. However, an open question is whether 3D sketch
-maps can be used to communicate 3D information by laymen (Xiao et al., 2024). Prior research shows that laypeople struggle with precision when sketching 3D objects in VR, although training improves performance (Deisinger, Blach, Wesche, Breining, \& Simon, 2000; Keefe et al., 2008; Machuca, Israel, Keefe, \& Stuerzlinger, 2023; Mäkelä, Reunanen, \& Takala, 2004; Wiese, Israel, Meyer, \& Bongartz, 2010). These challenges motivate our focus on qualitative rather than precise metric analyses.
+maps can be used to communicate 3D information by laymen (Xiao et al., 2024). Prior research shows that laypeople struggle with precision when sketching 3D objects in VR, although training improves performance (Deisinger, Blach, Wesche, Breining, \& Simon, 2000). These challenges motivate our focus on qualitative rather than precise metric analyses.
 
 \section{This study}\label{this-study}
 
@@ -367,7 +344,7 @@ We have stated six hypotheses:
 
 \emph{H5. Higher cognitive load, as measured by NASA-TLX, will be correlated with lower visibility and correctness of spatial relations in both 2D and 3D sketch maps.} Cognitive load associated with drawing (both in 2D and 3D) might be a factor limiting participants from expressing everything they would like to (Zimmerer \& Matthiesen, 2021).
 
-\emph{H6: Participants with higher spatial ability will produce more visible and more correct spatial relations, and will produce a smaller difference between 2D and 3D sketch maps.} Spatial abilities might be associated with greater ease of remembering the environment (Hegarty et al., 2006; Ishikawa \& Montello, 2006; Weisberg, Schinazi, Newcombe, Shipley, \& Epstein, 2014), as well as manipulating and transforming it for the drawing task (Barrera Machuca, Stuerzlinger, \& Asente, 2019), regardless of whether the sketch happens in 2D or 3D.
+\emph{H6: Participants with higher spatial ability will produce more visible and more correct spatial relations, and will produce a smaller difference between 2D and 3D sketch maps.} Spatial abilities might be associated with greater ease of remembering the environment (Hegarty et al., 2006), as well as manipulating and transforming it for the drawing task (Barrera Machuca, Stuerzlinger, \& Asente, 2019), regardless of whether the sketch happens in 2D or 3D.
 
 \section{Experiment 1: Vertically layered environment}\label{experiment-1-vertically-layered-environment}
 
@@ -759,7 +736,7 @@ In this section we discuss similarities and differences between Experiment 1 and
 
 The most significant outcome of this manuscript, supported by data consistent across both studies, is that 2D sketch maps are a bottleneck for communicating valid parts of participant's mental representation of space. This result was equally strong in Experiment 1 (layered environment) and in Experiment 2 (volumetric environment). The information that is left out in 2D sketch maps is predominantly vertical. While in layered environments participants were able to communicate some vertical information with textual labels (utilising a type of a work-around for the limitation of 2D pen-and-paper medium), this was not done in the volumetric environment. Thus, researchers should use 3D sketch maps for tasks with vertical complexity. For tasks where the vertical dimension plays no role, our data suggest that 2D pen-and-paper sketch maps remain an adequate and efficient method: x- and y- dimension relations were communicated to a similar level of visibility.
 
-Drawing order had no impact on the results of Experiment 1 but a significant impact on the completeness of spatial relations in Experiment 2. Our explanation assumes that participants activated a more complex mental representation of space when sketching in 3D first. If this is true, the discrepancy between data from both experiments could be interpreted as a sign that memory of spatial relations in buildings is easier to preserve over a time span of 30-60 minutes (i.e., the time between the exploration of the VR environment and completing the second sketch in our study) than the memory of urban areas. This can result from the fact that vertical information in vertically layered environments (buildings) can be stored in a simplified form (containerised within floors, or even only semantically labelled). This is not true for volumetric environments, where successful externalisation does require storing continuous vertical information - a more difficult task. Taken together, these results provide empirical support for the different cognitive processing of vertically layered and volumetric spaces (Hölscher et al., 2013; Jeffery, 2011, 2021; Jeffery et al., 2013).
+Drawing order had no impact on the results of Experiment 1 but a significant impact on the completeness of spatial relations in Experiment 2. Our explanation assumes that participants activated a more complex mental representation of space when sketching in 3D first. If this is true, the discrepancy between data from both experiments could be interpreted as a sign that memory of spatial relations in buildings is easier to preserve over a time span of 30-60 minutes (i.e., the time between the exploration of the VR environment and completing the second sketch in our study) than the memory of urban areas. This can result from the fact that vertical information in vertically layered environments (buildings) can be stored in a simplified form (containerised within floors, or even only semantically labelled). This is not true for volumetric environments, where successful externalisation does require storing continuous vertical information - a more difficult task. Taken together, these results provide empirical support for the different cognitive processing of vertically layered and volumetric spaces (Jeffery, 2021).
 
 Completeness of 2D maps unexpectedly increased with cognitive load. This suggests that presumed low cognitive effort of drawing 2D pen-and-paper sketch maps might only be true for sketches that are simple or incomplete. Although drawing in 3D can be more taxing on average (here in Experiment 2, but also in other studies; see (Xiao et al., 2024)), seeing this as a disadvantage of 3D sketch maps is incorrect, if to consider the reported cognitive load of comparably complete 2D sketches. It is also important to note that there was no significant relation between cognitive load and correctness, i.e., high cognitive load does not seem to cause errors.
 
@@ -769,11 +746,17 @@ One more notable difference between the experiments is that the visibility of re
 
 \section{Conclusion}\label{conclusion}
 
-Our results indicate that 2D sketch maps are a bottleneck for the visibility of vertical spatial relations: they limit the externalisation of what is known. The correctness of what is ultimately represented in the sketch is not affected by the dimensionality of the sketch. However, in a volumetric environment where vertical information is difficult to encode and must be stored in a more complex form, people with lower spatial abilities draw it disproportionally poorly, compared to other information. Our results provide empirical evidence for the difference in cognitive processes involved in encoding and storing mental representations of layered and volumetric environments and indicate potential advantages of 3D sketch maps as a method for externalising more complete mental representations of space. Researchers interested in spatial cognition of vertically-complex spaces should be aware that 2D sketch maps might result in under-representation of what participants know about that environment. Methodologically, our work shows the potential of immersive VR technologies as an assessment tool for spatial cognition research (Colombo et al., 2024) and highlights the wealth of related open questions, such as how to realise and assess the validity of 3D sketch maps in real-world environments, or develop formal metrics for evaluating mental representations of 3D spaces. The implications of our findings extend beyond spatial cognition research. Enhanced 3D sketch mapping can inform urban design, improve navigation aids for multi-level environments, and contribute to the development of more intuitive educational tools in virtual and augmented reality platforms.
+This research addresses a fundamental methodological limitation in geographic information science: the reliance on 2D methods to assess spatial knowledge of inherently 3D environments. Our findings demonstrate that 2D sketch maps systematically under-represent participants' knowledge of vertically-complex spaces, creating a methodological bottleneck. Across both layered (building interiors) and volumetric (urban terrain) environments, participants externalised substantially more vertical spatial relations in 3D sketch maps whilst maintaining comparable correctness. This indicates that the limitation lies in the capacity of 2D pen-and-paper methods rather than in participants' spatial knowledge itself, directly addressing the challenge of how cognitive representations can be accurately externalised and formalised (Mark \& Frank, 1996).
+
+The intellectual contribution to advancing GI science are multiple. First, we provide empirical validation for distinctions between layered and volumetric spatial environments (Jeffery, 2021). This has suggests that information about such environments should be treated differently in GIS interfaces, e.g.~in Virtual Reality and digital twin contexts (Verbree, Maren, Germs, Jansen, \& Kraak, 1999). Second, we introduce and validate a VR-based 3D sketch mapping methodology, extending analysis of qualitative relations in sketch maps (Chipofya et al., 2016) to 3D. Most fundamentally, our findings challenge the assumption that 2D representations suffice for capturing spatial knowledge simply because environments can be projected onto two dimensions. Instead, we show that assessment method must match the dimensionality of the spatial knowledge being investigated. This principle has broad implications for spatial cognition studies, wayfinding technologies, and built environment assessment.
+
+For researchers studying navigation or spatial memory in vertically-complex environments, our work demonstrates that 2D sketch maps may systematically underestimate what participants know. For urban planners and architects, this shows that the importance of the vertical information might be under-represent in existing evidence base used for decision making. For software developers of 3D design support systems and GIS analyses, it highlights the need to support vertical information processing and representation explicitly, rather than assuming users can always communicate about 3D structures through 2D interfaces. For example, the scale inconsistencies observed in 3D sketch maps of volumetric environments highlight the need for computational tools that support consistent scaling or can quantify and trace distortions.
+
+While our data comes from controlled VR environments, generalisation to real-world settings requires further investigation. Further development would also benefit from formal metrics that characterise the accuracy of 3D sketch maps beyond simple visibility/correctness counts.
 
 \section{Data and Software Availability Statement}\label{data-and-software-availability-statement}
 
-Raw data (including all sketch maps), video demonstrations of the experimental procedure, and an R markdown file containing the statistical analyses are available at: \url{https://osf.io/avnxh/?view_only=5fa8dc8e3ec046b1a36a51c8d8f3bf0b}
+Raw data (including all sketch maps), video demonstrations of the experimental procedure, and an R markdown file containing the statistical analyses are available at: \url{https://anonymous.4open.science/r/3dsmpaper-anonym/README.md}
 
 (the repository has been anonymised for peer-review and will be completed with all remaining material after acceptance)
 
@@ -781,9 +764,6 @@ Raw data (including all sketch maps), video demonstrations of the experimental p
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-appleyard.1970}
-Appleyard, D. (1970). Styles and methods of structuring a city. \emph{Environment and Behavior}, \emph{2}(1), 100--117. \url{https://doi.org/10.1177/001391657000200106}
-
 \bibitem[\citeproctext]{ref-barreramachuca.2019}
 Barrera Machuca, M. D., Stuerzlinger, W., \& Asente, P. (2019). The {Effect} of {Spatial} {Ability} on {Immersive} {3D} {Drawing}. \emph{Proceedings of the 2019 on {Creativity} and {Cognition}}, 173--186. San Diego CA USA: ACM. \url{https://doi.org/10.1145/3325480.3325489}
 
@@ -802,14 +782,14 @@ Bürkner, P.-C. (2017). Brms: {An} {R} {Package} for {Bayesian} {Multilevel} {Mo
 \bibitem[\citeproctext]{ref-carpenter.2017}
 Carpenter, B., Gelman, A., Hoffman, M. D., Lee, D., Goodrich, B., Betancourt, M., \ldots{} Riddell, A. (2017). Stan: {A} {Probabilistic} {Programming} {Language}. \emph{Journal of Statistical Software}, \emph{76}, 1--32. \url{https://doi.org/10.18637/jss.v076.i01}
 
+\bibitem[\citeproctext]{ref-chipofya.2016}
+Chipofya, M. C., Schultz, C., \& Schwering, A. (2016). A metaheuristic approach for efficient and effective sketch-to-metric map alignment. \emph{International Journal of Geographical Information Science}, \emph{30}(2), 405--425. \url{https://doi.org/10.1080/13658816.2015.1090000}
+
 \bibitem[\citeproctext]{ref-cho.2019}
 Cho, J. Y., \& Suh, J. (2019). Understanding {Spatial} {Ability} in {Interior} {Design} {Education}: {2D}-to-{3D} {Visualization} {Proficiency} as a {Predictor} of {Design} {Performance}. \emph{Journal of Interior Design}, \emph{44}(3), 141--159. \url{https://doi.org/10.1111/joid.12143}
 
 \bibitem[\citeproctext]{ref-cho.2022}
 Cho, J. Y., \& Suh, J. (2022). The {Architecture} and {Interior} {Design} {Domain}-{Specific} {Spatial} {Ability} {Test} ({AISAT}): {Its} {Validity} and {Reliability}. \emph{Journal of Interior Design}, \emph{47}(2), 11--30. \url{https://doi.org/10.1111/joid.12211}
-
-\bibitem[\citeproctext]{ref-colombo.2024}
-Colombo, G., Minta, K., Grübel, J., Tai, W. L. E., Hölscher, C., \& Schinazi, V. R. (2024). Detecting cognitive impairment through an age-friendly serious game: {The} development and usability of the {Spatial} {Performance} {Assessment} for {Cognitive} {Evaluation} ({SPACE}). \emph{Computers in Human Behavior}, \emph{160}, 108349. \url{https://doi.org/10.1016/j.chb.2024.108349}
 
 \bibitem[\citeproctext]{ref-dalton.2016}
 Dalton, R. C., \& Hölscher, C. (2016). \emph{Take one building: {Interdisciplinary} research perspectives of the seattle central library}. Taylor \& Francis.
@@ -820,14 +800,14 @@ Deisinger, J., Blach, R., Wesche, G., Breining, R., \& Simon, A. (2000). Towards
 \bibitem[\citeproctext]{ref-du.2022}
 Du, Y. K., \& Mou, W. (2022). When humans can fly: {Imprecise} vertical encoding in human {3D} spatial navigation. \emph{Behavioural Brain Research}, \emph{426}, 113835. \url{https://doi.org/10.1016/j.bbr.2022.113835}
 
+\bibitem[\citeproctext]{ref-frank.1996}
+Frank, A. U. (1996). Qualitative spatial reasoning: Cardinal directions as an example. \emph{International Journal of Geographical Information Systems}, \emph{10}(3), 269--290. \url{https://doi.org/10.1080/02693799608902079}
+
 \bibitem[\citeproctext]{ref-friedman.2003}
 Friedman, A., \& Kohler, B. (2003). Bidimensional regression: Assessing the configural similarity and accuracy of cognitive maps and other two-dimensional data sets. \emph{Psychological Methods}. \url{https://doi.org/10.1037/1082-989X.8.4.468}
 
 \bibitem[\citeproctext]{ref-gagnier.2017}
 Gagnier, K. M., Atit, K., Ormand, C. J., \& Shipley, T. F. (2017). Comprehending {3D} {Diagrams}: {Sketching} to {Support} {Spatial} {Reasoning}. \emph{Topics in Cognitive Science}, \emph{9}(4), 883--901. \url{https://doi.org/10.1111/tops.12233}
-
-\bibitem[\citeproctext]{ref-gath-morad.2021}
-Gath-Morad, M., Thrash, T., Schicker, J., Hölscher, C., Helbing, D., \& Melgar, L. E. A. (2021). Visibility matters during wayfinding in the vertical. \emph{Scientific Reports}, \emph{11}(1), 18980. \url{https://doi.org/10.1038/s41598-021-98439-1}
 
 \bibitem[\citeproctext]{ref-hallgren.2012}
 Hallgren, K. A. (2012). Computing inter-rater reliability for observational data: {An} overview and tutorial. \emph{Tutorials in Quantitative Methods for Psychology}, \emph{8}(1), 23--34. \url{https://doi.org/10.20982/tqmp.08.1.p023}
@@ -862,17 +842,11 @@ Jonker, T. R., Wammes, J. D., \& MacLeod, C. M. (2019). Drawing enhances item in
 \bibitem[\citeproctext]{ref-judd.2017}
 Judd, C. M., Westfall, J., \& Kenny, D. A. (2017). Experiments with more than one random factor: {Designs}, analytic models, and statistical power. \emph{Annual Review of Psychology}, \emph{68}(1), 601--625. \url{https://doi.org/10.1146/annurev-psych-122414-033702}
 
-\bibitem[\citeproctext]{ref-keefe.2008}
-Keefe, D. F., Acevedo, D., Miles, J., Drury, F., Swartz, S. M., \& Laidlaw, D. H. (2008). Scientific {Sketching} for {Collaborative} {VR} {Visualization} {Design}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{14}(4), 835--847. \url{https://doi.org/10.1109/TVCG.2008.31}
-
 \bibitem[\citeproctext]{ref-kim.2022}
 Kim, K. G., Krukar, J., Mavros, P., Zhao, J., Kiefer, P., Schwering, A., \ldots{} Raubal, M. (2022). {3D} {Sketch} {Maps}: {Concept}, {Potential} {Benefits}, and {Challenges}. In T. Ishikawa, S. I. Fabrikant, \& S. Winter (Eds.), \emph{15th {International} {Conference} on {Spatial} {Information} {Theory} ({COSIT} 2022)} (pp. 14:1--14:7). Dagstuhl, Germany: Schloss Dagstuhl -- Leibniz-Zentrum für Informatik. \url{https://doi.org/10.4230/LIPIcs.COSIT.2022.14}
 
 \bibitem[\citeproctext]{ref-krukar.2021a}
 Krukar, J., Manivannan, C., Bhatt, M., \& Schultz, C. (2021). Embodied {3D} isovists: {A} method to model the visual perception of space. \emph{Environment and Planning B: Urban Analytics and City Science}, \emph{48}(8), 2307--2325. \url{https://doi.org/10.1177/2399808320974533}
-
-\bibitem[\citeproctext]{ref-krukar.2018}
-Krukar, J., Münzer, S., Lörch, L., Anacta, V. J., Fuest, S., \& Schwering, A. (2018). Distinguishing sketch map types: {A} flexible feature-based classification. \emph{Spatial Cognition {XI}, 11th International Conference, Spatial Cognition 2018, Tübingen, Germany, September 5-8, 2018, Proceedings}, 279--292. \url{https://doi.org/10.1007/978-3-319-96385-3_19}
 
 \bibitem[\citeproctext]{ref-li.2021}
 Li, H., Mavros, P., Krukar, J., \& Hölscher, C. (2021). The effect of navigation method and visual display on distance perception in a large-scale virtual building. \emph{Cognitive Processing}, \emph{22}(2), 239--259. \url{https://doi.org/10.1007/s10339-020-01011-4}
@@ -883,14 +857,11 @@ Lu, Y., \& Ye, Y. (2019). Can people memorize multilevel building as volumetric 
 \bibitem[\citeproctext]{ref-lynch.1960}
 Lynch, K. (1960). \emph{The image of the city} (21st ed). Cambridge (Mass.): The MIT Press.
 
-\bibitem[\citeproctext]{ref-machuca.2023}
-Machuca, M. D. B., Israel, J. H., Keefe, D. F., \& Stuerzlinger, W. (2023). Toward {More} {Comprehensive} {Evaluations} of {3D} {Immersive} {Sketching}, {Drawing}, and {Painting}. \emph{IEEE Transactions on Visualization and Computer Graphics}, 1--18. \url{https://doi.org/10.1109/TVCG.2023.3276291}
-
-\bibitem[\citeproctext]{ref-makela.2004}
-Mäkelä, W., Reunanen, M., \& Takala, T. (2004). Possibilities and limitations of immersive free-hand expression: A case study with professional artists. \emph{Proceedings of the 12th Annual {ACM} International Conference on {Multimedia}}, 504--507. New York, NY, USA: Association for Computing Machinery. \url{https://doi.org/10.1145/1027527.1027649}
-
 \bibitem[\citeproctext]{ref-manivannan.2022a}
 Manivannan, C., Krukar, J., \& Schwering, A. (2022). Spatial generalization in sketch maps: {A} systematic classification. \emph{Journal of Environmental Psychology}, \emph{83}, 101851. \url{https://doi.org/10.1016/j.jenvp.2022.101851}
+
+\bibitem[\citeproctext]{ref-mark.1996}
+Mark, D. M., \& Frank, A. U. (1996). Experiential and {Formal} {Models} of {Geographic} {Space}. \emph{Environment and Planning B: Planning and Design}, \emph{23}(1), 3--24. \url{https://doi.org/10.1068/b230003}
 
 \bibitem[\citeproctext]{ref-mcelreath.2016}
 McElreath, R. (2016). \emph{Statistical {Rethinking}: {A} {Bayesian} {Course} with {Examples} in {R} and {Stan}}. Boca Raton: Chapman; Hall/CRC. \url{https://doi.org/10.1201/9781315372495}
@@ -898,17 +869,11 @@ McElreath, R. (2016). \emph{Statistical {Rethinking}: {A} {Bayesian} {Course} wi
 \bibitem[\citeproctext]{ref-mcnamara.2003}
 McNamara, T. P. (2003). How {Are} the {Locations} of {Objects} in the {Environment} {Represented} in {Memory}? In C. Freksa, W. Brauer, C. Habel, \& K. F. Wender (Eds.), \emph{Spatial {Cognition} {III}} (pp. 174--191). Berlin, Heidelberg: Springer. \url{https://doi.org/10.1007/3-540-45004-1_11}
 
-\bibitem[\citeproctext]{ref-meilinger.2008}
-Meilinger, T. (2008). The {Network} of {Reference} {Frames} {Theory}: {A} {Synthesis} of {Graphs} and {Cognitive} {Maps}. In C. Freksa, N. S. Newcombe, P. Gärdenfors, \& S. Wölfl (Eds.), \emph{Spatial {Cognition} {VI}. {Learning}, {Reasoning}, and {Talking} about {Space}} (pp. 344--360). Berlin, Heidelberg: Springer. \url{https://doi.org/10.1007/978-3-540-87601-4_25}
-
 \bibitem[\citeproctext]{ref-montello.1993}
 Montello, D. R. (1993). Scale and multiple psychologies of space. In A. U. Frank \& I. Campari (Eds.), \emph{Spatial {Information} {Theory} {A} {Theoretical} {Basis} for {GIS}} (pp. 312--321). Berlin, Heidelberg: Springer. \url{https://doi.org/10.1007/3-540-57207-4_21}
 
 \bibitem[\citeproctext]{ref-montello.1998}
 Montello, D. R. (1998). A new framework for understanding the acquisition of spatial knowledge in large-scale environments. \emph{Spatial and Temporal Reasoning in Geographic Information Systems}, 143--154.
-
-\bibitem[\citeproctext]{ref-montello.2016a}
-Montello, D. R. (2016). Cognition and spatial behavior. In {[}"Richardson, D. and\}. \{Castree, N. and\}. \{Goodchild, M. F. and\}. \{Kobayashi, A. and\}. \{Liu, W. and\}. \{Marston, \& R. A."{]} (Eds.), \emph{International encyclopedia of geography: {People}, the earth, environment and technology} (pp. 1--20). Oxford, UK: John Wiley \& Sons, Ltd. \url{https://doi.org/10.1002/9781118786352.wbieg0498}
 
 \bibitem[\citeproctext]{ref-schwering.2022}
 Schwering, A., Krukar, J., Manivannan, C., Chipofya, M., \& Jan, S. (2022). Generalized, {Inaccurate}, {Incomplete}: {How} to {Comprehensively} {Analyze} {Sketch} {Maps} {Beyond} {Their} {Metric} {Correctness}. In T. Ishikawa, S. I. Fabrikant, \& S. Winter (Eds.), \emph{15th {International} {Conference} on {Spatial} {Information} {Theory} ({COSIT} 2022)} (pp. 8:1--8:15). Dagstuhl, Germany: Schloss Dagstuhl -- Leibniz-Zentrum für Informatik. \url{https://doi.org/10.4230/LIPIcs.COSIT.2022.8}
@@ -928,26 +893,20 @@ Tobler, W. R. (2010). Bidimensional regression. \emph{Geographical Analysis}, \e
 \bibitem[\citeproctext]{ref-tung.2024}
 Tung, Y.-H., \& Chang, C.-Y. (2024). How three-dimensional sketching environments affect spatial thinking: {A} functional magnetic resonance imaging study of virtual reality. \emph{PLOS ONE}, \emph{19}(3), e0294451. \url{https://doi.org/10.1371/journal.pone.0294451}
 
-\bibitem[\citeproctext]{ref-tversky.1993}
-Tversky, B. (1993). Cognitive maps, cognitive collages, and spatial mental models. In A. U. Frank \& I. Campari (Eds.), \emph{Spatial {Information} {Theory} {A} {Theoretical} {Basis} for {GIS}} (pp. 14--24). Berlin, Heidelberg: Springer. \url{https://doi.org/10.1007/3-540-57207-4_2}
-
 \bibitem[\citeproctext]{ref-tversky2002sketches}
 Tversky, B. (2002). What do sketches say about thinking. In R. Davis, J. Landay, \& T. Stahovich (Eds.), \emph{2002 {AAAI} spring symposium, sketch understanding workshop, stanford university, {AAAI} technical report {SS}-02-08} (pp. 148--151). Stanford, CA.
+
+\bibitem[\citeproctext]{ref-verbree.1999}
+Verbree, E., Maren, G. V., Germs, R., Jansen, F., \& Kraak, M.-J. (1999). Interaction in virtual world views-linking {3D} {GIS} with {VR}. \emph{International Journal of Geographical Information Science}, \emph{13}(4), 385--396. \url{https://doi.org/10.1080/136588199241265}
 
 \bibitem[\citeproctext]{ref-wang.2015}
 Wang, J., \& Schwering, A. (2015). Invariant spatial information in sketch maps --- a study of survey sketch maps of urban areas. \emph{Journal of Spatial Information Science}, (11), 31--52. Retrieved from \url{http://josis.net/index.php/josis/article/view/62}
 
+\bibitem[\citeproctext]{ref-wang.2017}
+Wang, J., \& Worboys, M. (2017). Ontologies and representation spaces for sketch map interpretation. \emph{International Journal of Geographical Information Science}, \emph{31}(9), 1697--1721. \url{https://doi.org/10.1080/13658816.2017.1309043}
+
 \bibitem[\citeproctext]{ref-warren.2017}
 Warren, W. H., Rothman, D. B., Schnapp, B. H., \& Ericson, J. D. (2017). Wormholes in virtual space: {From} cognitive maps to cognitive graphs. \emph{Cognition}, \emph{166}, 152--163. \url{https://doi.org/10.1016/j.cognition.2017.05.020}
-
-\bibitem[\citeproctext]{ref-weisberg.2018}
-Weisberg, S. M., \& Newcombe, N. S. (2018). Cognitive maps: {Some} people make them, some people struggle. \emph{Current Directions in Psychological Science}, \emph{27}(4), 220--226. \url{https://doi.org/10.1177/0963721417744521}
-
-\bibitem[\citeproctext]{ref-weisberg.2014}
-Weisberg, S. M., Schinazi, V. R., Newcombe, N. S., Shipley, T. F., \& Epstein, R. A. (2014). Variations in cognitive maps: {Understanding} individual differences in navigation. \emph{Journal of Experimental Psychology: Learning, Memory, and Cognition}, \emph{40}(3), 669--682. \url{https://doi.org/10.1037/a0035261}
-
-\bibitem[\citeproctext]{ref-wiese.2010}
-Wiese, E., Israel, J. H., Meyer, A., \& Bongartz, S. (2010). Investigating the learnability of immersive free-hand sketching. \emph{Proceedings of the {Seventh} {Sketch}-{Based} {Interfaces} and {Modeling} {Symposium}}, 135--142. Goslar, DEU: Eurographics Association.
 
 \bibitem[\citeproctext]{ref-xiao.2025}
 Xiao, T., Chen, Y., Zhong, S., Kiefer, P., Krukar, J., Kim, K. G., \ldots{} Raubal, M. (2025). {Sketch2Terrain}: {AI}-{Driven} {Real}-{Time} {Terrain} {Sketch} {Mapping} in {Augmented} {Reality}. \emph{Proceedings of the 2025 {CHI} {Conference} on {Human} {Factors} in {Computing} {Systems}}, 1--24. New York, NY, USA: Association for Computing Machinery. \url{https://doi.org/10.1145/3706598.3713467}
