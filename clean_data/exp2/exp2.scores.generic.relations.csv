@@ -1,0 +1,445 @@
+relation.code,relation.type,relation.short,relation.long.desc,visibility,correctness,comments.scores,participant.ID,cond
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,101,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,101,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",101,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,101,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,102,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,102,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,Topdown + cross section,"topdown, cross section, single vintage point, mix, 3D",102,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,102,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,103,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,103,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",103,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,no,NA,103,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,104,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,104,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",104,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,104,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,105,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,105,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,mix,"topdown, cross section, single vintage point, mix, 3D",105,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,105,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,106,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,106,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,mix,"topdown, cross section, single vintage point, mix, 3D",106,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,106,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,107,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,107,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown - Multiple single vintage point!,"topdown, cross section, single vintage point, mix, 3D",107,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,107,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,108,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,108,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,cross section,"topdown, cross section, single vintage point, mix, 3D",108,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,108,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,109,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,109,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",109,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,109,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,110,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,110,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown,"topdown, cross section, single vintage point, mix, 3D",110,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,110,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,111,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,111,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",111,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,111,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,112,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,112,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown + single vintage point,"topdown, cross section, single vintage point, mix, 3D",112,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,112,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,113,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,113,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,mix,"topdown, cross section, single vintage point, mix, 3D",113,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,113,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,114,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,114,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",114,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,114,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,115,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,115,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,mix,"topdown, cross section, single vintage point, mix, 3D",115,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,115,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,116,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,116,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown + single vintage point,"topdown, cross section, single vintage point, mix, 3D",116,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,116,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,117,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,117,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",117,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,117,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,119,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,119,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,perspective,"topdown, cross section, single vintage point, mix, 3D",119,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,119,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,120,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,120,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",120,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,120,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,121,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,121,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown,"topdown, cross section, single vintage point, mix, 3D",121,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,121,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,122,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,122,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown,"topdown, cross section, single vintage point, mix, 3D",122,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,122,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,124,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,124,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,cross section,"topdown, cross section, single vintage point, mix, 3D",124,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,124,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,125,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,125,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,mix,"topdown, cross section, single vintage point, mix, 3D",125,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,125,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,126,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,126,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown,"topdown, cross section, single vintage point, mix, 3D",126,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,126,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,127,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,127,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,mix,"topdown, cross section, single vintage point, mix, 3D",127,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,127,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,128,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,128,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,perspective,"topdown, cross section, single vintage point, mix, 3D",128,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,128,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,130,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,130,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown,"topdown, cross section, single vintage point, mix, 3D",130,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,130,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,132,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,132,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,topdown + single vintage point,"topdown, cross section, single vintage point, mix, 3D",132,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,132,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,133,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,133,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,sngle vintage point,"topdown, cross section, single vintage point, mix, 3D",133,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,133,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,134,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,134,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",134,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,134,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,135,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,135,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",135,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,135,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,136,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,136,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,cross section,"topdown, cross section, single vintage point, mix, 3D",136,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,136,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,137,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,137,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",137,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,137,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,138,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,138,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,perspective,"topdown, cross section, single vintage point, mix, 3D",138,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,138,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,139,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,139,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",139,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,139,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,140,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,140,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,cross section,"topdown, cross section, single vintage point, mix, 3D",140,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,140,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,141,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,141,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, mix, 3D",141,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,141,2D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,101,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,101,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,101,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,101,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,102,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,102,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,102,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,102,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,103,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,103,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",103,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,103,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,104,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,104,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",104,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,104,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,105,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,105,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",105,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,105,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,106,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,106,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",106,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,106,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,107,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,107,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",107,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,107,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,108,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,108,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, 3D",108,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,108,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,109,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,109,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",109,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,109,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,110,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,110,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",110,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,110,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,111,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,111,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, 3D",111,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,111,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,112,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,112,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",112,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,112,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,113,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,113,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",113,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,113,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,114,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,114,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",114,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,114,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,115,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,115,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",115,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,115,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,116,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,116,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",116,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,116,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,117,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,117,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",117,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,117,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,119,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,119,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",119,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,119,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,120,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,120,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",120,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,120,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,121,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,121,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",121,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,121,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,122,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,122,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",122,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,122,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,124,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,124,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",124,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,124,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,125,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,125,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",125,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,125,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,126,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,126,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",126,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,126,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,127,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,127,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",127,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,127,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,128,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,128,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",128,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,128,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,130,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,130,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",130,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,130,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,132,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,132,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",132,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,132,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,133,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,133,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",133,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,133,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,134,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,134,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vintage point,"topdown, cross section, single vintage point, 3D",134,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,134,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,135,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,135,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",135,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,135,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,136,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,136,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",136,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,136,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,137,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,137,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",137,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,137,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,138,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,138,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",138,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,138,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,139,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,139,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",139,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,139,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,0,NA,140,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,140,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",140,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,140,3D
+RouteOrder,generic.relations,Route Order is correct?,"Correct, If the route goes through these buildings or objects sequentially: Building1/Car, B2/Cat, B3/Sheep, B4/Shark, B5/Trees, B6/Rhino, and then B1/Car once more.",NA,1,NA,141,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated.",NA,1,NA,141,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,"topdown, cross section, single vintage point, 3D",141,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,141,3D

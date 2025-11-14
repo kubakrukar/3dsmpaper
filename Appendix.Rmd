@@ -1,0 +1,360 @@
+# Ceiling effect
+
+Ceiling effect is an inherent risk in experimental design where the focus lies on testing well-learnt environments. This is specifically the case here, where participants were given multiple chances to memorise the space as the focus is on the externalisation of well-remembered spatial knowledge. We account for this in two ways. First, given the fact that we fit data close to the maximum possible values, we fit models within the Bernoulli family which appropriately models the variance of boolean data even close to the maximum boundary. As demonstrated by the posterior predictive checks, our approach was fully successful in modeling the shape of the data's distribution. 
+
+Second, we discuss potential consequences to the interpretation of the results of Experiment 1. As noted in the manuscript, correctness values in Experiment 1 reached 100%, meaning that the ceiling effect might have reduced the study's sensitivity to detect smaller differences in H2, H4, and H6. Visibility values in Experiment 1 did reach 100% in the 3D sketch maps condition but not in the 2D condition. This indicates that any significant effects found with respect to the visibility results could be larger under more challenging tasks.
+
+With respect to H2, we have detected no difference across conditions in the correctness of vertical relations. Importantly, this result is similar in Experiment 2 where correctness rates did not reach 100% and where ceiling effect is not a concern. Thus, despite compromised sensitivity in Experiment 1, our data from Experiment 2 still indicates that during sketching well-learnt spaces correctness is similar across 2D and 3D sketch maps. Future work can test whether this effect is different when environments are much more complex, such as in large public buildings [@li.2021], and when participants are not given sufficient opportunities to fully memorise the space.
+
+With respect to H4, neither Experiment 1 (ceiling effect) nor Experiment 2 (no ceiling) showed a difference in correctness depending on which sketch map was drawn as first. However, the pattern of findings was inconsistent for the visibility metric (no order effect on visibility in Experiment 1; significant impact of drawing order on visibility in Experiment 2). A potential small effect might have been undetected in Experiment 1.
+
+With respect to H6, Credible Intervals highly varied across participants with low and high spatial abilities. As noted, our post-diction tests are exploratory, but they point to an interesting question for future research: How participants with low vs high spatial skills will behave given more complex environments? One possibility worth investigating is an interaction effect between spatial skills and the complexity of the environment being drawn. It might be the case that the differences between 2D and 3D sketch maps are more pronounced for specific combinations of participants and complexity of the environment that needs to be drawn.
+
+A related limitation of the current manuscript is that we only investigated sketching of two environments. A greater diversity and difficulty of buildings and urban areas could reveal specific situations under which two-dimensionality of sketch maps limits the participants in expressing what they know. Future work could address this e.g., by systematically varying the complexity of the environments within the horizontal and vertical dimensions.
+
+# Interrater agreement: Experiment 1
+
+We present results of two interrater analyses.
+
+Initially, a second researcher rated the visibility and correctness of all spatial relations in 8 sketch maps (4 of each condition, i.e., 14% of the dataset). The Kappa coefficient for the visibility variable was `r kappa_exp1_vis` and for the correctness (of those relations that were considered 'visible' by both raters) was `r kappa_exp1_cor`. These values correspond to 'almost perfect' and 'substantial' agreement respectively and make it possible to draw further conclusion from the analysis [@hallgren.2012].
+
+Subsequently to running all other analyses, an additional rater was recruited to conduct an interrater agreement analysis of the full dataset. The Kappa coefficient for the visibility variable was `r kappa_exp1_vis_interrater2` and for the correctness (of those relations that were considered 'visible' by both raters) was `r kappa_exp1_cor_interrater2`. These values correspond to 'substantial' and 'almost perfect' agreement respectively and make it possible to draw further conclusion from the analysis [@hallgren.2012]. We associate the lower number with the fact that the new rater did not participate in the definition of the scoring scheme.
+
+# Interrater agreement: Experiment 2
+
+Initially, a second researcher rated the visibility and correctness of all spatial relations in 8 sketch maps (4 of each condition, i.e., 11% of the dataset). The Kappa coefficient for the visibility variable was `r kappa_exp2_vis` and for the correctness (of those relations that were considered 'visible' by both raters) was `r kappa_exp2_cor`. These values correspond to 'almost perfect' and 'substantial' agreement respectively and make it possible to draw further conclusion from the analysis [@hallgren.2012].
+
+As in Experiment 2, an additional rater performed the analysis on the full dataset. The Kappa coefficient for the visibility variable was `r kappa_exp2_vis_interrater2` and for the correctness (of those relations that were considered 'visible' by both raters) was `r kappa_exp2_cor_interrater2`. These values correspond to 'substantial' agreement and make it possible to draw further conclusion from the analysis [@hallgren.2012].
+
+Interrater agreement demonstrated satisfactory, yet imperfect scores. We associate the lower number of the full analysis (compared to the intial partial analysis) with the fact that the new rater did not participate in the definition of the scoring scheme. In the initial situation where both raters co-created the scoring system and scored the relations independently, the interrater agreement was higher. This demonstrates that the key issue in interrater agreement is the explanation of the scoring system, and not its intrinsic characteristics. Further work on scoring sketch maps based on qualitative spatial relations is necessary to avoid such ambiguities [@manivannan.2022a].
+
+# Sample size justification
+
+Our study utilised Bayesian statistical methods implemented with the brms package in R [@burkner.2017] which is based on Stan [@carpenter.2017], following the Statistical Rethinking framework [@mcelreath.2016]. We evaluate the adequacy of our sample size through convergence statistics and model fit. We examined \(\hat{R}\) values which were < 1.01 across all parameters, and effective sample size (ESS) well above 1000 across all parameters, which indicates that the sample size was sufficient for the planned analyses and the chains converged correctly. We used weakly informative priors that have negligible impact on the results. In order to verify whether the sample size was sufficient to allow the data to guide our estimates, we performed simulation-based posterior predictive checks and present the results at the end of this Appendix.
+
+For reference, we also provide a frequentist estimate of statistical power for the effect of the main condition (2D vs 3D sketch maps). The study is classified as a CCC design (participants × targets × condition) within the framework of @judd.2017. Power analysis computed with the associated web application under its default settings was 0.92 for detecting a medium effect (d = 0.5) with 27 participants and 63 targets (where each target is a single spatial relation) and 0.74 for 21 targets (i.e., for a difference between two conditions within a single X/Y/Z dimension).
+
+# Additional summary statistics: Experiment 1
+
+We also classified (but do not include in main analyses): 
+
+- whether the drawn route had a correct sequence of turns (true for `r exp1.summary.gen$route.cor.m_2D`% in 2D and for `r exp1.summary.gen$route.cor.m_3D`% in 3D); 
+
+- whether the route was drawn as continuous line or its continuity could be inferred (true for `r exp1.summary.gen$route.cont.m_2D`% in 2D and for `r exp1.summary.gen$route.cont.m_3D`% in 3D); 
+
+- whether the sketch map was split into multiple parts (true for `r exp1.summary.gen$many.parts.m_2D`% in 2D and for `r exp1.summary.gen$many.parts.m_3D`% in 3D); 
+
+- whether the sketch map depicted that there were 3 floors (true for `r exp1.summary.gen$vert.al.m_2D`% in 2D and for `r exp1.summary.gen$vert.al.m_3D`% in 3D); and 
+
+- whether at least two of them would be depicted as having rectangular shape with the middle floor being rotated by 90 degrees (true for `r exp1.summary.gen$hori.al.m_2D`% in 2D and for `r exp1.summary.gen$hori.al.m_3D`% in 3D).
+
+
+# Additional summary statisticts: Experiment 2
+
+We also classified (but do not include in main analyses): 
+
+- whether the drawn route had a correct sequence of turns (true for `r exp2.summary.gen$route.cor.m_2D`% in 2D and for `r exp2.summary.gen$route.cor.m_3D`% in 3D); 
+
+- whether the route was drawn as continuous line or its continuity could be inferred (true for `r exp2.summary.gen$route.cont.m_2D`% in 2D and for `r exp2.summary.gen$route.cont.m_3D`% in 3D); and 
+
+- whether the sketch map was split into multiple parts (true for `r exp2.summary.gen$many.parts.m_2D`% in 2D and for `r exp2.summary.gen$many.parts.m_3D`% in 3D).
+
+
+
+
+# Details of statistical models
+
+\newpage
+
+```{r}
+fit1.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H1**")
+```
+
+ 
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit1.1, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit1.1, "cond3D = 0") %>% plot()
+```
+
+
+
+\newpage
+```{r}
+fit1.2 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H2**")
+```
+
+
+ 
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit1.2, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.", fig.pos="H"}
+hypothesis(fit1.2, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit1.4.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H4 - Visibility**")
+```
+
+
+ 
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit1.4.1, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit1.4.1, "cond3D = 0") %>% plot()
+```
+
+\newpage
+
+```{r}
+fit1.4.2 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H4 - Correctness**")
+```
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit1.4.2, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.", fig.pos="H"}
+hypothesis(fit1.4.2, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit1.5.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H5 - Visibility**")
+```
+
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit1.5.1, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit1.5.1, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit1.5.2 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H5 - Correctness**")
+```
+
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit1.5.2, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.", fig.pos="H"}
+hypothesis(fit1.5.2, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit1.6.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H6 - Visibility**")
+```
+
+
+```{r}
+fit1.6.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H6 - Correctness**")
+```
+
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit1.6.1, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit1.6.1, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit1.6.3 %>% tbl_regression(exponentiate = FALSE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H6 - IPT score on NASA TLX**")
+```
+
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit1.6.3, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.", fig.pos="H"}
+hypothesis(fit1.6.3, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit1.6.4 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 1 - H6 - IPT score on number of relations left out**")
+```
+
+
+
+\newpage
+```{r}
+fit2.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H1**")
+```
+
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.1, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit2.1, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit2.2 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H2**")
+```
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.2, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.", fig.pos="H"}
+hypothesis(fit2.2, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit2.4.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H4 - Visibility**")
+```
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.4.1, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit2.4.1, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit2.4.2 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H4 - Correctness**")
+```
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.4.2, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.", fig.pos="H"}
+hypothesis(fit2.4.2, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+```{r}
+fit2.5.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H5 - Visibility**")
+```
+
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.5.1, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit2.5.1, "cond3D = 0") %>% plot()
+```
+
+
+
+
+
+\newpage
+```{r}
+fit2.5.2 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H5 - Correctness**")
+```
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.5.2, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.", fig.pos="H"}
+hypothesis(fit2.5.2, "cond3D = 0") %>% plot()
+```
+
+
+
+\newpage
+
+```{r}
+fit2.6.1 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H6 - Visibility**")
+```
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.6.1, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit2.6.1, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+
+```{r}
+fit2.6.2 %>% tbl_regression(exponentiate = TRUE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H6 - Correctness**")
+```
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.6.2, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.", fig.pos="H"}
+hypothesis(fit2.6.2, "cond3D = 0") %>% plot()
+```
+
+
+
+\newpage
+
+```{r}
+fit2.6.3 %>% tbl_regression(exponentiate = FALSE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H6 - Urban Layout Test on NASA TLX**")
+```
+
+
+```{r, out.width="70%", fig.cap="Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).", fig.pos="H"}
+pp_check(fit2.6.3, ndraws = 100)
+```
+
+
+```{r, out.width="70%", fig.cap="A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).", fig.pos="H"}
+hypothesis(fit2.6.3, "cond3D = 0") %>% plot()
+```
+
+
+\newpage
+
+```{r}
+fit2.6.4 %>% tbl_regression(exponentiate = FALSE) %>% modify_header(label = "**Variable**", estimate = "**Odds Ratio**") %>% modify_spanning_header(everything() ~ "**Experiment 2 - H6 - Urban Layout Test on number of relations left out**")
+```
+

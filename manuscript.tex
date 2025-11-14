@@ -1,0 +1,1733 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  british,
+  man,floatsintext]{apa6}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage[english]{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% Manuscript styling
+\usepackage{upgreek}
+\captionsetup{font=singlespacing,justification=justified}
+
+% Table formatting
+\usepackage{longtable}
+\usepackage{lscape}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\centering\begin{threeparttable}}
+%   {\end{threeparttable}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
+
+% Enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
+
+% \setlength{\parindent}{0.5in}
+% \setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
+% See https://github.com/crsh/papaja/issues/292
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-\z@\relax}%
+  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
+\makeatletter
+\usepackage{etoolbox}
+\patchcmd{\maketitle}
+  {\section{\normalfont\normalsize\abstractname}}
+  {\section*{\normalfont\normalsize\abstractname}}
+  {}{\typeout{Failed to patch abstract.}}
+\patchcmd{\maketitle}
+  {\section{\protect\normalfont{\@title}}}
+  {\section*{\protect\normalfont{\@title}}}
+  {}{\typeout{Failed to patch title.}}
+\makeatother
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
+\makeatother
+\keywords{3D visualisation, spatial cognition, sketch maps, virtual reality, vertical spatial relations}
+\usepackage{csquotes}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={3D Environments Require 3D Visualisations: The Limitations of 2D Sketch Maps in Capturing Spatial Knowledge},
+  pdfauthor={Jakub Krukar1, Ahmed Aly1, Lukas Baecker1, Lea Heming1, Jiayan Zhao2, \& Angela Schwering1},
+  pdflang={en-GB},
+  pdfkeywords={3D visualisation, spatial cognition, sketch maps, virtual reality, vertical spatial relations},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{3D Environments Require 3D Visualisations: The Limitations of 2D Sketch Maps in Capturing Spatial Knowledge}
+\author{Jakub Krukar\textsuperscript{1}, Ahmed Aly\textsuperscript{1}, Lukas Baecker\textsuperscript{1}, Lea Heming\textsuperscript{1}, Jiayan Zhao\textsuperscript{2}, \& Angela Schwering\textsuperscript{1}}
+\date{}
+
+
+\shorttitle{3D vs 2D sketch maps}
+
+\authornote{
+
+Correspondence concerning this article should be addressed to Jakub Krukar, Institute for Geoinformatics, University of Muenster, Heisenbergstr. 2, 48149 Muenster, Germany. E-mail: \href{mailto:krukar@uni-muenster.de}{\nolinkurl{krukar@uni-muenster.de}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} Institute for Geoinformatics, University of Muenster, Germany\\\textsuperscript{2} Laboratory of Geo-information Science and Remote Sensing, Wageningen University, Netherlands}
+
+\abstract{%
+Sketch maps are a widely utilized method for assessing how participants encode and externalize knowledge of large-scale environments. Even though many such spaces include an important vertical component, participants tend to omit, or distort vertical information when drawing 2D sketch maps. Recent advancement in Virtual Reality sketching interfaces open the question whether sketch maps could be realised in 3D. Here we show that when tasked with drawing vertically-complex spaces on traditional 2D pen-and-paper medium, participants omit a lot of (mostly vertical) information that they do in fact store in their cognitive model of that space and can externalise in a Virtual Reality-based 3D sketch map. Although 3D sketch maps induced high cognitive load in some situations, so did the most complete 2D sketch maps. This indicates that 2D sketch maps may be a bottleneck for expressing valid parts of participants' spatial knowledge of vertically-complex spaces, while 3D sketch maps offer a promising alternative.
+}
+
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}\label{introduction}
+
+An important component of spatial knowledge is \emph{survey} knowledge - the understanding of
+spatial configuration of objects in the environment including approximate distanced and angles between them (Ishikawa \& Montello, 2006; Montello, 1998; Siegel \& White, 1975). This knowledge is key for environmental-scale spaces like buildings or city districts (Montello, 1993). Individuals greatly differ
+in their ability to integrate survey knowledge from distant sub-parts of
+an environmental-scale spaces into a coherent representation
+(Ishikawa \& Montello, 2006; Weisberg \& Newcombe, 2018). For this reason researchers require
+tools for assessing survey knowledge of individuals in
+environmental-scale spaces.
+
+There are many methods that allow participants to express the remembered
+configuration of objects in environmental space (Montello, 2016). One
+are sketch maps - simplified drawings of the environmental configurations (Appleyard, 1970; Lynch, 1960; Simonet et al., 2025). Sketch maps are valued because they allow relatively unrestricted visualization of thought, making them a natural and easy tool for expressing imperfect spatial knowledge (Manivannan, Krukar, \& Schwering, 2022; Schwering, Krukar, Manivannan, Chipofya, \& Jan, 2022; Tversky, 1993, 2002).
+
+One problem that so far did not attract much attention in the literature
+is the fact that sketch maps are drawn and analysed in two-dimensional
+form, even though the spaces we experience are three-dimensional
+(Kim et al., 2022). Disregarding the information on the
+vertical dimension can be justified in some navigational scenarios in
+which vertical dimension is irrelevant to path choice, i.e., when
+navigational decisions only need to be taken on the horizontal plane.
+However, in some situations spatial knowledge of vertical information is
+important for one's ability to successfully perform the task at hand. In such cases 2D sketch maps have significant limitations as a research tool.
+
+For example, navigational studies of multi-level buildings show that vertical misrepresentations can lead to systematic wayfinding errors, such as underestimating detours between floors or failing to integrate staircases and elevators into a coherent route plan (Hölscher, Meilinger, Vrachliotis, Brösamle, \& Knauff, 2006). Understanding the vertical structure of buildings, e.g., whether separate floors have the same layout, and how they are aligned with regard to each other, is a known human factor issue of modern architecture (Dalton \& Hölscher, 2016; Gath-Morad et al., 2021). These examples show that our understanding of how vertical information is perceived and understood might be yet insufficient and potentially lag behind the horizontal dimensions.
+
+The question investigated in this manuscript is whether sketch maps traditionally limited to 2D representation can be realized in 3D. Consumer-grade VR devices now enable sketching directly in three dimensions, allowing participants--even without drawing expertise--to externalize complex 3D spatial information without relying on symbolic conventions (Kim et al., 2022).
+
+This manuscript investigates the limitations of 2D sketch maps in scenarios where vertical information is crucial and explores the potential of 3D sketch maps
+created using a VR-based drawing interface. We have tasked
+participants with drawing 2D and 3D sketch maps representing two
+environmental-scale spaces. We evaluated
+sketch maps with regard to the \emph{visibility} and \emph{correctness} of spatial
+information conveyed in them. Inspired by the method of aligning sketch maps with metric maps based on qualitative spatial relations between landmarks (Manivannan et al., 2022; Schwering et al., 2014; Wang \& Schwering, 2015), we define \emph{visibility} as the proportion of spatial relations interpretable from the sketch and \emph{correctness} as the accuracy of these relations when compared to the ground-truth environment. The assumption motivating this work is that 2D pen-and-paper sketch maps create a bottleneck for extracting human spatial knowledge of three-dimensional environments, while VR-based 3D sketching enables participants to externalize knowledge they possess but struggle to fully communicate in 2D.
+
+\subsection{Spatial relations in sketch maps}\label{spatial-relations-in-sketch-maps}
+
+Drawing a sketch map requires participants to place all queried
+environmental features on a single representation of that environment,
+forcing them to explicitly define spatial relations between all objects
+in the sketch. These spatial relations can be analysed in multiple ways;
+the two dominant analyses are quantitative and qualitative. We focus on
+analysing qualitative relations between two types of
+features depicted in sketch maps: landmarks in the surrounding
+environment and the shape of the travelled path.
+
+Unlike quantitative metrics such as bidimensional regression (Friedman \& Kohler, 2003; Tobler, 2010), qualitative relations emphasize relative order and topology, aligning with how humans encode spatial knowledge and often remaining valid even when metric accuracy is distorted (Ishikawa \& Montello, 2006; Krukar et al., 2018; Meilinger, 2008; Wang \& Schwering, 2015; Warren, Rothman, Schnapp, \& Ericson, 2017). Thus, analysing sketch maps with regard to qualitative
+relations carries relevance to how humans mentally
+represent spatial knowledge.
+
+In the current work we distinguish between spatial relations in all three dimensions, and analyse them separately. The reason for this is
+twofold. First, 2D sketch maps might be particularly well-suited for
+communicating information in a single plane (e.g.~only horizontal plane
+in top-down drawings) and thus their evaluation should not be based
+solely on joint analyses of all dimensions. Second, there is a
+well-established horizontal-vertical anisotropy in how people perceive,
+store, and communicate spatial information (Du \& Mou, 2022; Krukar, Manivannan, Bhatt, \& Schultz, 2021). This may affect the quality
+of 3D sketch maps but would not be captured in analyses that combine all
+dimensions.
+
+\subsection{Conveying vertical information in sketch maps}\label{conveying-vertical-information-in-sketch-maps}
+
+There are multiple ways in which one may attempt to convey vertical information in
+a 2D sketch. Architects are trained in the technique of multiview
+projection - using a set of drawings to depict a single 3-dimensional
+object from different views aligned with distinct axes. Most common
+views are a \emph{plan} (a drawing from the top-down perspective along the
+vertical axis) and a \emph{section} (a drawing from the side along the
+horizontal axis). Brandt et al. (2015) showed that non-architects are able to produce these two
+conventions.
+
+Other possibilities for 2D sketch maps include:
+(a) drawing multiple plans depicting space at
+different levels of the vertical axis (e.g., separate floors),
+(b) producing a single drawing and coding the 3rd dimension with textual or symbolic annotations, or
+(c) producing a perspective drawing, i.e., a sketch that represents all three spatial dimensions within a single view by simulating how objects appear from a given vantage point; this can convey depth and height more intuitively, but necessarily distorts angles and distances (Figure \ref{fig:lit-3drawings}).
+
+Yet, studies show that few participants spontaneously depict vertical relations: only 11 of 38 maps in Blajenkova, Motes, and Kozhevnikov (2005) and 16 of 62 in Zhong and Kozhevnikov (2016) included floor alignment. Yet performance on other tasks remained good, suggesting that constraints of 2D sketching, not memory, hinder expression of vertical information.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figs/lit-3drawings} \caption{Examples of 3 sketch maps obtained by Zhong and Kozhevnikov (2016). (A) Different floors drawn as separate drawings cannot be vertically aligned. (B) A single layout drawing with annotations for different vertical levels. (C) A perspective drawing distorting angles and distances in an inconsistent way across different parts of the drawing. Figure obtained with permission and modified from original Figure 2.}\label{fig:lit-3drawings}
+\end{figure}
+
+Our experiments re-create the procedures used by Blajenkova et al. (2005) and Zhong and Kozhevnikov (2016) in the sense of giving participants a task that requires memorising and communicating information in all three dimensions, but relying on participants' \emph{spontaneous} choice of sketch mapping convention. This reflects the way in which sketch maps are used in research and in everyday settings: their advantage is that they are intuitive and can be produced spontaneously; i.e., participants can perform the task with minimal instructions and no feedback on their progress. The motivation behind this paper is that the affordances and learned conventions of intuitive 2D sketch mapping restrict participants in expressing their spatial knowledge to its full extent, and that newly available technological possibility of 3D sketch mapping does not.
+
+\subsection{Individual differences in 3D spatial information processing}\label{individual-differences-in-3d-spatial-information-processing}
+
+Individual spatial abilities might play a role in one's ability to encode, store, and retrieve complex three-dimensional spatial information, and thus the effect the 2D vs 3D drawing interface has on their output. However, it is unclear which spatial abilities are predictive of this task, and how to measure them. Hegarty, Montello, Richardson, Ishikawa, and Lovelace (2006) demonstrated that different spatial abilities measured by relatively abstract pen-and-paper questionnaires are partially dissociated from participants' environmental learning. In order to control for that we use highly-specific battery of tests originally developed by Berkowitz et al. (2021) to test spatial abilities of
+architecture students (Figure \ref{fig:berkowitztests}). The tests were validated by showing that advanced architecture students
+outperformed beginners.
+
+We chose this battery because it captures cognitive processes that are central for representing survey knowledge of buildings and urban configurations, such as switching between perspectives, composing 3D volumes, and performing 2D-to-3D transformations. Prior work shows that such domain-specific tests better distinguish expertise and predict design-related performance than general measures like visuospatial working memory (Berkowitz et al., 2021; Cho \& Suh, 2019, 2022). As the focus of our study is on sketch map construction, a test battery capturing design-related processes related to visualising 3D shapes is likely to isolate and capture individual differences more specific to this task. A possible downside of this choice is that such tests may be less comparable across disciplines and may share variance with prior design or drawing training.
+
+The Indoor Perspective Test consists of ten questions, each of which shows a 3D object from the
+outside, with four corners marked as positions A, B, C, and D. The participant has
+to imagine taking the perspective from one of the four points looking at another as if they were inside the object. Four
+indoor views are provided as potential answers. The participant's task is to select the one that would be visible from the queried perspective. Urban Layout Test follows a similar idea, however instead of a single object participants see multiple objects arranged on a flat plane and their task is to select the correct first person view as if they were located at a queried location between these object (Berkowitz et al., 2021).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figs/berkowitz-tests} \caption{An excerpt from the battery of tests by Berkowitz et al. (2021). (A) Indoor Perspective Test. (B) Urban Layout Test. Reproduced with permission.}\label{fig:berkowitztests}
+\end{figure}
+
+\subsection{Vertical information in different types of spaces}\label{vertical-information-in-different-types-of-spaces}
+
+The differences between 2D and 3D sketch maps might depend on the type
+of space that is being depicted. The type of movement a space allows for affects how it is cognitively processed (Hölscher, Büchner, \& Strube, 2013; Jeffery, 2011, 2021). With
+respect to this, we focus on two types of space: \emph{volumetric environmental spaces} and \emph{multi-layered environmental spaces}
+(Jeffery, Jovalekic, Verriotis, \& Hayman, 2013). The former makes it possible to explore the vertical
+dimension freely (e.g., through flying), while the latter consists of
+vertically-layered discrete spaces that cannot always be freely changed
+(e.g., floors of a building can only be changed by using elevators,
+escalators, or stairs). These movement constraints might contribute
+to participants' choice of depicting separate floors of buildings as
+separate 2D plans (Blajenkova et al., 2005; Zhong \& Kozhevnikov, 2016). Specifically, floors
+lend themselves to easier annotation of qualitative vertical relations
+(e.g., one can label separate floor plans with numbers). A volumetric
+space cannot be intuitively represented as multiple 2D plans. For this
+reason we present two experiments, one in each type of space, and discuss the similarities and differences in their outcomes.
+
+\subsection{VR-based drawing interfaces}\label{vr-based-drawing-interfaces}
+
+Laypersons are not trained to represent 3D spatial relations effectively on 2D sketch maps.
+A 2D medium necessitates that information from one of the three
+dimensions is either ignored, distorted, or represented with a different
+convention than the remaining two dimensions. 3D sketch maps allow for the representation of information from all three dimensions within a single, consistent drawing convention. However, an open question is whether 3D sketch
+maps can be used to communicate 3D information by laymen (Xiao et al., 2024). Prior research shows that laypeople struggle with precision when sketching 3D objects in VR, although training improves performance (Deisinger, Blach, Wesche, Breining, \& Simon, 2000; Keefe et al., 2008; Machuca, Israel, Keefe, \& Stuerzlinger, 2023; Mäkelä, Reunanen, \& Takala, 2004; Wiese, Israel, Meyer, \& Bongartz, 2010). These challenges motivate our focus on qualitative rather than precise metric analyses.
+
+\section{This study}\label{this-study}
+
+We present two experiments that investigated the difference between 2D and 3D sketch maps in two types of vertically-complex environments: a layered 3D environment (a building; Experiment 1), and a volumetric 3D environment (an urban area; Experiment 2). Our analyses focus on whether participants are able to express qualitative spatial relations between objects in the sketches (e.g., ``x is higher than y'') in a way that would be interpretable by another human, and whether these spatial relations are expressed correctly, in relation to the environment they have explored.
+
+We have stated six hypotheses:
+
+\emph{H1. Participants will exhibit a cognitive bias toward the horizontal plane in 2D sketch maps, resulting in a lower rate of represented vertical (Z-axis) relations in 2D sketch maps.} The common way of thinking about and drawing maps on 2D paper in non-professional contexts is the top-down view (Blajenkova et al., 2005; Zhong \& Kozhevnikov, 2016). Although alternative drawing styles are possible (cross-section from the side, perspective drawing), we hypothesised that most participants will prioritise depicting horizontal relations at the expense of vertical information.
+
+\emph{H2. 3D sketch maps will capture vertical (Z-axis) spatial relations between landmarks with higher correctness, compared to 2D sketch maps.} Given that all sketches are selective and generalised (Tversky, 2002), the fact that drawing in 3D requires activation of a more complex 3D mental representation (Gagnier, Atit, Ormand, \& Shipley, 2017; Tung \& Chang, 2024) but demand less mental projection (Kim et al., 2022) may mean that that 2D sketch maps (potentially not requiring maintaining such a representation in working memory, especially for vertical information) will result in lower correctness of vertical spatial relations.
+
+\emph{H3. Spatial relations that were left out from participant's 2D sketch map but present on their corresponding 3D sketch map will capture valid spatial knowledge (higher than chance accuracy of elements left out in 2D sketch but present in the 3D sketch).} Our assumption is that participants are able to store complex 3D spatial relations (Lu \& Ye, 2019), and it is the limitation of 2D drawing that does not allow them to express what they know. This is contrary to an alternative possibility that 3D drawing forces participants to draw spatial relations that they have no chance of knowing, because they never stored them.
+
+\emph{H4. The visibility and correctness of spatial relations will be higher in both 2D and 3D sketch maps when participants draw the 3D map first.} Being required to draw a 3D sketch map first requires to activate a more complex mental representation of the environment shortly after learning it (Jonker, Wammes, \& MacLeod, 2019; Tung \& Chang, 2024). We hypothesise that this will result in better overall memory throughout the task.
+
+\emph{H5. Higher cognitive load, as measured by NASA-TLX, will be correlated with lower visibility and correctness of spatial relations in both 2D and 3D sketch maps.} Cognitive load associated with drawing (both in 2D and 3D) might be a factor limiting participants from expressing everything they would like to (Zimmerer \& Matthiesen, 2021).
+
+\emph{H6: Participants with higher spatial ability will produce more visible and more correct spatial relations, and will produce a smaller difference between 2D and 3D sketch maps.} Spatial abilities might be associated with greater ease of remembering the environment (Hegarty et al., 2006; Ishikawa \& Montello, 2006; Weisberg, Schinazi, Newcombe, Shipley, \& Epstein, 2014), as well as manipulating and transforming it for the drawing task (Barrera Machuca, Stuerzlinger, \& Asente, 2019), regardless of whether the sketch happens in 2D or 3D.
+
+\section{Experiment 1: Vertically layered environment}\label{experiment-1-vertically-layered-environment}
+
+\subsection{Methods}\label{methods}
+
+\subsubsection{Participants}\label{participants}
+
+A total of 30 participants
+(13 men,
+15 women,
+2 undeclared)
+were recruited from the general population and among attendees of the
+``Places \_ VR Festival'' introducing Virtual Reality applications to
+general population. Data from
+3 participants were
+excluded due to heavy motion sickness, problems with understanding the
+application, or inability to memorise the building model.
+
+The age of the remaining 27 participants ranged from
+20 to 29 years (M =
+24.07, SD =
+2.56). All participants provided informed
+consent and received 12 euro for their participation. The study was
+approved by the institutional ethics committee.
+
+\subsubsection{Material}\label{material}
+
+\paragraph{Multi-layered environmental-scale space}\label{multi-layered-environmental-scale-space}
+
+The environment that was explored and sketched by the participants was a virtual 3D model of a building consisting of three rectangular-shaped levels, the middle of which was rotated by 90 degrees (Figure \ref{fig:exp1-env}). The floors were connected by a large open staircase. The interior consisted of furniture that differentiated the spaces by adding functional context (kitchen furniture, office furniture, gym furniture). In addition, there were 6 distinct landmarks: (1) car, (2) cat, and (3) trees located outside the building, and (4) shark, (5) sheep, and (6) rhino located inside. The building also included two vertical pillars with a large button located on top. Pressing the virtual button by the participant initiated the experiment by displaying a line on the floor that participants would follow. The building was designed in Blender 3.4.4 and then imported into experiment environment in Unity version 2021.3.10f1.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figs/exp1-env} \caption{The environment that was explored and sketched by the participants.}\label{fig:exp1-env}
+\end{figure}
+
+\paragraph{Navigation and sketching interfaces}\label{navigation-and-sketching-interfaces}
+
+Oculus Quest 2 VR headset was used for both exploring the environment and for the 3D drawing task. It has a horizontal field of view of up to 97° and vertical field of view of up to 93° (depending on the user) with two 1832x1920 pixel displays. Movement through the building was controlled with a joystick on the headset's hand controller. Rotation of the head corresponded to the rotation of the field of view in the virtual environment.
+
+Participants were drawing 3D sketch maps using the \emph{Gravity Sketch} v.5.6.2 application\footnote{www.gravitysketch.com}. When the user presses the button of the controller located under the pointing finger, the application leaves a
+trace of ``virtual ink'' in the air. One can control the perspective by
+moving around the 3D sketch. It is also possible to scale and move the
+3D sketch by using ``pinch and zoom movement'' on both controllers.
+Participants adhered to pre-configured sketching settings, ensuring consistency across trials, but were allowed to modify colours to improve clarity in their 3D sketches. Gravity Sketch was selected for this study from a large number of available 3D sketching tools, because it relies on freehand sketching and most closely resembles 2D pen-and-paper sketching (e.g., the used tools do not input any objects for participants, and do not correct their shapes). This makes 3D and 2D sketch mapping condition comparable.
+
+2D sketch maps were drawn on A4 paper, using the provided pens. Participants could request an additional sheet of paper at any time.
+
+\paragraph{Questionnaires}\label{questionnaires}
+
+Participants completed three questionnaires on a tablet: a short demographic questionnaire, Indoor Perspective Test (Berkowitz et al., 2021), and NASA-TLX (Hart, 2006). The Indoor Perspective Test (IPT) is one of a battery of tests created to investigate spatial abilities of architecture students (Berkowitz et al., 2021). A maximum of 10 points can be collected. NASA-TLX is a standard tool for measuring subjective workload in six sub-scales: mental demand, physical demand, temporal demand, user performance, effort, and frustration.
+
+\subsubsection{Procedure}\label{procedure}
+
+Participants came into an isolated room, signed an Informed Consent Form, and filled in the Indoor Perspective Test. After a short training in the VR interface they were moved into the virtual study scene and instructed to explore the scene:
+
+\begin{quote}
+``Please memorize the mentioned landmarks as you will be asked to draw them on a sketch map. The position of the landmarks is crucial. It is important to be able to represent them on your sketch map.''
+\end{quote}
+
+The learning phase consisted of free exploration and a naivgation task. In the free exploration participants first circumnavigated the building model, and then by freely walked inside. There was no time limit. The experimenter then visually and verbally verified that participant had memorised the location of landmarks by asking them to (a) point to each of them, and (b) verbally confirm how many floors the building has. Participants who made mistakes or showed uncertainties were asked to further explore the scene before the assessment was repeated. As the final step of the learning phase, participants performed a navigation task by following a line displayed on the floor near all indoor landmarks.
+
+Following the learning phase, participants were asked to draw two sketch maps of the environment (in a counterbalanced order): a 2D pen-and-paper sketch map and a VR-based 3D sketch map in Gravity Sketch. They were asked to use the red colour for drawing the route, green for six landmarks, and black for everything else. At the end the experimenter verified whether the identity of each landmark is identifiable, and asked for a clarification (e.g., adding a label) if necessary.
+
+Lastly, participants were asked to fill in NASA-TLX questionnaire separately for both conditions (2D and 3D sketching).
+
+\subsubsection{Experimental design}\label{experimental-design}
+
+The experiment followed a within-subject design. Each participant drew two sketch maps (2D and 3D). The complexity of the environment was equal for all participants, and the number of landmarks that had to be drawn was pre-determined.
+
+\subsubsection{Data analysis}\label{data-analysis}
+
+\paragraph{Sketch interpretation}\label{sketch-interpretation}
+
+Each sketch map contained 6 landmarks and the travelled path, as remembered by the participant. We have manually coded each sketch map to extract the following binary variable of interest: \emph{visibility} (is the relation visible/interpretable from the sketch) and \emph{correctness} (i.e., is the relation true with respect to the ground-truth environment travelled by the participant) of each of the following spatial relation:
+
+\begin{itemize}
+\item
+  relative horizontal (X-dimension) relation between pairs of landmarks, e.g., ``the shark is to the left relative to the sheep'';
+\item
+  relative depth (Y-dimension) relation between pairs of landmarks, e.g., ``the car is closer to the front relative to the sheep'';
+\item
+  relative vertical (Z-dimension) relation between pairs of landmarks, e.g., ``the shark is lower than the sheep'';
+\item
+  as well as X-, Y-, and Z-dimension relations of each landmark relative to the path, e.g., ``the car is to the right of the first path segment''.
+\end{itemize}
+
+There were 45 XYZ relations between pairs of landmarks in total (15 pairs * 3 dimensions) and there were 18 relations between landmarks and the path (6 landmarks * 3 dimensions). Thus, there were 63 spatial relations in total. However, any spatial relation that was marked as not \emph{visible} on a given sketch map, would be automatically marked as \emph{NA} in terms of its \emph{correctness}. So the maximal \emph{correctness} score per participant was capped by their number of \emph{visible} relations. Note that some relations were correct only if the landmarks overlapped, e.g., the trees are directly behind the cat in Experiment 1, and therefore the X-dimension relation would be correct if their bounding boxes would overlap on the X-dimension.
+
+The reference viewpoint from which the relations were estimated was the starting view of the journey. This choice is based on existing evidence for the special role of initial views on forming spatial memories (McNamara, 2003). We noted that a vast majority of 2D sketch maps were drawn with their top-orientation aligned with that view, which validates the above assumption.
+
+\paragraph{Interrater agreement}\label{interrater-agreement}
+
+We conducted two interrater agreement analyses. Both have yielded kappa values corresponding to `almost perfect' or `substantial' agreement making it possible to draw further conclusion from the analysis (Hallgren, 2012). Details are provided in the Appendix.
+
+\paragraph{Questionnaires}\label{questionnaires-1}
+
+The score from the Indoor Perspective Test is the number of correct answers (0-10). For determining cognitive load, we use raw-TLX index, consisting of a sum of all unweighted NASA-TLX scales (Hart, 2006). We scaled and mean-centred questionnaire results before submitting them to the analysis which improves the fit of statistical models.
+
+\paragraph{Sample size justification}\label{sample-size-justification}
+
+Sample size was determined primarily through resource constraints (time, money). Statistical power computed within the framework of Judd, Westfall, and Kenny (2017) varied between 0.74 and 0.92 for a medium effect size. See the Appendix for details.
+
+\paragraph{Hypothesis validation}\label{hypothesis-validation}
+
+We validate our hypotheses by checking the posterior probability of data in favor of the hypothesis, and by checking whether the 95\% Credible Interval excludes 1 (for odds-ratio parameters) or 0 (for log-scale parameters), which is a conservative approach. The attached code repository contains technical details of each model. The Appendix contains detailed parameter estimates from all models reported below. Hypotheses 1-5 have been formulated before investigating the dataset. Hypothesis 6 is fully exploratory and has been formed after the initial analyses.
+
+\subsection{Results}\label{results}
+
+On average, the percentage of spatial relations that were visible in 2D sketch maps was \emph{M} = 74\% (\emph{SD} = 15\%) and ranged from 48\% to 98\%. In the 3D sketch map condition all relations were classified as visible (100\%). In the 2D condition, out of relations that were visible, \emph{M} = 92\% (\emph{SD} = 7\%) were correct, ranging from 76\% to 100\%. In the 3D condition, correctness was \emph{M} = 92\% (\emph{SD} = 6\%), ranging from 75\% to 100\%. Figures \ref{fig:exp1-2d-examples} and \ref{fig:exp1-3d-examples} show selected examples.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figs/exp1-2d-examples} \caption{Examples of 2D sketch maps demonstrate challenges of drawing a 3D structure on 2D paper. A: Part of the drawing is a cross-section, while the left part is drawn in perspective. Judging some relations becomes impossible (e.g., are trees further to the right or directly behind the cat?). B: A top-down view ignoring vertical information. Two landmarks in the upper left ("Hai" - a shark, and "Katze" - a cat) are drawn as a single point without indicating which one is higher. C: Two upper floors represented as one, without indicating which is higher. D: Three floors represented separately without indicating how they align vertically. Consequently, relations between landmarks at different floors cannot be interpreted. The location of outside landmarks (e.g., B - "Baum" for a tree) is ambiguous.}\label{fig:exp1-2d-examples}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figs/exp1-3d-examples} \caption{Four examples of 3D sketch maps. Despite various degree of detail and correctness, spatial relations between objects can be interpreted on all three dimensions.}\label{fig:exp1-3d-examples}
+\end{figure}
+
+Note that, the ceiling effect might have reduced the study's sensitivity to detect smaller yet meaningful differences with respect to Hypotheses H2, H5 (the part related to correctness), and H6. See the Appendix for a discussion of this issue.
+
+\subsubsection{H1: Cognitive bias toward horizontal plane in 2D sketch maps.}\label{h1-cognitive-bias-toward-horizontal-plane-in-2d-sketch-maps.}
+
+In order to test H1 we implemented a Bernoulli-family mixed-effect model\footnote{Visibility \textasciitilde{} Condition * Spatial Dimension + (1 + Condition \textbar{} Participant ID) + (1 + Condition \textbar{} Spatial Relation)} explaining the probability of a given spatial relation being \emph{visible} on a sketch map, across both conditions (2D vs 3D sketch map) and across three dimensions (X, Y, and Z). A Bayesian hypothesis test was conducted to evaluate whether the visibility probability in the Z-dimension was lower than in the X-dimension in the 2D condition. The odds of visibility in the Z-dimension of 2D sketch maps were approximately 2.04 times lower than in the X-dimension (OR = 0.49, 95\% CI {[}0.22, 1.10{]}). The posterior probability that the odds are lower was 93\%, indicating moderate evidence in favour of Hypothesis 1 (Figure \ref{fig:plot111})
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot111-1.pdf}}
+\caption{\label{fig:plot111}Predicted visibility as a function of condition and spatial dimension.}
+\end{figure}
+
+\subsubsection{H2: Vertical relations are easier to represent correctly on 3D sketch maps.}\label{h2-vertical-relations-are-easier-to-represent-correctly-on-3d-sketch-maps.}
+
+Since there are more Z-axis relations represented on 3D sketch maps, their correctness on 2D sketch maps might be biased towards those that were easier to represent. We therefore condition this analysis on whether each specific relation was included in both sketch maps of a given participant. Only those spatial relations that were included in both sketch maps are taken into account in this analysis. We implemented a Bernoulli-family mixed-effect model\footnote{Correctness \textasciitilde{} Condition * Spatial Dimension + (1 + Condition \textbar{} Participant ID) + (1 + Condition \textbar{} Spatial Relation)} explaining the probability of a given spatial relation being \emph{correct} on a sketch map, across both conditions and three dimensions. A Bayesian hypothesis test was conducted to evaluate whether the correctness probability in the Z-dimension was higher in the 3D condition, compared to 2D. It was not (log-scale interaction effect of condition and Z-dimension = -0.32; 95\% CI {[}-1.17, 0.52{]}; posterior probability showing that the data is approximately 3 times more likely under the opposite hypothesis). See Figure \ref{fig:plot1-2}.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot1-2-1.pdf}}
+\caption{\label{fig:plot1-2}Predicted correctness as a function of condition and spatial dimension.}
+\end{figure}
+
+\subsubsection{H3: Relations left out in 2D are mostly correct when they appear in the 3D sketch.}\label{h3-relations-left-out-in-2d-are-mostly-correct-when-they-appear-in-the-3d-sketch.}
+
+Spatial relations that were missing from participants' 2D Sketch Map but present in their corresponding 3D Sketch Map covered all three dimensions in similar proportions. There were 138 such relations in the X dimension, 154 in the Y dimension, and 150 in the Z dimension. This shows that vertical relations were not left out disproportionally often. Overall, the correctness of these relations in the 3D Sketch Map was 91\%. To test this statistically, we have implemented an intercept-only Bernoulli-family model. The results showed that the odds of correctness of these relations are 10.54 times greater than chance; 95\% CI {[}6.47, 17.46{]}, with posterior probability for this hypothesis approaching 100\%. This provides strong evidence in favor Hypothesis 3.
+
+\subsubsection{H4. The visibility and correctness of spatial relations will be higher in both 2D and 3D sketch maps when participants draw the 3D map first.}\label{h4.-the-visibility-and-correctness-of-spatial-relations-will-be-higher-in-both-2d-and-3d-sketch-maps-when-participants-draw-the-3d-map-first.}
+
+In order to test H4 we implemented two Bernoulli-family mixed-effect models\footnote{Visibility/Correctness \textasciitilde{} Condition * Order * Spatial Dimension + (1 + Condition \textbar{} Participant ID) + (1 + Condition \textbar{} Spatial Relation)} explaining the probability of a given spatial relation being \emph{visible}/\emph{correct} on a sketch map depending on the order of drawing the two sketch maps (2D\_first vs 3D\_first). Two Bayesian hypothesis tests were conducted to assess whether the odds of visibility/correctness in the 3D\_first case were higher. For visibility, the odds ratio equaled 0.91 with a 95\% credible interval ranging from 0.54 to 2.13. The posterior probability that the odds ratio was higher than 1 was 33\%, with an evidence ratio of 0.50, or approximately 2 times more likely under the opposite hypothesis. This indicates that the probability of a spatial relation being visible was not higher when the 3D Sketch Map was drawn as first.
+
+For correctness, the odds ratio equaled 0.82 with a 95\% credible interval ranging from 0.55 to 1.50. The posterior probability that the odds ratio was higher than 1 was 22\%, with an evidence ratio of 0.28, or approximately 4 times more likely under the opposite hypothesis. Probability of a spatial relation being correct was not higher when the 3D Sketch Map was drawn as first. Figure \ref{fig:plot1-4} demonstrates these results.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot1-4-1.pdf}}
+\caption{\label{fig:plot1-4}Predicted visibility and correctness depending on drawing order.}
+\end{figure}
+
+\subsubsection{H5. Higher cognitive load will be correlated with lower visibility and correctness of spatial relations in both 2D and 3D sketch maps.}\label{h5.-higher-cognitive-load-will-be-correlated-with-lower-visibility-and-correctness-of-spatial-relations-in-both-2d-and-3d-sketch-maps.}
+
+We implemented two Bernoulli-family mixed-effect models\footnote{Visibility/Correctness \textasciitilde{} raw-TLX * Condition + (1 + Condition \textbar{} Participant ID) + (1 + Condition \textbar{} Spatial Relation)} explaining the probability of a given spatial relation being \emph{visible}/\emph{correct} on a sketch map, depending on the raw NASA-TLX score, and its interaction with the sketch map condition. Visual inspection of the data revealed that the relation seems to be reverse compared to our initial hypothesis. We therefore report the results of a statistical estimates of the opposite hypothesis: visibility/correctness being higher with higher cognitive load. These exploratory results should be treated with caution.
+
+For visibility, the log-scale estimate was 0.32 (95\% CI = {[}-0.03, 0.67{]}). The posterior probability that the estimate was higher than 0 was 94\%, with an evidence ratio of 14.52 times more likely than the null. Probability of a spatial relation being visible was higher when the reported cognitive load was higher. As demonstrated in Figure \ref{fig:plot1-5}, this was mainly due to the 2D Sketch Map condition.
+
+For correctness, there was no corresponding effect: the log-scale estimate was -0.02 (95\% CI = {[}-0.32, 0.27{]}). The posterior probability that the estimate was higher than 0 was 47\%, with an evidence ratio of 0.88.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot1-5-1.pdf}}
+\caption{\label{fig:plot1-5}Reported cognitive load across conditions (left) and the relation between reported cognitive load and visibility of spatial relations (right).}
+\end{figure}
+
+\subsubsection{H6: Better spatial ability leads to higher visibility and correctness and is associated with smaller difference between participant's 2D and 3D sketch map.}\label{h6-better-spatial-ability-leads-to-higher-visibility-and-correctness-and-is-associated-with-smaller-difference-between-participants-2d-and-3d-sketch-map.}
+
+We implemented two Bernoulli-family mixed-effect models\footnote{Visibility/Correctness \textasciitilde{} IPT Score * Condition * Spatial Dimension + (1 + Condition \textbar{} Participant ID) + (1 + Condition \textbar{} Spatial Relation)} explaining the probability of a given spatial relation being \emph{visible}/\emph{correct} on a sketch map, depending on the IPT score, and its interaction with the sketch map condition and dimension. The probability of the Z-dimension spatial relation being visible decreased for participants with higher spatial abilities (the log-scale estimate of the interaction between the IPT score and Z-dimension visibility was -0.47 (95\% CI = {[}-0.74, -0.20{]}). The posterior probability that the estimate was lower than 0 was 100\%, with an evidence ratio of 607.70 times more likely than the null (Figure \ref{fig:plot1-6}). Note the ceiling effect for participants with lower IPT scores, and the increasing Credible Intervals for participants with higher IPT scores: this pattern might indicate that the effect size is small, and the result should be treated with caution.
+
+The evidence for the corresponding effect of correctness was not equally substantial (the interaction estimate was -0.63 (95\% CI = {[}-1.36, 0.07{]}). The posterior probability that the estimate was lower than 0 was 93\%, with an evidence ratio of 13.26 times more likely than the null. Since these are post-diction test, they should be treated with caution. As seen in Figure \ref{fig:plot1-6}(b), the differences in correctness across the IPT score are minimal.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot1-6-1.pdf}}
+\caption{\label{fig:plot1-6}Predicted visibility (left) and correctness (right) depending on the IPT score indicating participant's spatial ability, across the 3 spatial dimensions.}
+\end{figure}
+
+Surprised by the counterintuitive relation between spatial abilities and visibility, we have performed a series of exploratory checks testing whether highly skilled participants had lower visibility of Z-dimension spatial relations due to some systematic choice of drawing convention for depicting 2D sketch maps. We did not find any indication suggesting that participants with better spatial ability were more likely to: draw a specific type of 2D sketch map (like top-down, or a perspective drawing), split their 2D sketch map into multiple parts (usually separate floors), misremember the vertical or horizontal alignment of floors.
+
+Another possibility we have investigated is that participants with higher spatial abilities engage with the task less, which would be indicated by reporting lower cognitive load. There was no substantial evidence for the correlation between the IPT score and the raw TLX score (b = -0.14 (95\% CI = {[}-0.48, 0.21{]}). The posterior probability that the estimate was lower than 0 was 75\%, with an evidence ratio of 2.94 times more likely than the null.
+
+We also tested whether the number of relations left out in 2D but present in participant's 3D Sketch Map was correlated with their spatial abilities (Indoor Perspective Test score). They were not (the log-scale coefficient for IPT score was 0.09, 95\% CI {[}-0.21, 0.39{]}). This indicates that the number of spatial relations left out on 2D sketch maps is not related to participant's spatial abilities.
+
+\subsection{Experiment 1 Discussion}\label{experiment-1-discussion}
+
+Our findings demonstrate that 2D sketch maps systematically under-represent spatial relations, particularly those involving the vertical dimension, thereby limiting their utility for studying vertically complex environments (H1). Information that is left out of the 2D sketch maps is \emph{not} something that participants do not remember well (and therefore choose to ignore in the sketch), but rather information that they do remember correctly (H3). When given a chance (in the 3D sketch map drawing condition) they correctly externalise this part of their knowledge. Taken together, these results indicate that asking participants to draw complex 3D structures as a 2D sketch map acts as a bottleneck for externalisation of their spatial knowledge.
+
+Reported cognitive load was similar across the conditions. However, 2D sketch maps that were more complete (higher visibility of spatial relations) were associated with higher cognitive load. Presumed lower cognitive load of 2D sketch maps is only true for those sketch maps that are incomplete.
+
+We also found exploratory evidence for small correlation between spatial ability and visibility of spatial relations (H6), with higher spatial abilities being, counterintuitively, associated with \emph{lower} visibility of the Z-dimension relations. We were not able to explain this result with subsequent analyses. Neither did we find an association between the difference in the completeness of participant's 2D and 3D sketch map and their spatial ability. One way of interpreting this is that Hypothesis 3 \emph{is not} clearly conditioned on spatial abilities of the individual - 2D sketch maps limit the expression of valid spatial knowledge (present in the corresponding 3D sketch map) regardless of one's spatial abilities. Contrary to our hypothesis, drawing the 3D sketch map as first (H4) did not activate a more complex mental representation that would result in better drawings overall.
+
+A visual analysis of sketch maps available in the appendix also shows that many participants understood that landmarks are clustered in ``vertical containers'' but struggled with depicting floors correctly. For example, surfaces of 2 floors were often merged, even though the landmarks depicted on the sketch were labelled with the correct floor number. This indicates the need for creating tools that assist participants with drawing correct floor structure (Xiao et al., 2024).
+
+\section{Experiment 2: Vertically volumetric environment}\label{experiment-2-vertically-volumetric-environment}
+
+\subsection{Methods}\label{methods-1}
+
+\subsubsection{Participants}\label{participants-1}
+
+A total of 41 participants
+(16 men,
+25 women) were
+recruited from the general population and via a university newsletter.
+Data from 4 participants were excluded due to
+heavy motion sickness preventing them from completing the study or
+because they did not fully follow the instructions.
+
+The age of the remaining 37 participants ranged from
+18 to 45 years (M =
+25.32, SD =
+6.08). Asked in a brief questionnaire
+about their experience with using VR,
+13 selected
+``I never used VR'',
+21 selected
+``I used VR \textless10 times in my life'',
+2 selected
+``I used VR 10 times or more in my life but don't use it regularly'', and
+1 selected
+``I use VR regularly''. All participants provided
+informed consent and received 12 euro for their participation. The study
+was approved by the institutional ethics committee.
+
+\subsubsection{Material}\label{material-1}
+
+\paragraph{Volumetric environmental-scale space}\label{volumetric-environmental-scale-space}
+
+The environment that was explored and sketched by the participants was a virtual 3D model of an urban area consisting of 6 buildings and 6 landmarks (Figure \ref{fig:exp2-env}). The landmarks were the same objects as in Experiment 1. Each landmark was located in close proximity to a single building and the vertical location of the landmark was fixed at one of three heights (either standing on the ground or floating in the air). The scenario simulated a drone flight around the area. The Unity version was 2021.3.11f1.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figs/exp2-env} \caption{The environment that was explored and sketched by the participants. (A) View of the whole environment, including the route. (B) One of the first-person views experienced by the participant during the video.}\label{fig:exp2-env}
+\end{figure}
+
+\paragraph{Navigation and sketching interfaces}\label{navigation-and-sketching-interfaces-1}
+
+Oculus Quest 2 VR headset, same as in Experiment 1, was used for both exploring the environment and for the 3D drawing task. Unlike in Experiment 1, participants were not able to navigate the environment freely, but were experiencing the flight from the first-person perspective. They could freely rotate the view (by moving their head) and stop the drone movement at will (by pressing a button on the controller), but they could not deviate from the pre-defined path. The path circumnavigated the buildings, passing nearby each landmark. After reaching the end, the drone followed the same path in the reverse direction, back to the starting position, so the flight was experienced twice, from both directions. Unless paused by the participant, the video lasted 270 seconds. Compared to Experiment 1, this procedure restricted participants' path more (in Experiment 1, exploration included a path-free phase), and changed their control of locomotion (in Experiment 1 they had to operate the controller in order to move, in Experiment 2 in order to stop the movement). The reason for this decision was that controlling locomotion in 3D proven to be overwhelming to unskilled participants in pilot testing. Because the focus of this study is on the difference between 2D and 3D sketch maps, the goal of the procedure was to ensure that participants are able to successfully comprehend the environment. We adjusted the learning method across the two experiments to facilitate this goal.
+
+Participants were drawing 3D sketch maps using the \emph{Gravity Sketch} v.6.1.6 with the same configuration as in Experiment 1. 2D sketch maps were drawn on A4 paper, using the provided pens. Participants could request an additional sheet of paper at any time.
+
+\paragraph{Questionnaires}\label{questionnaires-2}
+
+Participants completed three questionnaires on a tablet: a short demographic questionnaire, Urban Layout Test, and NASA-TLX. Urban Layout Test comes from the same battery as Indoor Perspective Test used in Experiment 1, but focuses on understanding urban configurations. A maximum of 20 points can be collected.
+
+\subsubsection{Procedure}\label{procedure-1}
+
+Procedure was similar to Experiment 1. Each participant was tested
+individually. After coming into the room they were presented with the
+informed consent forms, demographic questionnaire, the Urban Perspective Test, and asked to perform a tutorial on drawing in 3D in Gravity
+Sketch. Then, while wearing a VR headset and seated in a
+rotating chair, participants watched an immersive 360 video inside a
+training environment from the first-person perspective of a drone flying
+through an urban environment. They were shown how to pause the drone
+(using a button on the controller) and how to look around the
+environment (using head movement) and explained that they are not able
+to affect the flying path of the drone. After experiencing this sample
+environment and confirming no motion sickness they saw the flight in the
+main environment with the instruction to remember the layout of
+buildings, the path of the drone and the location of landmarks for
+future drawing. After flying the same route in both directions they were
+asked to point to a selection of objects as a confirmation that they
+remember the environment. They were offered a chance to repeat the
+flight but no one reported such a need. Participants then drew two
+sketch maps (in a counterbalanced order) and filled
+the NASA-TLX questionnaire for both drawing tasks on a tablet.
+
+\subsubsection{Experimental design}\label{experimental-design-1}
+
+The experiment followed a within-subject design. Each participant drew two sketch maps (2D and 3D). The complexity of the environment was equal for all participants, and the number of landmarks that had to be drawn was pre-determined.
+
+\subsubsection{Data analysis}\label{data-analysis-1}
+
+\paragraph{Sketch interpretation}\label{sketch-interpretation-1}
+
+Sketch map analysis was as similar as possible to the one employed in Experiment 1. Each sketch map contained 6 landmarks, 6 buildings, and the travelled path, as remembered by the participant. We have manually coded each sketch map with respect to \emph{visibility} and \emph{correctness} of the following spatial relations:
+
+\begin{itemize}
+\item
+  relative horizontal (X-dimension) relation between pairs of landmarks, e.g., ``the shark is to the left relative to the sheep'';
+\item
+  relative depth (Y-dimension) relation between pairs of landmarks, e.g., ``the car is closer to the front relative to the sheep'';
+\item
+  relative vertical (Z-dimension) relation between pairs of landmarks, e.g., ``the rhino is lower than the sheep'';
+\item
+  X-, Y-, and Z-dimension relations of each landmark relative to the path, e.g., ``the car is to the right of the first path segment''.
+\item
+  relative horizontal relation between the path and the nearest building. Due to mixed perspectives of 2D sketch maps (buildings were often drawn in a different perspective than the path) we opted for considering X- and Y-dimension relations jointly (i.e., XY-dimension such as ``Correct, if the path makes a left turn behind the building'', and separately the Z-dimension such as ``Correct, if the path goes under the bridge of the building'').
+\end{itemize}
+
+There were 45 spatial relations between landmarks (15 pairs * 3 dimensions), 18 spatial relations between landmarks and the path (6 landmarks * 3 dimensions), and 12 spatial relations between the path and the nearest building (6 buildings * 2 spatial relations). Therefore, there were 75 spatial relations in total that were analysed. As in Experiment 1, the maximal \emph{correctness} score per participant was capped by their number of \emph{visible} relations.
+
+The reference viewpoint from which the relations were estimated was the starting view of the journey and, as in Experiment 1, the orientation of the majority of 2D sketch maps validated that this orientation was preferred (McNamara, 2003).
+
+\paragraph{Interrater agreement}\label{interrater-agreement-1}
+
+Similarly to Experiment 1, interrater agreement was `substantial', making it possible to draw further conclusion from the analysis (Hallgren, 2012). See the Appendix.
+
+\paragraph{Questionnaires}\label{questionnaires-3}
+
+Questionnaire data was processed as in Experiment 1. The single difference is that the Urban Layout Test used instead of the Indoor Perspective Test allowed 0-20 (and not 0-10) correct responses.
+
+\paragraph{Sample size justification and statistical analyses}\label{sample-size-justification-and-statistical-analyses}
+
+Statistical approach was identical to this in Experiment 1.
+
+\subsection{Results}\label{results-1}
+
+On average, the percentage of spatial relations that were visible in 2D sketch maps equalled \emph{M} = 78\% (\emph{SD} = 12\%) and ranged from 55\% to 95\%. In the 3D sketch map condition, visibility was \emph{M} = 96\% (\emph{SD} = 6\%) and ranged from 69\% to 100\%. In the 2D condition, out of relations that were visible, \emph{M} = 83\% (\emph{SD} = 10\%) were correct, ranging from 44\% to 98\%. In the 3D condition, correctness was \emph{M} = 79\% (\emph{SD} = 9\%), ranging from 60\% to 95\%. Figure \ref{fig:exp2-examples} shows two examples.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{figs/exp2-examples} \caption{A good-quality 2D (top) and a corresponding 3D (bottom) sketch map of a single participant. The 2D sketch map is a mixture of a top-down view and inconsistent perspective, and relies heavily on annotations. Despite that, interpreting some relations between distant landmarks remains impossible (e.g., is the sheep in upper-right corner higher than the shark mid-left?). 3D sketch maps make even distant relations possible to interpret.}\label{fig:exp2-examples}
+\end{figure}
+
+\subsubsection{H1: Cognitive bias toward horizontal plane in 2D sketch maps.}\label{h1-cognitive-bias-toward-horizontal-plane-in-2d-sketch-maps.-1}
+
+The odds of visibility in the Z-dimension of 2D sketch maps were approximately 34.94 times lower than in the X-dimension (OR = 0.03, 95\% CI {[}0.02, 0.05{]}). The posterior probability that the odds are lower was approaching 100\% indicating very strong evidence in favor of Hypothesis 1 (Figure \ref{fig:plot2-1}).
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot2-1-1.pdf}}
+\caption{\label{fig:plot2-1}Predicted visibility as a function of condition and spatial dimension.}
+\end{figure}
+
+\subsubsection{H2: Vertical relations are easier to represent correctly on 3D sketch maps.}\label{h2-vertical-relations-are-easier-to-represent-correctly-on-3d-sketch-maps.-1}
+
+Among spatial relations that were visible on both of participant's sketch maps, a Bayesian hypothesis test was conducted to evaluate whether the correctness probability in the Z-dimension was higher in the 3D condition, compared to 2D. It was not (log-scale interaction effect of condition and Z-dimension = -0.31; 95\% CI {[}-0.76, 0.12{]}; posterior probability showing that the data is approximately 7 times more likely under the opposite hypothesis; Figure \ref{fig:plot2-2})
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot2-2-1.pdf}}
+\caption{\label{fig:plot2-2}Predicted correctness as a function of condition and spatial dimension.}
+\end{figure}
+
+\subsubsection{H3: Relations left out in 2D are mostly correct when they appear in the 3D sketch.}\label{h3-relations-left-out-in-2d-are-mostly-correct-when-they-appear-in-the-3d-sketch.-1}
+
+It was mostly the Z-dimension relations that were missing from participants' 2D Sketch Map (32 in the X dimension, 69 in the Y dimension, and 455 in the Z dimension). This shows that vertical relations were left out disproportionally often. Overall, the correctness of these relations in the 3D Sketch Map was 67\%. The odds of correctness of these relations are 1.88 times greater than chance; 95\% CI {[}1.47, 2.41{]}, with posterior probability for this hypothesis approaching 100\%. This provides strong evidence in favor Hypothesis 3.
+
+\subsubsection{H4: The visibility and correctness of spatial relations will be higher in both 2D and 3D sketch maps when participants draw the 3D map first.}\label{h4-the-visibility-and-correctness-of-spatial-relations-will-be-higher-in-both-2d-and-3d-sketch-maps-when-participants-draw-the-3d-map-first.}
+
+The odds ratio for spatial relations being more visible if 3D sketch map was drawn first, equaled 5.84 with a 95\% credible interval ranging from 1.35 to 51.73. The posterior probability that the odds ratio was higher than 1 was 99\%, with an evidence ratio of 100.45 more likely than the opposite. This confirms that probability of a spatial relation being visible was higher when the 3D Sketch Map was drawn as first.
+
+The odds ratio for spatial relations being more correct if 3D sketch map was drawn first, equaled 1.27 with a 95\% credible interval including 1, ranging from 0.70 to 2.93. The posterior probability that the odds ratio was higher than 1 was 67\%, with an evidence ratio of 2.03 times more likely than the opposite. There was therefore no convincing evidence that a spatial relation would be more likely correct when the 3D Sketch Map was drawn as first.
+
+\subsubsection{H5. Higher cognitive load will be correlated with lower visibility and correctness of spatial relations in both 2D and 3D sketch maps.}\label{h5.-higher-cognitive-load-will-be-correlated-with-lower-visibility-and-correctness-of-spatial-relations-in-both-2d-and-3d-sketch-maps.-1}
+
+For visibility, the log-scale estimate was 0.20 (95\% CI = {[}-0.22, 0.61{]}). The posterior probability that the estimate was higher than 0 was 79\%, with an evidence ratio of 3.70 times more likely than the opposite. This does not provide conclusive evidence on the main effect of cognitive load on visibility.
+
+However, as demonstrated on Figure \ref{fig:plot2-5}, there is a ceiling effect in the 3D Sketch map condition, where almost all participants reported high cognitive load. For this reason, we have conducted a follow-up post-diction analysis evaluating the significance of the interaction effect between NASA-TLX score and the 3D condition. The interaction effect was significant (log-scale estimate = -0.64, 95\% CI = {[}-1.24, -0.03{]}). The posterior probability that the interaction effect estimate was lower than 0 was 96\%, with an evidence ratio of 21.69 times more likely than the opposite hypothesis. This result indicates that, contrary to Hypothesis 5, higher cognitive load was associated with \emph{higher} visibility, but only in the 2D condition.
+
+For correctness, there was no corresponding effect: the log-scale estimate was -0.05 (95\% CI = {[}-0.31, 0.19{]}). The posterior probability that the estimate was higher than 0 was 37\%, with an evidence ratio of 0.59. The interaction effect was not significant either.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot2-5-1.pdf}}
+\caption{\label{fig:plot2-5}Predicted visibility depending on the sketch map condition (left) and cognitive load (right).}
+\end{figure}
+
+\subsubsection{H6: Better spatial ability leads to higher visibility and correctness and is associated with smaller difference between participant's 2D and 3D sketch map.}\label{h6-better-spatial-ability-leads-to-higher-visibility-and-correctness-and-is-associated-with-smaller-difference-between-participants-2d-and-3d-sketch-map.-1}
+
+As seen in Figure \ref{fig:plot2-6}, there was a ceiling effect for the visibility of the X- and Y- dimensions, so we have focused on estimating whether Z-dimension relations were correlated with spatial abilities. The visibility of the Z-dimension did not significantly increased for participants with higher spatial abilities (the log-scale estimate of the interaction between urban test score and Z-dimension visibility was 0.09 (95\% CI = {[}-0.20, 0.38{]}). The posterior probability that the estimate was higher than 0 was 70\%, with an evidence ratio of 2.29 times more likely than the opposite hypothesis.
+
+However, there was stronger evidence for the corresponding effect of correctness. The main effect was 0.54 (95\% CI = {[}0.26, 0.83{]}). The posterior probability that the estimate was higher than 0 was approaching 100\%, with an evidence ratio of 699 times more likely than the opposite hypothesis. This is substantial evidence for the effect of spatial ability on the correctness of sketch maps. The interaction estimate with the Z-dimension was present but small (log-scale estimate = 0.17; 95\% CI = {[}-0.13, 0.46{]}, posterior probability that the estimate was higher than 0 = 83\%, with an evidence ratio of 4.74 times more likely than the opposite). Since these are post-diction test, they should be treated with caution.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-latex/plot2-6-1.pdf}}
+\caption{\label{fig:plot2-6}Predicted visibility (left) and correctness (right) depending on the IPT score indicating participant's spatial ability, across the 3 spatial dimensions.}
+\end{figure}
+
+There was no effect of spatial abilities on the reported task load (estimate = 0.11; 95\% CI = {[}-0.15, 0.35{]}). Also the number of relations included in the 3D sketch map but missing in corresponding participant's 2D sketch map was not correlated with spatial skills (estimate = -0.08; 95\% CI = {[}-0.26, 0.10{]}).
+
+\subsection{Experiment 2 Discussion}\label{experiment-2-discussion}
+
+Results demonstrated that 2D sketch maps under-represent vertical relations between landmarks (H1). Yet, information that is left out in 2D is mostly correct when drawn in 3D (H3), indicating that 2D sketch maps are a bottleneck for expressing valid parts of participants' spatial knowledge of vertically-complex urban-like environment.
+
+Visibility of 3D spatial relations was significantly higher across both sketches if the participant was asked to draw the 3D sketch map first (H4). A possible explanation of this result is that drawing vertically-complex environment in 3D early after learning it, activates a more complex cognitive representation that is perhaps reinforced during the drawing. Participants' tendency for more complete externalisation of that model is then carried over to the subsequent task of drawing in 2D. Conversely, when participants are asked to draw a vertically-complex 3D space in 2D first, it seems sufficient for them to perform the task based on a simplified mental model that is then reinforced. As a result, participants were less likely to draw complete spatial relations in 3D sketching method that explicitly requires these relations.
+
+Sketching in 3D was associated with higher cognitive load on average. This is a well known effect reported in other studies (Xiao et al., 2024). It is often explained with the relative unfamiliarity with the VR technology, but also by the fact that simple operations, such as drawing two connecting lines, require more attention in 3D sketching scenarios (e.g., one needs to check from two viewing points if lines connect). Interestingly, 2D sketch maps that were more complete were associated with higher cognitive load, too. One way to interpret this is that 2D sketch maps give participants a chance to perform the task with low cognitive effort, but those wishing to draw a complete sketch map of a vertically-complex environment, are likely to report higher cognitive load anyway. 3D sketch maps simply do not offer the possibly of performing the task with low cognitive effort. This might introduce issues of inclusivity (as some participants might respond poorly to high cognitive load). However, it is also possible that 3D sketch maps by default force participants into a state of focus and attention that prevents them from trivialising the task.
+
+Participants with higher spatial abilities drew more correct (but not more complete) sketch maps, particularly with respect to vertical information. This shows that the most challenging aspect of representing the volumetric environment (i.e., the vertical information) is also the one most dependent on spatial abilities of the individual.
+
+\section{General Discussion}\label{general-discussion}
+
+In this section we discuss similarities and differences between Experiment 1 and 2. We revisit the central argument for the initial design of these two studies: that buildings represent a vertically ``layered'' space, where vertical information can be containerised as belonging to separate floors, while the urban environment represents a vertically ``volumetric'' environment, where changes on the vertical dimension are continuous and cannot be easily containerised.
+
+The most significant outcome of this manuscript, supported by data consistent across both studies, is that 2D sketch maps are a bottleneck for communicating valid parts of participant's mental representation of space. This result was equally strong in Experiment 1 (layered environment) and in Experiment 2 (volumetric environment). The information that is left out in 2D sketch maps is predominantly vertical. While in layered environments participants were able to communicate some vertical information with textual labels (utilising a type of a work-around for the limitation of 2D pen-and-paper medium), this was not done in the volumetric environment. Thus, researchers should use 3D sketch maps for tasks with vertical complexity. For tasks where the vertical dimension plays no role, our data suggest that 2D pen-and-paper sketch maps remain an adequate and efficient method: x- and y- dimension relations were communicated to a similar level of visibility.
+
+Drawing order had no impact on the results of Experiment 1 but a significant impact on the completeness of spatial relations in Experiment 2. Our explanation assumes that participants activated a more complex mental representation of space when sketching in 3D first. If this is true, the discrepancy between data from both experiments could be interpreted as a sign that memory of spatial relations in buildings is easier to preserve over a time span of 30-60 minutes (i.e., the time between the exploration of the VR environment and completing the second sketch in our study) than the memory of urban areas. This can result from the fact that vertical information in vertically layered environments (buildings) can be stored in a simplified form (containerised within floors, or even only semantically labelled). This is not true for volumetric environments, where successful externalisation does require storing continuous vertical information - a more difficult task. Taken together, these results provide empirical support for the different cognitive processing of vertically layered and volumetric spaces (Hölscher et al., 2013; Jeffery, 2011, 2021; Jeffery et al., 2013).
+
+Completeness of 2D maps unexpectedly increased with cognitive load. This suggests that presumed low cognitive effort of drawing 2D pen-and-paper sketch maps might only be true for sketches that are simple or incomplete. Although drawing in 3D can be more taxing on average (here in Experiment 2, but also in other studies; see (Xiao et al., 2024)), seeing this as a disadvantage of 3D sketch maps is incorrect, if to consider the reported cognitive load of comparably complete 2D sketches. It is also important to note that there was no significant relation between cognitive load and correctness, i.e., high cognitive load does not seem to cause errors.
+
+Individual spatial abilities had contrasting effect on participants' sketch maps. In Experiment 1, higher skills were associated with lower visibility of spatial relations (but not their correctness). In Experiment 2, higher skills resulted in better correctness (but not visibility), primarily of vertical relations. This can be interpreted in light of layered environments being easier to represent in memory. Spatial abilities did not play a role in how correct these representations are. In the volumetric environment, where encoding or storing vertical information is more challenging, individual abilities play a role in the process. It bears noting however, that spatial abilities in these two experiments were measured with different tests. It is possible that one of them (Urban Layout Test) is more valid among non-architects, compared to the alternative from Experiment 1 (Indoor Perspective Taking test). Given the ceiling effects and large Credible Intervals, these results should be treated as highly exploratory and demand further investigation under different tasks.
+
+One more notable difference between the experiments is that the visibility of relations in 3D sketch maps was perfect (100\%) in Experiment 1, but not so in Experiment 2 (96\% on average, with 69\% in the worst sketch map). This was primarily due to the fact that larger urban 3D sketch maps often had inconsistent scale at different areas of the drawing, and the buildings were not placed on a single plane. Thus, understanding what is higher, or lower, often remained possible on the local level (e.g.~two landmarks close to each, a path and a nearby building), but impossible for landmarks located far away from each other. In Experiment 1, not only is the extent of the environment smaller, but also the presence of floors provides a structure that helps to maintain consistency across the whole 3D sketch map. A recent tool by Xiao et al. (2024) explicitly supports this aspect of 3D sketch maps of layered environments, but supporting consistent sketching of volumetric environments demands a different approach (Xiao et al., 2025). Also, in Experiment 2, not many 2D drawings were split into multiple parts (as in Experiment 1). This seems to confirm that participants are more likely to think about layered 3D environments in multiple chunks, compared to volumetric environments that offer no obvious way to split them.
+
+\section{Conclusion}\label{conclusion}
+
+Our results indicate that 2D sketch maps are a bottleneck for the visibility of vertical spatial relations: they limit the externalisation of what is known. The correctness of what is ultimately represented in the sketch is not affected by the dimensionality of the sketch. However, in a volumetric environment where vertical information is difficult to encode and must be stored in a more complex form, people with lower spatial abilities draw it disproportionally poorly, compared to other information. Our results provide empirical evidence for the difference in cognitive processes involved in encoding and storing mental representations of layered and volumetric environments and indicate potential advantages of 3D sketch maps as a method for externalising more complete mental representations of space. Researchers interested in spatial cognition of vertically-complex spaces should be aware that 2D sketch maps might result in under-representation of what participants know about that environment. Methodologically, our work shows the potential of immersive VR technologies as an assessment tool for spatial cognition research (Colombo et al., 2024) and highlights the wealth of related open questions, such as how to realise and assess the validity of 3D sketch maps in real-world environments, or develop formal metrics for evaluating mental representations of 3D spaces. The implications of our findings extend beyond spatial cognition research. Enhanced 3D sketch mapping can inform urban design, improve navigation aids for multi-level environments, and contribute to the development of more intuitive educational tools in virtual and augmented reality platforms.
+
+\section{Data and Software Availability Statement}\label{data-and-software-availability-statement}
+
+Raw data (including all sketch maps), video demonstrations of the experimental procedure, and an R markdown file containing the statistical analyses are available at: \url{https://osf.io/avnxh/?view_only=5fa8dc8e3ec046b1a36a51c8d8f3bf0b}
+
+(the repository has been anonymised for peer-review and will be completed with all remaining material after acceptance)
+
+\section{References}\label{references}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-appleyard.1970}
+Appleyard, D. (1970). Styles and methods of structuring a city. \emph{Environment and Behavior}, \emph{2}(1), 100--117. \url{https://doi.org/10.1177/001391657000200106}
+
+\bibitem[\citeproctext]{ref-barreramachuca.2019}
+Barrera Machuca, M. D., Stuerzlinger, W., \& Asente, P. (2019). The {Effect} of {Spatial} {Ability} on {Immersive} {3D} {Drawing}. \emph{Proceedings of the 2019 on {Creativity} and {Cognition}}, 173--186. San Diego CA USA: ACM. \url{https://doi.org/10.1145/3325480.3325489}
+
+\bibitem[\citeproctext]{ref-berkowitz.2021}
+Berkowitz, M., Gerber, A., Thurn, C. M., Emo, B., Hoelscher, C., \& Stern, E. (2021). Spatial {Abilities} for {Architecture}: {Cross} {Sectional} and {Longitudinal} {Assessment} {With} {Novel} and {Existing} {Spatial} {Ability} {Tests}. \emph{Frontiers in Psychology}, \emph{11}. Retrieved from \url{https://www.frontiersin.org/articles/10.3389/fpsyg.2020.609363}
+
+\bibitem[\citeproctext]{ref-blajenkova.2005}
+Blajenkova, O., Motes, M. A., \& Kozhevnikov, M. (2005). Individual differences in the representations of novel environments. \emph{Journal of Environmental Psychology}, \emph{25}(1), 97--109. \url{https://doi.org/10.1016/j.jenvp.2004.12.003}
+
+\bibitem[\citeproctext]{ref-brandt.2015}
+Brandt, T., Huber, M., Schramm, H., Kugler, G., Dieterich, M., \& Glasauer, S. (2015). {`{Taller} and {Shorter}'}: {Human} 3-{D} {Spatial} {Memory} {Distorts} {Familiar} {Multilevel} {Buildings}. \emph{PLOS ONE}, \emph{10}(10), e0141257. \url{https://doi.org/10.1371/journal.pone.0141257}
+
+\bibitem[\citeproctext]{ref-burkner.2017}
+Bürkner, P.-C. (2017). Brms: {An} {R} {Package} for {Bayesian} {Multilevel} {Models} {Using} {Stan}. \emph{Journal of Statistical Software}, \emph{80}, 1--28. \url{https://doi.org/10.18637/jss.v080.i01}
+
+\bibitem[\citeproctext]{ref-carpenter.2017}
+Carpenter, B., Gelman, A., Hoffman, M. D., Lee, D., Goodrich, B., Betancourt, M., \ldots{} Riddell, A. (2017). Stan: {A} {Probabilistic} {Programming} {Language}. \emph{Journal of Statistical Software}, \emph{76}, 1--32. \url{https://doi.org/10.18637/jss.v076.i01}
+
+\bibitem[\citeproctext]{ref-cho.2019}
+Cho, J. Y., \& Suh, J. (2019). Understanding {Spatial} {Ability} in {Interior} {Design} {Education}: {2D}-to-{3D} {Visualization} {Proficiency} as a {Predictor} of {Design} {Performance}. \emph{Journal of Interior Design}, \emph{44}(3), 141--159. \url{https://doi.org/10.1111/joid.12143}
+
+\bibitem[\citeproctext]{ref-cho.2022}
+Cho, J. Y., \& Suh, J. (2022). The {Architecture} and {Interior} {Design} {Domain}-{Specific} {Spatial} {Ability} {Test} ({AISAT}): {Its} {Validity} and {Reliability}. \emph{Journal of Interior Design}, \emph{47}(2), 11--30. \url{https://doi.org/10.1111/joid.12211}
+
+\bibitem[\citeproctext]{ref-colombo.2024}
+Colombo, G., Minta, K., Grübel, J., Tai, W. L. E., Hölscher, C., \& Schinazi, V. R. (2024). Detecting cognitive impairment through an age-friendly serious game: {The} development and usability of the {Spatial} {Performance} {Assessment} for {Cognitive} {Evaluation} ({SPACE}). \emph{Computers in Human Behavior}, \emph{160}, 108349. \url{https://doi.org/10.1016/j.chb.2024.108349}
+
+\bibitem[\citeproctext]{ref-dalton.2016}
+Dalton, R. C., \& Hölscher, C. (2016). \emph{Take one building: {Interdisciplinary} research perspectives of the seattle central library}. Taylor \& Francis.
+
+\bibitem[\citeproctext]{ref-deisinger.2000}
+Deisinger, J., Blach, R., Wesche, G., Breining, R., \& Simon, A. (2000). Towards {Immersive} {Modeling} --- {Challenges} and {Recommendations}: {A} {Workshop} {Analyzing} the {Needs} of {Designers}. In J. Mulder \& R. van Liere (Eds.), \emph{Virtual {Environments} 2000} (pp. 145--156). Vienna: Springer. \url{https://doi.org/10.1007/978-3-7091-6785-4_16}
+
+\bibitem[\citeproctext]{ref-du.2022}
+Du, Y. K., \& Mou, W. (2022). When humans can fly: {Imprecise} vertical encoding in human {3D} spatial navigation. \emph{Behavioural Brain Research}, \emph{426}, 113835. \url{https://doi.org/10.1016/j.bbr.2022.113835}
+
+\bibitem[\citeproctext]{ref-friedman.2003}
+Friedman, A., \& Kohler, B. (2003). Bidimensional regression: Assessing the configural similarity and accuracy of cognitive maps and other two-dimensional data sets. \emph{Psychological Methods}. \url{https://doi.org/10.1037/1082-989X.8.4.468}
+
+\bibitem[\citeproctext]{ref-gagnier.2017}
+Gagnier, K. M., Atit, K., Ormand, C. J., \& Shipley, T. F. (2017). Comprehending {3D} {Diagrams}: {Sketching} to {Support} {Spatial} {Reasoning}. \emph{Topics in Cognitive Science}, \emph{9}(4), 883--901. \url{https://doi.org/10.1111/tops.12233}
+
+\bibitem[\citeproctext]{ref-gath-morad.2021}
+Gath-Morad, M., Thrash, T., Schicker, J., Hölscher, C., Helbing, D., \& Melgar, L. E. A. (2021). Visibility matters during wayfinding in the vertical. \emph{Scientific Reports}, \emph{11}(1), 18980. \url{https://doi.org/10.1038/s41598-021-98439-1}
+
+\bibitem[\citeproctext]{ref-hallgren.2012}
+Hallgren, K. A. (2012). Computing inter-rater reliability for observational data: {An} overview and tutorial. \emph{Tutorials in Quantitative Methods for Psychology}, \emph{8}(1), 23--34. \url{https://doi.org/10.20982/tqmp.08.1.p023}
+
+\bibitem[\citeproctext]{ref-hart.2006}
+Hart, S. G. (2006). Nasa-{Task} {Load} {Index} ({NASA}-{TLX}); 20 {Years} {Later}. \emph{Proceedings of the Human Factors and Ergonomics Society Annual Meeting}, \emph{50}(9), 904--908. \url{https://doi.org/10.1177/154193120605000909}
+
+\bibitem[\citeproctext]{ref-hegarty.2006}
+Hegarty, M., Montello, D. R., Richardson, A. E., Ishikawa, T., \& Lovelace, K. (2006). Spatial abilities at different scales: {Individual} differences in aptitude-test performance and spatial-layout learning. \emph{Intelligence}, \emph{34}(2), 151--176. \url{https://doi.org/10.1016/j.intell.2005.09.005}
+
+\bibitem[\citeproctext]{ref-holscher.2013}
+Hölscher, C., Büchner, S., \& Strube, G. (2013). Multi-floor buildings and human wayfinding cognition. \emph{Behavioral and Brain Sciences}, \emph{36}(5), 551--552. \url{https://doi.org/10.1017/S0140525X1300040X}
+
+\bibitem[\citeproctext]{ref-holscher.2006}
+Hölscher, C., Meilinger, T., Vrachliotis, G., Brösamle, M., \& Knauff, M. (2006). Up the down staircase: {Wayfinding} strategies in multi-level buildings. \emph{Journal of Environmental Psychology}, \emph{26}(4), 284--299. \url{https://doi.org/10.1016/j.jenvp.2006.09.002}
+
+\bibitem[\citeproctext]{ref-ishikawa.2006}
+Ishikawa, T., \& Montello, D. (2006). Spatial knowledge acquisition from direct experience in the environment: {Individual} differences in the development of metric knowledge and the integration of separately learned places. \emph{Cognitive Psychology}, \emph{52}(2), 93--129. \url{https://doi.org/10.1016/j.cogpsych.2005.08.003}
+
+\bibitem[\citeproctext]{ref-jeffery.2011}
+Jeffery, K. J. (2011). \emph{Navigating in a {Three}-{Dimensional} {World}}. \url{https://doi.org/10.7551/mitpress/9187.003.0006}
+
+\bibitem[\citeproctext]{ref-jeffery.2021}
+Jeffery, K. J. (2021). How environmental movement constraints shape the neural code for space. \emph{Cognitive Processing}, \emph{22}(Suppl 1), 97--104. \url{https://doi.org/10.1007/s10339-021-01045-2}
+
+\bibitem[\citeproctext]{ref-jeffery.2013}
+Jeffery, K. J., Jovalekic, A., Verriotis, M., \& Hayman, R. (2013). A framework for three-dimensional navigation research. \emph{Behavioral and Brain Sciences}, \emph{36}(5), 571--587. \url{https://doi.org/10.1017/S0140525X13001556}
+
+\bibitem[\citeproctext]{ref-jonker.2019}
+Jonker, T. R., Wammes, J. D., \& MacLeod, C. M. (2019). Drawing enhances item information but undermines sequence information in memory. \emph{Journal of Experimental Psychology. Learning, Memory, and Cognition}, \emph{45}(4), 689--699. \url{https://doi.org/10.1037/xlm0000610}
+
+\bibitem[\citeproctext]{ref-judd.2017}
+Judd, C. M., Westfall, J., \& Kenny, D. A. (2017). Experiments with more than one random factor: {Designs}, analytic models, and statistical power. \emph{Annual Review of Psychology}, \emph{68}(1), 601--625. \url{https://doi.org/10.1146/annurev-psych-122414-033702}
+
+\bibitem[\citeproctext]{ref-keefe.2008}
+Keefe, D. F., Acevedo, D., Miles, J., Drury, F., Swartz, S. M., \& Laidlaw, D. H. (2008). Scientific {Sketching} for {Collaborative} {VR} {Visualization} {Design}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{14}(4), 835--847. \url{https://doi.org/10.1109/TVCG.2008.31}
+
+\bibitem[\citeproctext]{ref-kim.2022}
+Kim, K. G., Krukar, J., Mavros, P., Zhao, J., Kiefer, P., Schwering, A., \ldots{} Raubal, M. (2022). {3D} {Sketch} {Maps}: {Concept}, {Potential} {Benefits}, and {Challenges}. In T. Ishikawa, S. I. Fabrikant, \& S. Winter (Eds.), \emph{15th {International} {Conference} on {Spatial} {Information} {Theory} ({COSIT} 2022)} (pp. 14:1--14:7). Dagstuhl, Germany: Schloss Dagstuhl -- Leibniz-Zentrum für Informatik. \url{https://doi.org/10.4230/LIPIcs.COSIT.2022.14}
+
+\bibitem[\citeproctext]{ref-krukar.2021a}
+Krukar, J., Manivannan, C., Bhatt, M., \& Schultz, C. (2021). Embodied {3D} isovists: {A} method to model the visual perception of space. \emph{Environment and Planning B: Urban Analytics and City Science}, \emph{48}(8), 2307--2325. \url{https://doi.org/10.1177/2399808320974533}
+
+\bibitem[\citeproctext]{ref-krukar.2018}
+Krukar, J., Münzer, S., Lörch, L., Anacta, V. J., Fuest, S., \& Schwering, A. (2018). Distinguishing sketch map types: {A} flexible feature-based classification. \emph{Spatial Cognition {XI}, 11th International Conference, Spatial Cognition 2018, Tübingen, Germany, September 5-8, 2018, Proceedings}, 279--292. \url{https://doi.org/10.1007/978-3-319-96385-3_19}
+
+\bibitem[\citeproctext]{ref-li.2021}
+Li, H., Mavros, P., Krukar, J., \& Hölscher, C. (2021). The effect of navigation method and visual display on distance perception in a large-scale virtual building. \emph{Cognitive Processing}, \emph{22}(2), 239--259. \url{https://doi.org/10.1007/s10339-020-01011-4}
+
+\bibitem[\citeproctext]{ref-lu.2019}
+Lu, Y., \& Ye, Y. (2019). Can people memorize multilevel building as volumetric map? {A} study of multilevel atrium building. \emph{Environment and Planning B: Urban Analytics and City Science}, \emph{46}(2), 225--242. \url{https://doi.org/10.1177/2399808317705659}
+
+\bibitem[\citeproctext]{ref-lynch.1960}
+Lynch, K. (1960). \emph{The image of the city} (21st ed). Cambridge (Mass.): The MIT Press.
+
+\bibitem[\citeproctext]{ref-machuca.2023}
+Machuca, M. D. B., Israel, J. H., Keefe, D. F., \& Stuerzlinger, W. (2023). Toward {More} {Comprehensive} {Evaluations} of {3D} {Immersive} {Sketching}, {Drawing}, and {Painting}. \emph{IEEE Transactions on Visualization and Computer Graphics}, 1--18. \url{https://doi.org/10.1109/TVCG.2023.3276291}
+
+\bibitem[\citeproctext]{ref-makela.2004}
+Mäkelä, W., Reunanen, M., \& Takala, T. (2004). Possibilities and limitations of immersive free-hand expression: A case study with professional artists. \emph{Proceedings of the 12th Annual {ACM} International Conference on {Multimedia}}, 504--507. New York, NY, USA: Association for Computing Machinery. \url{https://doi.org/10.1145/1027527.1027649}
+
+\bibitem[\citeproctext]{ref-manivannan.2022a}
+Manivannan, C., Krukar, J., \& Schwering, A. (2022). Spatial generalization in sketch maps: {A} systematic classification. \emph{Journal of Environmental Psychology}, \emph{83}, 101851. \url{https://doi.org/10.1016/j.jenvp.2022.101851}
+
+\bibitem[\citeproctext]{ref-mcelreath.2016}
+McElreath, R. (2016). \emph{Statistical {Rethinking}: {A} {Bayesian} {Course} with {Examples} in {R} and {Stan}}. Boca Raton: Chapman; Hall/CRC. \url{https://doi.org/10.1201/9781315372495}
+
+\bibitem[\citeproctext]{ref-mcnamara.2003}
+McNamara, T. P. (2003). How {Are} the {Locations} of {Objects} in the {Environment} {Represented} in {Memory}? In C. Freksa, W. Brauer, C. Habel, \& K. F. Wender (Eds.), \emph{Spatial {Cognition} {III}} (pp. 174--191). Berlin, Heidelberg: Springer. \url{https://doi.org/10.1007/3-540-45004-1_11}
+
+\bibitem[\citeproctext]{ref-meilinger.2008}
+Meilinger, T. (2008). The {Network} of {Reference} {Frames} {Theory}: {A} {Synthesis} of {Graphs} and {Cognitive} {Maps}. In C. Freksa, N. S. Newcombe, P. Gärdenfors, \& S. Wölfl (Eds.), \emph{Spatial {Cognition} {VI}. {Learning}, {Reasoning}, and {Talking} about {Space}} (pp. 344--360). Berlin, Heidelberg: Springer. \url{https://doi.org/10.1007/978-3-540-87601-4_25}
+
+\bibitem[\citeproctext]{ref-montello.1993}
+Montello, D. R. (1993). Scale and multiple psychologies of space. In A. U. Frank \& I. Campari (Eds.), \emph{Spatial {Information} {Theory} {A} {Theoretical} {Basis} for {GIS}} (pp. 312--321). Berlin, Heidelberg: Springer. \url{https://doi.org/10.1007/3-540-57207-4_21}
+
+\bibitem[\citeproctext]{ref-montello.1998}
+Montello, D. R. (1998). A new framework for understanding the acquisition of spatial knowledge in large-scale environments. \emph{Spatial and Temporal Reasoning in Geographic Information Systems}, 143--154.
+
+\bibitem[\citeproctext]{ref-montello.2016a}
+Montello, D. R. (2016). Cognition and spatial behavior. In {[}"Richardson, D. and\}. \{Castree, N. and\}. \{Goodchild, M. F. and\}. \{Kobayashi, A. and\}. \{Liu, W. and\}. \{Marston, \& R. A."{]} (Eds.), \emph{International encyclopedia of geography: {People}, the earth, environment and technology} (pp. 1--20). Oxford, UK: John Wiley \& Sons, Ltd. \url{https://doi.org/10.1002/9781118786352.wbieg0498}
+
+\bibitem[\citeproctext]{ref-schwering.2022}
+Schwering, A., Krukar, J., Manivannan, C., Chipofya, M., \& Jan, S. (2022). Generalized, {Inaccurate}, {Incomplete}: {How} to {Comprehensively} {Analyze} {Sketch} {Maps} {Beyond} {Their} {Metric} {Correctness}. In T. Ishikawa, S. I. Fabrikant, \& S. Winter (Eds.), \emph{15th {International} {Conference} on {Spatial} {Information} {Theory} ({COSIT} 2022)} (pp. 8:1--8:15). Dagstuhl, Germany: Schloss Dagstuhl -- Leibniz-Zentrum für Informatik. \url{https://doi.org/10.4230/LIPIcs.COSIT.2022.8}
+
+\bibitem[\citeproctext]{ref-schwering.2014}
+Schwering, A., Wang, J., Chipofya, M., Jan, J., Li, R., \& Broelemann, K. (2014). {SketchMapia}: {Qualitative} {Representations} for the {Alignment} of {Sketch} and {Metric} {Maps}. \emph{Spatial Cognition \& Computation}, \emph{14}(3), 220--254. \url{https://doi.org/10.1080/13875868.2014.917378}
+
+\bibitem[\citeproctext]{ref-siegel.1975}
+Siegel, A. W., \& White, S. H. (1975). The {Development} of {Spatial} {Representations} of {Large}-{Scale} {Environments}. In H. W. Reese (Ed.), \emph{Advances in {Child} {Development} and {Behavior}} (Vol. 10, pp. 9--55). JAI. \url{https://doi.org/10.1016/S0065-2407(08)60007-5}
+
+\bibitem[\citeproctext]{ref-simonet.2025}
+Simonet, M., Vater, C., Abati, C., Zhong, S., Mavros, P., Schwering, A., \ldots{} Krukar, J. (2025). Probing mental representations of space through sketch mapping: A scoping review. \emph{Cognitive Research: Principles and Implications}, \emph{10}(1), 59. \url{https://doi.org/10.1186/s41235-025-00667-w}
+
+\bibitem[\citeproctext]{ref-tobler.2010}
+Tobler, W. R. (2010). Bidimensional regression. \emph{Geographical Analysis}, \emph{26}(3), 187--212. \url{https://doi.org/10.1111/j.1538-4632.1994.tb00320.x}
+
+\bibitem[\citeproctext]{ref-tung.2024}
+Tung, Y.-H., \& Chang, C.-Y. (2024). How three-dimensional sketching environments affect spatial thinking: {A} functional magnetic resonance imaging study of virtual reality. \emph{PLOS ONE}, \emph{19}(3), e0294451. \url{https://doi.org/10.1371/journal.pone.0294451}
+
+\bibitem[\citeproctext]{ref-tversky.1993}
+Tversky, B. (1993). Cognitive maps, cognitive collages, and spatial mental models. In A. U. Frank \& I. Campari (Eds.), \emph{Spatial {Information} {Theory} {A} {Theoretical} {Basis} for {GIS}} (pp. 14--24). Berlin, Heidelberg: Springer. \url{https://doi.org/10.1007/3-540-57207-4_2}
+
+\bibitem[\citeproctext]{ref-tversky2002sketches}
+Tversky, B. (2002). What do sketches say about thinking. In R. Davis, J. Landay, \& T. Stahovich (Eds.), \emph{2002 {AAAI} spring symposium, sketch understanding workshop, stanford university, {AAAI} technical report {SS}-02-08} (pp. 148--151). Stanford, CA.
+
+\bibitem[\citeproctext]{ref-wang.2015}
+Wang, J., \& Schwering, A. (2015). Invariant spatial information in sketch maps --- a study of survey sketch maps of urban areas. \emph{Journal of Spatial Information Science}, (11), 31--52. Retrieved from \url{http://josis.net/index.php/josis/article/view/62}
+
+\bibitem[\citeproctext]{ref-warren.2017}
+Warren, W. H., Rothman, D. B., Schnapp, B. H., \& Ericson, J. D. (2017). Wormholes in virtual space: {From} cognitive maps to cognitive graphs. \emph{Cognition}, \emph{166}, 152--163. \url{https://doi.org/10.1016/j.cognition.2017.05.020}
+
+\bibitem[\citeproctext]{ref-weisberg.2018}
+Weisberg, S. M., \& Newcombe, N. S. (2018). Cognitive maps: {Some} people make them, some people struggle. \emph{Current Directions in Psychological Science}, \emph{27}(4), 220--226. \url{https://doi.org/10.1177/0963721417744521}
+
+\bibitem[\citeproctext]{ref-weisberg.2014}
+Weisberg, S. M., Schinazi, V. R., Newcombe, N. S., Shipley, T. F., \& Epstein, R. A. (2014). Variations in cognitive maps: {Understanding} individual differences in navigation. \emph{Journal of Experimental Psychology: Learning, Memory, and Cognition}, \emph{40}(3), 669--682. \url{https://doi.org/10.1037/a0035261}
+
+\bibitem[\citeproctext]{ref-wiese.2010}
+Wiese, E., Israel, J. H., Meyer, A., \& Bongartz, S. (2010). Investigating the learnability of immersive free-hand sketching. \emph{Proceedings of the {Seventh} {Sketch}-{Based} {Interfaces} and {Modeling} {Symposium}}, 135--142. Goslar, DEU: Eurographics Association.
+
+\bibitem[\citeproctext]{ref-xiao.2025}
+Xiao, T., Chen, Y., Zhong, S., Kiefer, P., Krukar, J., Kim, K. G., \ldots{} Raubal, M. (2025). {Sketch2Terrain}: {AI}-{Driven} {Real}-{Time} {Terrain} {Sketch} {Mapping} in {Augmented} {Reality}. \emph{Proceedings of the 2025 {CHI} {Conference} on {Human} {Factors} in {Computing} {Systems}}, 1--24. New York, NY, USA: Association for Computing Machinery. \url{https://doi.org/10.1145/3706598.3713467}
+
+\bibitem[\citeproctext]{ref-xiao.2024}
+Xiao, T., Kim, K. G., Krukar, J., Subramaniyan, R., Kiefer, P., Schwering, A., \& Raubal, M. (2024). {VResin}: {Externalizing} spatial memory into {3D} sketch maps. \emph{International Journal of Human-Computer Studies}, \emph{190}, 103322. \url{https://doi.org/10.1016/j.ijhcs.2024.103322}
+
+\bibitem[\citeproctext]{ref-zhong.2016}
+Zhong, J. Y., \& Kozhevnikov, M. (2016). Relating allocentric and egocentric survey-based representations to the self-reported use of a navigation strategy of egocentric spatial updating. \emph{Journal of Environmental Psychology}, \emph{46}, 154--175. \url{https://doi.org/10.1016/j.jenvp.2016.04.007}
+
+\bibitem[\citeproctext]{ref-zimmerer.2021}
+Zimmerer, C., \& Matthiesen, S. (2021). {STUDY} {ON} {THE} {IMPACT} {OF} {COGNITIVE} {LOAD} {ON} {PERFORMANCE} {IN} {ENGINEERING} {DESIGN}. \emph{Proceedings of the Design Society}, \emph{1}, 2761--2770. \url{https://doi.org/10.1017/pds.2021.537}
+
+\end{CSLReferences}
+
+\newpage
+
+\appendix
+
+
+\section{Ceiling effect}\label{ceiling-effect}
+
+Ceiling effect is an inherent risk in experimental design where the focus lies on testing well-learnt environments. This is specifically the case here, where participants were given multiple chances to memorise the space as the focus is on the externalisation of well-remembered spatial knowledge. We account for this in two ways. First, given the fact that we fit data close to the maximum possible values, we fit models within the Bernoulli family which appropriately models the variance of boolean data even close to the maximum boundary. As demonstrated by the posterior predictive checks, our approach was fully successful in modeling the shape of the data's distribution.
+
+Second, we discuss potential consequences to the interpretation of the results of Experiment 1. As noted in the manuscript, correctness values in Experiment 1 reached 100\%, meaning that the ceiling effect might have reduced the study's sensitivity to detect smaller differences in H2, H4, and H6. Visibility values in Experiment 1 did reach 100\% in the 3D sketch maps condition but not in the 2D condition. This indicates that any significant effects found with respect to the visibility results could be larger under more challenging tasks.
+
+With respect to H2, we have detected no difference across conditions in the correctness of vertical relations. Importantly, this result is similar in Experiment 2 where correctness rates did not reach 100\% and where ceiling effect is not a concern. Thus, despite compromised sensitivity in Experiment 1, our data from Experiment 2 still indicates that during sketching well-learnt spaces correctness is similar across 2D and 3D sketch maps. Future work can test whether this effect is different when environments are much more complex, such as in large public buildings (Li, Mavros, Krukar, \& Hölscher, 2021), and when participants are not given sufficient opportunities to fully memorise the space.
+
+With respect to H4, neither Experiment 1 (ceiling effect) nor Experiment 2 (no ceiling) showed a difference in correctness depending on which sketch map was drawn as first. However, the pattern of findings was inconsistent for the visibility metric (no order effect on visibility in Experiment 1; significant impact of drawing order on visibility in Experiment 2). A potential small effect might have been undetected in Experiment 1.
+
+With respect to H6, Credible Intervals highly varied across participants with low and high spatial abilities. As noted, our post-diction tests are exploratory, but they point to an interesting question for future research: How participants with low vs high spatial skills will behave given more complex environments? One possibility worth investigating is an interaction effect between spatial skills and the complexity of the environment being drawn. It might be the case that the differences between 2D and 3D sketch maps are more pronounced for specific combinations of participants and complexity of the environment that needs to be drawn.
+
+A related limitation of the current manuscript is that we only investigated sketching of two environments. A greater diversity and difficulty of buildings and urban areas could reveal specific situations under which two-dimensionality of sketch maps limits the participants in expressing what they know. Future work could address this e.g., by systematically varying the complexity of the environments within the horizontal and vertical dimensions.
+
+\section{Interrater agreement: Experiment 1}\label{interrater-agreement-experiment-1}
+
+We present results of two interrater analyses.
+
+Initially, a second researcher rated the visibility and correctness of all spatial relations in 8 sketch maps (4 of each condition, i.e., 14\% of the dataset). The Kappa coefficient for the visibility variable was 0.95 and for the correctness (of those relations that were considered `visible' by both raters) was 0.76. These values correspond to `almost perfect' and `substantial' agreement respectively and make it possible to draw further conclusion from the analysis (Hallgren, 2012).
+
+Subsequently to running all other analyses, an additional rater was recruited to conduct an interrater agreement analysis of the full dataset. The Kappa coefficient for the visibility variable was 0.72 and for the correctness (of those relations that were considered `visible' by both raters) was 0.85. These values correspond to `substantial' and `almost perfect' agreement respectively and make it possible to draw further conclusion from the analysis (Hallgren, 2012). We associate the lower number with the fact that the new rater did not participate in the definition of the scoring scheme.
+
+\section{Interrater agreement: Experiment 2}\label{interrater-agreement-experiment-2}
+
+Initially, a second researcher rated the visibility and correctness of all spatial relations in 8 sketch maps (4 of each condition, i.e., 11\% of the dataset). The Kappa coefficient for the visibility variable was 0.91 and for the correctness (of those relations that were considered `visible' by both raters) was 0.77. These values correspond to `almost perfect' and `substantial' agreement respectively and make it possible to draw further conclusion from the analysis (Hallgren, 2012).
+
+As in Experiment 2, an additional rater performed the analysis on the full dataset. The Kappa coefficient for the visibility variable was 0.67 and for the correctness (of those relations that were considered `visible' by both raters) was 0.80. These values correspond to `substantial' agreement and make it possible to draw further conclusion from the analysis (Hallgren, 2012).
+
+Interrater agreement demonstrated satisfactory, yet imperfect scores. We associate the lower number of the full analysis (compared to the intial partial analysis) with the fact that the new rater did not participate in the definition of the scoring scheme. In the initial situation where both raters co-created the scoring system and scored the relations independently, the interrater agreement was higher. This demonstrates that the key issue in interrater agreement is the explanation of the scoring system, and not its intrinsic characteristics. Further work on scoring sketch maps based on qualitative spatial relations is necessary to avoid such ambiguities (Manivannan et al., 2022).
+
+\section{Sample size justification}\label{sample-size-justification-1}
+
+Our study utilised Bayesian statistical methods implemented with the brms package in R (Bürkner, 2017) which is based on Stan (Carpenter et al., 2017), following the Statistical Rethinking framework (McElreath, 2016). We evaluate the adequacy of our sample size through convergence statistics and model fit. We examined \(\hat{R}\) values which were \textless{} 1.01 across all parameters, and effective sample size (ESS) well above 1000 across all parameters, which indicates that the sample size was sufficient for the planned analyses and the chains converged correctly. We used weakly informative priors that have negligible impact on the results. In order to verify whether the sample size was sufficient to allow the data to guide our estimates, we performed simulation-based posterior predictive checks and present the results at the end of this Appendix.
+
+For reference, we also provide a frequentist estimate of statistical power for the effect of the main condition (2D vs 3D sketch maps). The study is classified as a CCC design (participants × targets × condition) within the framework of Judd et al. (2017). Power analysis computed with the associated web application under its default settings was 0.92 for detecting a medium effect (d = 0.5) with 27 participants and 63 targets (where each target is a single spatial relation) and 0.74 for 21 targets (i.e., for a difference between two conditions within a single X/Y/Z dimension).
+
+\section{Additional summary statistics: Experiment 1}\label{additional-summary-statistics-experiment-1}
+
+We also classified (but do not include in main analyses):
+
+\begin{itemize}
+\item
+  whether the drawn route had a correct sequence of turns (true for 63\% in 2D and for 78\% in 3D);
+\item
+  whether the route was drawn as continuous line or its continuity could be inferred (true for 74\% in 2D and for 100\% in 3D);
+\item
+  whether the sketch map was split into multiple parts (true for 48\% in 2D and for 0\% in 3D);
+\item
+  whether the sketch map depicted that there were 3 floors (true for 67\% in 2D and for 59\% in 3D); and
+\item
+  whether at least two of them would be depicted as having rectangular shape with the middle floor being rotated by 90 degrees (true for 19\% in 2D and for 26\% in 3D).
+\end{itemize}
+
+\section{Additional summary statisticts: Experiment 2}\label{additional-summary-statisticts-experiment-2}
+
+We also classified (but do not include in main analyses):
+
+\begin{itemize}
+\item
+  whether the drawn route had a correct sequence of turns (true for 73\% in 2D and for 76\% in 3D);
+\item
+  whether the route was drawn as continuous line or its continuity could be inferred (true for 100\% in 2D and for 100\% in 3D); and
+\item
+  whether the sketch map was split into multiple parts (true for 3\% in 2D and for 0\% in 3D).
+\end{itemize}
+
+\section{Details of statistical models}\label{details-of-statistical-models}
+
+\newpage
+
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H1}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 66.3 & 18.1, 245 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 0.89 & 0.34, 2.38 \\ 
+    Z & 0.49 & 0.18, 1.27 \\ 
+participant.ID &  &  \\ 
+    cond3D:relation.dimY & 2.81 & 0.64, 13.4 \\ 
+    cond3D:relation.dimZ & 3.02 & 0.71, 14.3 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-85-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-85}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-86-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-86}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H2}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 0.98 & 0.42, 2.11 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 1.14 & 0.31, 4.09 \\ 
+    Z & 2.48 & 0.63, 9.50 \\ 
+participant.ID &  &  \\ 
+    cond3D:relation.dimY & 1.23 & 0.57, 2.64 \\ 
+    cond3D:relation.dimZ & 0.72 & 0.26, 1.97 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-88-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-88}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-89-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.}\label{fig:unnamed-chunk-89}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H4 - Visibility}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 51.0 & 13.0, 192 \\ 
+order &  &  \\ 
+    order3D\_first & 0.82 & 0.32, 2.02 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 0.99 & 0.35, 2.73 \\ 
+    Z & 0.53 & 0.20, 1.41 \\ 
+participant.ID &  &  \\ 
+    cond3D:order3D\_first & 3.11 & 0.70, 15.5 \\ 
+relation.code &  &  \\ 
+    cond3D:relation.dimY & 2.68 & 0.58, 13.3 \\ 
+    cond3D:relation.dimZ & 2.81 & 0.63, 13.8 \\ 
+cond * order &  &  \\ 
+    order3D\_first * Y & 0.76 & 0.40, 1.46 \\ 
+    order3D\_first * Z & 0.81 & 0.45, 1.46 \\ 
+cond * relation.dim &  &  \\ 
+    3D * order3D\_first * Y & 1.32 & 0.22, 8.58 \\ 
+    3D * order3D\_first * Z & 1.35 & 0.23, 8.46 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-91-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-91}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-92-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-92}
+\end{figure}
+
+\newpage
+
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H4 - Correctness}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 0.87 & 0.36, 1.99 \\ 
+order &  &  \\ 
+    order3D\_first & 0.75 & 0.36, 1.59 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 1.30 & 0.34, 4.76 \\ 
+    Z & 2.19 & 0.55, 8.58 \\ 
+participant.ID &  &  \\ 
+    cond3D:order3D\_first & 1.49 & 0.60, 3.68 \\ 
+relation.code &  &  \\ 
+    cond3D:relation.dimY & 0.85 & 0.37, 2.02 \\ 
+    cond3D:relation.dimZ & 0.64 & 0.22, 1.77 \\ 
+cond * order &  &  \\ 
+    order3D\_first * Y & 0.75 & 0.33, 1.78 \\ 
+    order3D\_first * Z & 1.36 & 0.43, 4.44 \\ 
+cond * relation.dim &  &  \\ 
+    3D * order3D\_first * Y & 1.45 & 0.51, 4.04 \\ 
+    3D * order3D\_first * Z & 5.32 & 1.29, 23.3 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-94-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-94}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-95-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.}\label{fig:unnamed-chunk-95}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H5 - Visibility}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+RAW.TLX.s & 1.37 & 0.90, 2.10 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 95.6 & 26.4, 333 \\ 
+participant.ID &  &  \\ 
+    RAW.TLX.s:cond3D & 0.66 & 0.25, 1.79 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-97-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-97}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-98-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-98}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H5 - Correctness}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+RAW.TLX.s & 0.98 & 0.67, 1.39 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 1.03 & 0.49, 2.03 \\ 
+participant.ID &  &  \\ 
+    RAW.TLX.s:cond3D & 1.08 & 0.57, 2.10 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-100-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-100}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-101-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.}\label{fig:unnamed-chunk-101}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H6 - Visibility}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+IPT.score.s & 0.99 & 0.59, 1.68 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 71.2 & 19.7, 266 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 0.89 & 0.33, 2.48 \\ 
+    Z & 0.51 & 0.19, 1.39 \\ 
+participant.ID &  &  \\ 
+    IPT.score.s:cond3D & 1.02 & 0.36, 2.84 \\ 
+relation.code &  &  \\ 
+    IPT.score.s:relation.dimY & 0.93 & 0.66, 1.31 \\ 
+    IPT.score.s:relation.dimZ & 0.62 & 0.45, 0.86 \\ 
+IPT.score.s * cond &  &  \\ 
+    3D * Y & 2.95 & 0.64, 14.1 \\ 
+    3D * Z & 3.23 & 0.73, 15.3 \\ 
+IPT.score.s * relation.dim &  &  \\ 
+    IPT.score.s * 3D * Y & 0.99 & 0.22, 4.21 \\ 
+    IPT.score.s * 3D * Z & 1.21 & 0.28, 5.07 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H6 - Correctness}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+IPT.score.s & 0.99 & 0.59, 1.68 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 71.2 & 19.7, 266 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 0.89 & 0.33, 2.48 \\ 
+    Z & 0.51 & 0.19, 1.39 \\ 
+participant.ID &  &  \\ 
+    IPT.score.s:cond3D & 1.02 & 0.36, 2.84 \\ 
+relation.code &  &  \\ 
+    IPT.score.s:relation.dimY & 0.93 & 0.66, 1.31 \\ 
+    IPT.score.s:relation.dimZ & 0.62 & 0.45, 0.86 \\ 
+IPT.score.s * cond &  &  \\ 
+    3D * Y & 2.95 & 0.64, 14.1 \\ 
+    3D * Z & 3.23 & 0.73, 15.3 \\ 
+IPT.score.s * relation.dim &  &  \\ 
+    IPT.score.s * 3D * Y & 0.99 & 0.22, 4.21 \\ 
+    IPT.score.s * 3D * Z & 1.21 & 0.28, 5.07 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-104-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-104}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-105-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-105}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H6 - IPT score on NASA TLX}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+IPT.score.s & -0.14 & -0.55, 0.27 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & -0.14 & -0.68, 0.39 \\ 
+participant.ID &  &  \\ 
+    IPT.score.s:cond3D & -0.06 & -0.60, 0.49 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-107-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-107}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-108-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.}\label{fig:unnamed-chunk-108}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 1 - H6 - IPT score on number of relations left out}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+IPT.score.s & 1.09 & 0.81, 1.47 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H1}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 3.17 & 1.32, 7.98 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 0.58 & 0.27, 1.32 \\ 
+    Z & 0.03 & 0.01, 0.06 \\ 
+participant.ID &  &  \\ 
+    cond3D:relation.dimY & 0.71 & 0.30, 1.59 \\ 
+    cond3D:relation.dimZ & 15.6 & 7.34, 32.6 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-111-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-111}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-112-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-112}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H2}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 0.89 & 0.61, 1.31 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 1.71 & 0.58, 4.92 \\ 
+    Z & 0.61 & 0.22, 1.69 \\ 
+participant.ID &  &  \\ 
+    cond3D:relation.dimY & 1.18 & 0.67, 2.05 \\ 
+    cond3D:relation.dimZ & 0.73 & 0.43, 1.22 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-114-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-114}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-115-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.}\label{fig:unnamed-chunk-115}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H4 - Visibility}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 2.58 & 0.95, 7.10 \\ 
+order &  &  \\ 
+    order3D\_first & 2.54 & 1.15, 5.69 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 0.59 & 0.26, 1.36 \\ 
+    Z & 0.05 & 0.02, 0.10 \\ 
+participant.ID &  &  \\ 
+    cond3D:order3D\_first & 0.97 & 0.29, 3.27 \\ 
+relation.code &  &  \\ 
+    cond3D:relation.dimY & 0.53 & 0.22, 1.20 \\ 
+    cond3D:relation.dimZ & 10.1 & 4.49, 21.7 \\ 
+cond * order &  &  \\ 
+    order3D\_first * Y & 0.71 & 0.34, 1.49 \\ 
+    order3D\_first * Z & 0.26 & 0.14, 0.50 \\ 
+cond * relation.dim &  &  \\ 
+    3D * order3D\_first * Y & 3.95 & 1.30, 12.1 \\ 
+    3D * order3D\_first * Z & 3.65 & 1.32, 9.97 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-117-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-117}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-118-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-118}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H4 - Correctness}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 0.99 & 0.62, 1.59 \\ 
+order &  &  \\ 
+    order3D\_first & 1.16 & 0.58, 2.30 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 1.67 & 0.57, 4.90 \\ 
+    Z & 0.61 & 0.22, 1.67 \\ 
+participant.ID &  &  \\ 
+    cond3D:order3D\_first & 0.84 & 0.49, 1.43 \\ 
+relation.code &  &  \\ 
+    cond3D:relation.dimY & 1.01 & 0.52, 1.96 \\ 
+    cond3D:relation.dimZ & 0.60 & 0.32, 1.12 \\ 
+cond * order &  &  \\ 
+    order3D\_first * Y & 1.22 & 0.66, 2.25 \\ 
+    order3D\_first * Z & 1.70 & 0.92, 3.18 \\ 
+cond * relation.dim &  &  \\ 
+    3D * order3D\_first * Y & 1.19 & 0.54, 2.67 \\ 
+    3D * order3D\_first * Z & 1.13 & 0.53, 2.40 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-120-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-120}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-121-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.}\label{fig:unnamed-chunk-121}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H5 - Visibility}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+RAW.TLX.s & 1.22 & 0.74, 2.00 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 5.80 & 2.24, 14.9 \\ 
+participant.ID &  &  \\ 
+    RAW.TLX.s:cond3D & 0.53 & 0.26, 1.11 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-123-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-123}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-124-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-124}
+\end{figure}
+
+\newpage
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H5 - Correctness}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+RAW.TLX.s & 0.95 & 0.70, 1.27 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 0.89 & 0.60, 1.28 \\ 
+participant.ID &  &  \\ 
+    RAW.TLX.s:cond3D & 0.97 & 0.70, 1.34 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-126-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-126}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-127-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.}\label{fig:unnamed-chunk-127}
+\end{figure}
+
+\newpage
+
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H6 - Visibility}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+urban.test.score.s & 1.09 & 0.68, 1.73 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 3.28 & 1.35, 8.24 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 0.58 & 0.27, 1.33 \\ 
+    Z & 0.03 & 0.01, 0.06 \\ 
+participant.ID &  &  \\ 
+    urban.test.score.s:cond3D & 0.70 & 0.30, 1.59 \\ 
+relation.code &  &  \\ 
+    urban.test.score.s:relation.dimY & 0.88 & 0.59, 1.32 \\ 
+    urban.test.score.s:relation.dimZ & 1.10 & 0.78, 1.56 \\ 
+urban.test.score.s * cond &  &  \\ 
+    3D * Y & 0.76 & 0.32, 1.74 \\ 
+    3D * Z & 15.0 & 6.83, 31.5 \\ 
+urban.test.score.s * relation.dim &  &  \\ 
+    urban.test.score.s * 3D * Y & 0.89 & 0.43, 1.86 \\ 
+    urban.test.score.s * 3D * Z & 1.17 & 0.61, 2.30 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-129-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-129}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-130-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-130}
+\end{figure}
+
+\newpage
+
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H6 - Correctness}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+urban.test.score.s & 1.71 & 1.22, 2.42 \\ 
+cond &  &  \\ 
+    2D & — & — \\ 
+    3D & 0.91 & 0.60, 1.36 \\ 
+relation.dim &  &  \\ 
+    X & — & — \\ 
+    Y & 1.74 & 0.60, 5.05 \\ 
+    Z & 0.76 & 0.28, 2.20 \\ 
+participant.ID &  &  \\ 
+    urban.test.score.s:cond3D & 0.91 & 0.67, 1.23 \\ 
+relation.code &  &  \\ 
+    urban.test.score.s:relation.dimY & 0.78 & 0.55, 1.09 \\ 
+    urban.test.score.s:relation.dimZ & 1.18 & 0.83, 1.69 \\ 
+urban.test.score.s * cond &  &  \\ 
+    3D * Y & 1.12 & 0.64, 1.96 \\ 
+    3D * Z & 0.64 & 0.38, 1.07 \\ 
+urban.test.score.s * relation.dim &  &  \\ 
+    urban.test.score.s * 3D * Y & 1.16 & 0.73, 1.83 \\ 
+    urban.test.score.s * 3D * Z & 0.73 & 0.47, 1.12 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-132-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-132}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-133-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing that the data-driven posterior distribution (darker curve) agrees with the prior. More data is unlikely to affect the result.}\label{fig:unnamed-chunk-133}
+\end{figure}
+
+\newpage
+
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H6 - Urban Layout Test on NASA TLX}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+urban.test.score.s & 0.11 & -0.20, 0.40 \\ 
+cond &  &  \\ 
+    cond3D & 1.1 & 0.73, 1.4 \\ 
+participant.ID &  &  \\ 
+    urban.test.score.s:cond3D & -0.13 & -0.48, 0.22 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-135-1} \caption{Simulation-based posterior predictive check with 100 draws showing an excellent fit of the modelled distribution (blue lines) to the data (black line).}\label{fig:unnamed-chunk-135}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\linewidth]{manuscript_files/figure-latex/unnamed-chunk-136-1} \caption{A comparison of prior and posterior distribution in a selected parameter, showing a clear change in the data-driven posterior distribution (darker curve).}\label{fig:unnamed-chunk-136}
+\end{figure}
+
+\newpage
+
+\begin{table}[!t]
+\fontsize{12.0pt}{14.4pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Experiment 2 - H6 - Urban Layout Test on number of relations left out}} \\ 
+\cmidrule(lr){1-3}
+\textbf{Variable} & \textbf{Odds Ratio} & \textbf{95\% CI}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+urban.test.score.s & -0.08 & -0.30, 0.14 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}CI = Credible Interval\\
+\end{minipage}
+\end{table}
+
+
+\end{document}

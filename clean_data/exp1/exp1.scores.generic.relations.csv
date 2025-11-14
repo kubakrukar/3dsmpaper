@@ -1,0 +1,481 @@
+relation.code,relation.type,relation.short,relation.long.desc,visibility,correctness,comments.scores,participant.ID,cond
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,1,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,1,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,1,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,1,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,1,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,1,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,2,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,2,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,2,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,2,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,2,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,2,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,3,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,3,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,3,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,3,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,3,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,3,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,4,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,0,NA,4,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,side,NA,4,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,4,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,4,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,4,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,5,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,5,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,perspective,NA,5,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,5,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,5,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,5,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,6,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,6,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,perspective,NA,6,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,6,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,6,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,6,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,7,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,0,NA,7,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,7,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,7,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,7,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,7,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,8,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,8,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,perspective,NA,8,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,8,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,8,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,8,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,9,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,0,NA,9,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,9,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,9,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,9,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,9,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,10,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,0,NA,10,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,10,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,10,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,10,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,10,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,11,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,11,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,11,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,11,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,11,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,11,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,12,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,12,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,12,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,12,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,12,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,12,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,13,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,13,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,13,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,13,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,13,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,13,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,14,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,14,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,14,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,14,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,14,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,14,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,15,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,15,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,15,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,15,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,15,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,15,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,16,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,16,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,16,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,16,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,16,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,16,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,17,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,17,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,17,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,17,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,17,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,17,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,18,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,0,NA,18,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,18,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,18,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,18,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,18,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,19,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,19,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,19,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,19,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,19,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,19,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,20,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,20,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,single vantage point,NA,20,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,20,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,20,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,20,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,21,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,21,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,cross-section+perspective,NA,21,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,21,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,21,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,21,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,22,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,22,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,22,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,22,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,22,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,22,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,23,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,23,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,23,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,23,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,23,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,23,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,24,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,0,NA,24,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,24,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,24,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,24,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,24,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,25,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,25,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top down,NA,25,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,25,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,25,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,25,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,26,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,0,NA,26,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,cross-section+perspective,NA,26,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,26,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,26,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,26,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,27,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,27,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,cross section,NA,27,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,27,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,27,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,27,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,28,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,0,NA,28,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,28,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,28,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,28,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,28,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,29,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,29,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,top-down,NA,29,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,1,NA,29,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,29,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,29,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,30,2D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,30,2D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,cross-section+perspective,NA,30,2D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,30,2D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,30,2D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,30,2D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,1,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,1,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,1,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,1,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,1,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,1,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,2,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,2,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,2,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,2,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,2,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,2,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,3,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,3,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,3,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,3,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,3,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,3,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,4,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,4,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,4,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,4,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,4,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,4,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,5,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,5,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,5,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,5,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,5,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,5,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,6,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,6,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,6,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,6,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,6,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,6,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,7,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,7,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,7,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,7,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,7,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,7,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,8,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,8,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,8,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,8,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,8,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,8,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,9,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,9,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,9,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,9,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,9,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,9,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,10,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,10,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,10,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,10,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,10,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,10,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,11,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,11,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,11,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,11,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,11,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,11,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,12,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,12,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,12,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,12,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,12,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,12,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,13,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,13,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,13,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,13,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,13,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,13,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,14,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,14,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,14,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,14,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,14,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,14,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,15,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,15,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,15,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,15,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,15,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,15,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,16,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,16,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,16,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,16,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,16,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,16,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,17,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,17,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,17,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,17,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,17,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,17,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,18,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,18,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,18,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,18,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,18,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,18,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,19,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,19,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,19,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,19,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,19,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,19,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,20,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,20,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,20,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,20,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,20,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,20,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,21,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,21,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,21,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,21,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,21,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,21,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,22,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,22,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,22,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,22,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,22,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,22,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,23,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,23,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,NA,NA,23,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,23,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,23,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,23,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,24,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,24,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,24,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,24,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,24,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,24,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,25,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,25,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,25,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,25,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,25,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,25,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,26,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,26,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,26,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,26,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,26,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,26,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,27,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,27,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,27,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,27,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,27,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,27,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,28,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,28,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,28,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,28,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,28,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,1,NA,28,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,1,NA,29,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,29,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,29,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,29,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,0,NA,29,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,29,3D
+RouteCorrect,generic.relations,Route is correct?,"The route is correct (=1) if number of turns is equal to 6 turns and they are in the following order (left turn (change the floor up), U-Turn (change the floor up), right turn, right turn (change the floor down), left turn, left turn) , Otherwise the route is considered wrong (=0)",NA,0,NA,30,3D
+Routecontinous,generic.relations,Route continuous?,"Correct, if the route is clearly continous or its continuity can be easily interpreted even when the lines are separated (e.g., in case of floor changes).",NA,1,NA,30,3D
+Perspective,generic.relations,Perspective of the Drawing?,"What perspective does the drawing(s) have
+
+Note: If the buildings' walls/shape are not drawn, then it's considered NA",NA,3D,NA,30,3D
+Multiple Parts?,generic.relations,Is the drawing split into multiple parts?,NA,NA,0,NA,30,3D
+VerticalAlignment,generic.relations,Vertical alignment of floors?,Correct if the sketch shows 3 floors and can be identified easily through the perspective or lettering.,NA,1,NA,30,3D
+HorizontalAlignment,generic.relations,Horizontal aligment of floors?,"Correct if If the floor is shown as a rectangular shape in the sktech and there are at least two rectangular floors depicted. One of them is the middle floor, and it's rotated 90 degrees.",NA,0,NA,30,3D

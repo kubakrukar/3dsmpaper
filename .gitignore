@@ -1,0 +1,28 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+manuscript_files
+manuscript_cache
+report_files
+report.html
+renv/library/
+models
+
+# papaja/LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
+*.idraw
+
+# macOS
+.DS_Store

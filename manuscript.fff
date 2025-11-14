@@ -1,0 +1,78 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\includegraphics[width=3.68in]{figs/exp1-2d-examples} \caption{Examples of 2D sketchmaps demonstrate challenges of drawing a 3D structure on 2D paper. A: Part of the drawing is a cross-section, while the left part is drawn in perspective. Judging some relations becomes impossible (e.g., are trees further to the right or directly behind the cat?). B: A top-down view ignoring vertical information. Two landmarks in the upper left ("Hai" - a shark, and "Katze" - a cat) are drawn as a single point without indicating which one is higher. C: Two upper floors represented as one, without indicating which is higher. D: Three floors represented separately without indicating how they align vertically, thus relations between landmarks at different floors cannot be interpreted. The location of outside landmarks (e.g., "B - Baum for a tree) is ambiguous.}\label{fig:exp1-2d-examples}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\includegraphics[width=4.81in]{figs/exp1-3d-examples} \caption{Four examples of 3D sketchmaps. Despite various degree of detail and correctness, spatial relations between objects can be interpreted on all three dimensions.}\label{fig:exp1-3d-examples}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot1.1-1.pdf}
+\caption{(\#fig:plot1.1)Predicted visibility as a function of condition and spatial dimension.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot1.2-1.pdf}
+\caption{(\#fig:plot1.2)Predicted correctness as a function of condition and spatial dimension.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot1.4-1.pdf}
+\caption{(\#fig:plot1.4)Predicted visibility and correctness depending on drawing order.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot1.5-1.pdf}
+\caption{(\#fig:plot1.5)Predicted visibility depending on the sketch map condition (left) and cognitive load (right).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot1.6-1.pdf}
+\caption{(\#fig:plot1.6)Predicted visibility (left) and correctness (right) depending on the IPT score indicating participant's spatial ability, across the 3 spatial dimensions.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\includegraphics[width=3.42in]{figs/exp2-examples} \caption{A good-quality 2D (top) and a corresponding 3D (bottom) sketchmap of a single participant. The 2D sketchmap is a mixture of a top-down view and inconsistent perspective, and relies heavily on annotations. Despite that, interpreting some relations between distant landmarks remains impossible (e.g., is the sheep in upper-right corner higher than the shark mid-left?). The 3D sketchmaps makes even distant relations possible to interpret.}\label{fig:exp2-examples}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot2.1-1.pdf}
+\caption{(\#fig:plot2.1)Predicted visibility as a function of condition and spatial dimension.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot2.2-1.pdf}
+\caption{(\#fig:plot2.2)Predicted correctness as a function of condition and spatial dimension.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot2.5-1.pdf}
+\caption{(\#fig:plot2.5)Predicted visibility depending on the sketch map condition (left) and cognitive load (right).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{manuscript_files/figure-latex/plot2.6-1.pdf}
+\caption{(\#fig:plot2.6)Predicted visibility (left) and correctness (right) depending on the IPT score indicating participant's spatial ability, across the 3 spatial dimensions.}
+\end{figure*}
