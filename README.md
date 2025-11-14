@@ -19,7 +19,9 @@ Code and text are integrated: In order to reproduce any figure or result from th
 ## Quick Start
 
 1. **Clone repository and open project**
-   Double-click `manuscript.Rproj` to open in RStudio. In the 'Files' tab, `open manuscript.Rmd`
+   
+   - Double-click `manuscript.Rproj` to open in RStudio. 
+   - In the Files tab, open `manuscript.Rmd`
 
 2. **Restore R packages**
 ```r
