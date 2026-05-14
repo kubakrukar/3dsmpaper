@@ -1,6 +1,6 @@
 # 3D sketch maps paper
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20187342.svg)](https://doi.org/10.5281/zenodo.20187342)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20187706.svg)](https://doi.org/10.5281/zenodo.20187706)
 
 Code, data, and sketch-map gallery for:
 

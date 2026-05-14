@@ -1437,7 +1437,7 @@ This work was supported by Schweizerischer Nationalfonds zur Förderung der Wiss
 
 An interactive landing page with a browsable side-by-side viewer for every 2D and 3D sketch map, alongside video demonstrations of the experimental procedure, is available at: https://kubakrukar.github.io/3dsmpaper/
 
-The versioned data and code repository, containing all raw data, cleaned data, the R Markdown source of this manuscript, and the Bayesian analysis scripts, is archived on Zenodo with the DOI: https://doi.org/10.5281/zenodo.20187342
+The versioned data and code repository, containing all raw data, cleaned data, the R Markdown source of this manuscript, and the Bayesian analysis scripts, is archived on Zenodo with the DOI: https://doi.org/10.5281/zenodo.20187706
 
 # References
  
