@@ -1,15 +1,35 @@
+# RStudio / R
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
-manuscript_files
-manuscript_cache
-report_files
-report.html
-renv/library/
-models
+.Rapp.history
 
-# papaja/LaTeX
+# Knit / build artefacts
+manuscript_files/
+manuscript_cache/
+report_files/
+report.html
+manuscript.tex
+manuscript.fff
+manuscript.ttt
+r-references.bib
+
+# Cached model fits
+models/
+
+# renv internals (lockfile is committed; library is not)
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/staging/
+
+# Claude Code working state
+.claude/
+
+# papaja / LaTeX
 *.aux
 *.bbl
 *.blg
@@ -21,8 +41,27 @@ models
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-*.pdf
 *.idraw
 
-# macOS
+# Render artefacts (the rendered PDF is fine to commit;
+# uncomment the next line if you prefer to gitignore it instead)
+# manuscript.pdf
+
+# macOS / Windows / Linux junk
 .DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Editor temp
+*~
+.#*
+\#*\#
+.vscode/
+.idea/
+
+# Private / not for distribution
+# (decision letters, drafts of cover letters, reviewer correspondence, etc.)
+*decision*.pdf
+*reviewer*.pdf
+*cover_letter*.pdf
