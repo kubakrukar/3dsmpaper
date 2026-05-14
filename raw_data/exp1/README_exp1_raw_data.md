@@ -24,7 +24,7 @@ Short description of the spatial relation - useful for evaluating the drawings.
 Longer description of how to evaluate the spatial relation.
 
 ## visibility
-Is the given spatial relation visible in the sketch map?
+Is the given spatial relation visible in the sketch map? Note that this variable was renamed to "occurrence" in the manuscript and in the cleaned data, following a suggestion of a peer reviewer.
 
 ## correctness
 If visible, is it correct or not? (if not visible than NA)

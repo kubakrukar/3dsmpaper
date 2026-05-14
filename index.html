@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3D Environments Require 3D Visualisations &mdash; Sketch maps project</title>
+<meta name="description" content="Data, code, and sketch-map gallery for Krukar et al., 'The Limitations of 2D Sketch Maps in Capturing Spatial Knowledge'.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<style>
+  :root {
+    --bg: #fafaf8;
+    --fg: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #d8d4cc;
+    --accent: #b1543b;
+    --accent-2: #2b4f6f;
+    --panel: #ffffff;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; line-height: 1.5; }
+  a { color: var(--accent-2); }
+  a:hover { color: var(--accent); }
+
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; }
+  h1 { font-size: 1.85rem; margin: 0 0 .4rem; letter-spacing: -.01em; line-height: 1.3; font-weight: 600; }
+  h2 { font-size: 1.05rem; margin: 0 0 1rem; text-transform: uppercase; letter-spacing: .15em;
+       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+       color: var(--muted); font-weight: 600; }
+  h2 .num { color: var(--accent); margin-right: .4rem; font-weight: 700; }
+  h3 { font-size: 1.05rem; margin: 0 0 .3rem; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; }
+
+  header.hero {
+    padding: 3.5rem 1.5rem 2rem;
+    background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+  .lede { color: var(--fg); font-size: 1.25rem; max-width: 64ch; margin: .2rem 0 .8rem; font-family: Georgia, serif; }
+  .authors { color: var(--muted); margin-top: .8rem; font-size: .9rem; }
+  .repo-note { margin-top: 1rem; padding: .7rem 1rem; background: var(--panel); border: 1px solid var(--line);
+    border-left: 3px solid var(--accent); border-radius: 4px; font-size: .9rem; max-width: 64ch; }
+  .repo-note a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .repo-note a:hover { text-decoration: underline; }
+  .badges { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+  .badge { display: inline-block; padding: .35rem .8rem; border: 1px solid var(--line);
+    border-radius: 999px; background: var(--panel); color: var(--fg); font-size: .85rem; text-decoration: none; }
+  .badge:hover { border-color: var(--accent); color: var(--accent); }
+
+  main { padding: 2rem 0 4rem; }
+  section { margin-bottom: 3rem; }
+
+  /* Generic card */
+  .card-base { background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    box-shadow: var(--shadow); }
+
+  /* One-liner */
+  .one-liner { font-size: 1.15rem; font-family: Georgia, serif; color: var(--fg); margin: 0 0 1.2rem; max-width: 70ch; }
+  .one-liner em { font-style: normal; background: linear-gradient(180deg, transparent 60%, #fde8d4 60%); padding: 0 .1rem; }
+
+  /* Stat cards (results) */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .hyp-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1rem; }
+  @media (max-width: 780px) { .hyp-grid { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    padding: 1.2rem 1.3rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: .3rem; }
+  .stat .v { font-size: 1.7rem; font-weight: 700; font-family: Georgia, serif; color: var(--fg); line-height: 1.1; }
+  .stat .v .vs { color: var(--muted); font-size: 1rem; font-weight: 400; }
+  .stat .v .hi { color: var(--accent-2); }
+  .stat .l { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+  .stat .sub { font-size: .82rem; color: var(--muted); margin-top: auto; padding-top: .4rem; }
+  .stat.headline { background: linear-gradient(135deg, #2b4f6f 0%, #1a3850 100%); color: white; border-color: transparent; }
+  .stat.headline .v { color: white; font-size: 1rem; font-family: Georgia, serif; font-weight: 400; line-height: 1.4; }
+  .stat.headline .v em { font-style: italic; color: #ffd9a8; }
+  .stat.headline .l { color: #f9c08a; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+
+  /* Two-column experiment cards */
+  .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 720px) { .exp-grid { grid-template-columns: 1fr; } }
+  .exp-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
+  .exp-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; background: #efece6; }
+  .exp-card .body { padding: 1rem 1.2rem; }
+  .exp-card h3 { font-family: Georgia, serif; font-size: 1.1rem; }
+  .exp-card .specs { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem .8rem; font-size: .88rem; margin-top: .6rem; }
+  .exp-card .specs dt { color: var(--muted); }
+  .exp-card .specs dd { margin: 0; font-weight: 600; }
+  .exp-card .video-link { margin: .8rem 0 0; font-size: .88rem; }
+  .exp-card .video-link a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .exp-card .video-link a:hover { text-decoration: underline; }
+
+  /* Problem visual */
+  .problem-vis { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 1.2rem; box-shadow: var(--shadow); }
+  .problem-vis img { width: 100%; height: auto; display: block; margin: 0 auto; }
+  .problem-vis .cap { font-size: .82rem; color: var(--muted); text-align: center; margin-top: .8rem; }
+
+  /* Sketchmap gallery */
+  .controls { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: 1rem 0; }
+  .controls button {
+    background: var(--panel); border: 1px solid var(--line); padding: .45rem .9rem;
+    border-radius: 999px; cursor: pointer; font: inherit; font-size: .9rem;
+  }
+  .controls button[aria-pressed="true"] { background: var(--accent-2); color: white; border-color: var(--accent-2); }
+  .controls .info { color: var(--muted); font-size: .88rem; margin-left: auto; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .8rem; margin-top: .8rem; }
+  .smcard { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+    cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
+  .smcard:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--accent); }
+  .smcard .thumb { aspect-ratio: 1 / 1; background: #efece6 center/cover no-repeat; }
+  .smcard .meta { padding: .45rem .65rem; font-size: .82rem; display: flex; justify-content: space-between; align-items: center; }
+  .smcard .id { font-weight: 600; }
+  .smcard .tags { color: var(--muted); font-size: .72rem; }
+  .tag { display: inline-block; padding: 0 .3rem; border-radius: 3px; background: #efece6; margin-left: .2rem; }
+
+  /* Modal viewer */
+  .modal { position: fixed; inset: 0; background: rgba(20,20,20,0.85); display: none; z-index: 100; align-items: stretch; justify-content: center; }
+  .modal.open { display: flex; }
+  .modal-inner { background: var(--bg); width: 100%; max-width: 1400px; margin: 1rem; border-radius: 8px; display: grid; grid-template-rows: auto 1fr; overflow: hidden; }
+  .modal-header { display: flex; justify-content: space-between; align-items: center; padding: .8rem 1.2rem; border-bottom: 1px solid var(--line); background: var(--panel); }
+  .modal-header h3 { margin: 0; font-size: 1.05rem; }
+  .modal-close { background: transparent; border: none; font-size: 1.4rem; cursor: pointer; color: var(--muted); }
+  .modal-close:hover { color: var(--fg); }
+  .viewer-pane { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 0; }
+  @media (max-width: 800px) { .viewer-pane { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; } }
+  .pane { display: flex; flex-direction: column; background: var(--bg); min-height: 0; }
+  .pane + .pane { border-left: 1px solid var(--line); }
+  @media (max-width: 800px) { .pane + .pane { border-left: none; border-top: 1px solid var(--line); } }
+  .pane-label { padding: .5rem .8rem; font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid var(--line); background: var(--panel); }
+  .pane-body { flex: 1; position: relative; overflow: auto; display: flex; align-items: center; justify-content: center; padding: .8rem; min-height: 300px; }
+  .pane-body img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in; }
+  .pane-body img.zoomed { cursor: zoom-out; max-width: none; max-height: none; }
+  .twod-thumbs { display: flex; gap: .4rem; padding: .4rem .8rem; overflow-x: auto; background: var(--panel); border-bottom: 1px solid var(--line); }
+  .twod-thumbs img { height: 50px; width: auto; cursor: pointer; border: 2px solid transparent; border-radius: 3px; }
+  .twod-thumbs img[aria-selected="true"] { border-color: var(--accent); }
+  #threeD-canvas { width: 100%; height: 100%; display: block; }
+  .loading { color: var(--muted); font-size: .9rem; }
+  .err { color: var(--accent); font-size: .9rem; }
+  .threeD-controls { padding: .4rem .8rem; background: var(--panel); border-bottom: 1px solid var(--line); font-size: .75rem; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: .85rem; }
+  footer p { margin: 0 0 .3rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <h1>3D Environments Require 3D Visualisations:<br>The Limitations of 2D Sketch Maps in Capturing Spatial Knowledge</h1>
+    <p class="lede">2D sketch maps systematically drop vertical information that people <em>can</em> draw when given a 3D medium.</p>
+    <p class="authors">Krukar, Aly, Baecker, Heming, Zhao &amp; Schwering &middot; <em>International Journal of Geographical Information Science</em></p>
+    <p class="repo-note">All code, raw data, and analysis scripts live in the GitHub repository:
+      <a href="https://github.com/kubakrukar/3dsmpaper">github.com/kubakrukar/3dsmpaper</a>.
+      The archived version with a citable DOI is on
+      <a href="https://doi.org/10.5281/zenodo.20187342">Zenodo</a>.</p>
+    <div class="badges">
+      <a class="badge" href="manuscript.pdf">&#x1F4C4; Manuscript (PDF)</a>
+      <a class="badge" href="https://github.com/kubakrukar/3dsmpaper">&lt;&gt; Code &amp; data</a>
+      <a class="badge" href="https://doi.org/10.5281/zenodo.20187342">DOI: 10.5281/zenodo.20187342</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+
+<section id="problem">
+  <h2><span class="num">1</span>Problem</h2>
+  <p class="one-liner">We assess 3D spatial knowledge with a <em>2D medium</em>.</p>
+  <div class="problem-vis">
+    <img src="figs/lit-3drawings.png" alt="Three examples of 2D sketch maps from prior work showing the difficulty of representing vertical structure on flat paper.">
+    <p class="cap">Three 2D sketch maps from Zhong &amp; Kozhevnikov (2016). Each loses vertical information in a different way: floors drawn as separate plans cannot be aligned (A); annotations stand in for height (B); ad-hoc perspective distorts angles (C).</p>
+  </div>
+</section>
+
+<section id="method">
+  <h2><span class="num">2</span>Method</h2>
+  <p class="one-liner">Two VR experiments. Each participant produced a 2D pen-and-paper <em>and</em> a 3D Gravity Sketch map of the same environment.</p>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <img src="figs/exp1-env.png" alt="Experiment 1 environment: a three-storey building with the middle floor rotated 90 degrees, viewed in cutaway.">
+      <div class="body">
+        <h3>Exp&nbsp;1 &middot; Vertically layered building</h3>
+        <dl class="specs">
+          <dt>n</dt><dd>27</dd>
+          <dt>Levels</dt><dd>3 (middle rotated 90&deg;)</dd>
+          <dt>Landmarks</dt><dd>6 (3 in, 3 out)</dd>
+          <dt>Locomotion</dt><dd>Joystick (free)</dd>
+        </dl>
+        <p class="video-link"><a href="https://youtu.be/FIQM87I4gYA">&#x25B6; Video demonstration of the experimental procedure</a></p>
+      </div>
+    </div>
+    <div class="exp-card">
+      <img src="figs/exp2-env.png" alt="Experiment 2 environment: an urban scene of six buildings with landmarks placed at three different heights.">
+      <div class="body">
+        <h3>Exp&nbsp;2 &middot; Vertically volumetric urban scene</h3>
+        <dl class="specs">
+          <dt>n</dt><dd>37</dd>
+          <dt>Buildings</dt><dd>6</dd>
+          <dt>Landmark heights</dt><dd>3 levels</dd>
+          <dt>Locomotion</dt><dd>Drone fly-through</dd>
+        </dl>
+        <p class="video-link"><a href="https://youtu.be/xxWtRMXMAeY">&#x25B6; Video demonstration of the experimental procedure</a></p>
+      </div>
+    </div>
+  </div>
+  <p class="one-liner" style="margin-top: 1rem; font-size: 1rem;">Each sketch was coded for <em>occurrence</em> and <em>correctness</em> of qualitative spatial relations along X, Y, Z axes separately. Bayesian Bernoulli mixed-effects models with random effects for participant and relation.</p>
+</section>
+
+<section id="results">
+  <h2><span class="num">3</span>Results</h2>
+  <p class="one-liner">2D sketch maps act as a <em>bottleneck</em>: people store vertical spatial knowledge that the 2D medium hides but a 3D medium reveals.</p>
+
+  <div class="hyp-grid">
+    <div class="stat headline">
+      <div class="l">H1 &middot; supported</div>
+      <div class="v">When drawing on paper, people show a bias toward the horizontal plane: they leave out vertical (up&ndash;down) relations far more often than horizontal ones.</div>
+    </div>
+    <div class="stat">
+      <div class="l">Exp 1 &middot; building</div>
+      <div class="v">2.0&times;<span class="vs"> lower odds</span></div>
+      <div class="sub">OR 0.49, 95% CI [0.22, 1.10] &middot; posterior 93%, <em>moderate</em>.</div>
+    </div>
+    <div class="stat">
+      <div class="l">Exp 2 &middot; urban</div>
+      <div class="v">35&times;<span class="vs"> lower odds</span></div>
+      <div class="sub">OR 0.03, 95% CI [0.02, 0.05] &middot; posterior ~100%, <em>strong</em>.</div>
+    </div>
+
+    <div class="stat headline">
+      <div class="l">H2 &middot; not supported</div>
+      <div class="v">When a vertical relation is drawn in both formats, the 3D sketch is no more accurate than the 2D one. 3D doesn't make relations <em>more correct</em> &mdash; just more likely to appear.</div>
+    </div>
+    <div class="stat">
+      <div class="l">Exp 1 &middot; building</div>
+      <div class="v">no difference</div>
+      <div class="sub">log-OR &minus;0.32, 95% CI [&minus;1.17, 0.52] &middot; ~3&times; more likely under null.</div>
+    </div>
+    <div class="stat">
+      <div class="l">Exp 2 &middot; urban</div>
+      <div class="v">no difference</div>
+      <div class="sub">log-OR &minus;0.31, 95% CI [&minus;0.76, 0.12] &middot; ~7&times; more likely under null.</div>
+    </div>
+
+    <div class="stat headline">
+      <div class="l">H3 &middot; supported</div>
+      <div class="v">When a relation is missing from someone's 2D sketch but appears on their 3D sketch, it's mostly correct &mdash; the spatial knowledge was there; the 2D medium was hiding it.</div>
+    </div>
+    <div class="stat">
+      <div class="l">Exp 1 &middot; building</div>
+      <div class="v">91% correct</div>
+      <div class="sub">OR vs chance 10.5, 95% CI [6.5, 17.5] &middot; posterior ~100%.</div>
+    </div>
+    <div class="stat">
+      <div class="l">Exp 2 &middot; urban</div>
+      <div class="v">67% correct</div>
+      <div class="sub">OR vs chance 1.88, 95% CI [1.47, 2.41] &middot; posterior ~100%.</div>
+    </div>
+  </div>
+</section>
+
+<section id="sketchmaps">
+  <h2><span class="num">4</span>Sketch maps</h2>
+  <p class="one-liner">Every participant&rsquo;s 2D and 3D sketch, side by side. Click a card.</p>
+
+  <div class="controls">
+    <button id="btn-exp1" aria-pressed="true">Exp 1 &middot; building</button>
+    <button id="btn-exp2" aria-pressed="false">Exp 2 &middot; urban</button>
+    <span class="info" id="info"></span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Code &amp; data: <a href="https://github.com/kubakrukar/3dsmpaper">github.com/kubakrukar/3dsmpaper</a> &middot; archived on <a href="https://doi.org/10.5281/zenodo.20187342">Zenodo</a> (DOI 10.5281/zenodo.20187342).</p>
+    <p>Licence: code MIT &middot; sketch maps &amp; manuscript text &copy; the authors.</p>
+    <p>Contact: <a href="mailto:krukar@uni-muenster.de">krukar@uni-muenster.de</a></p>
+  </div>
+</footer>
+
+<!-- Modal viewer -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-inner">
+    <div class="modal-header">
+      <h3 id="modal-title">&mdash;</h3>
+      <button class="modal-close" id="modal-close" aria-label="Close viewer">&times;</button>
+    </div>
+    <div class="viewer-pane">
+      <div class="pane">
+        <div class="pane-label">2D sketch <span id="twod-count"></span></div>
+        <div class="twod-thumbs" id="twod-thumbs"></div>
+        <div class="pane-body" id="twod-body"><span class="loading">No 2D sketch.</span></div>
+      </div>
+      <div class="pane">
+        <div class="pane-label">3D sketch (Gravity Sketch)</div>
+        <div class="threeD-controls">Drag = orbit &middot; scroll = zoom &middot; right-drag = pan &middot; <span id="threeD-size"></span></div>
+        <div class="pane-body" id="threeD-body"><span class="loading">Select a sketch.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="application/json" id="sketchmaps-data">
+{"exp1": [{"id": "id01", "twoD": ["id01_1.jpg", "id01_2.jpg"], "threeD_fbx": "id01.fbx", "threeD_glb": null, "threeD_size": 7649184, "threeD_glb_size": 0}, {"id": "id02", "twoD": ["id02_1.jpg", "id02_2.jpg"], "threeD_fbx": "id02.fbx", "threeD_glb": null, "threeD_size": 4538736, "threeD_glb_size": 0}, {"id": "id03", "twoD": ["id03.jpg"], "threeD_fbx": "id03.fbx", "threeD_glb": null, "threeD_size": 3589264, "threeD_glb_size": 0}, {"id": "id04", "twoD": ["id04.jpg"], "threeD_fbx": "id04.fbx", "threeD_glb": null, "threeD_size": 2976640, "threeD_glb_size": 0}, {"id": "id05", "twoD": ["id05.jpg"], "threeD_fbx": "id05.fbx", "threeD_glb": null, "threeD_size": 4276096, "threeD_glb_size": 0}, {"id": "id06", "twoD": ["id06.jpg"], "threeD_fbx": "id06.fbx", "threeD_glb": null, "threeD_size": 1692400, "threeD_glb_size": 0}, {"id": "id07", "twoD": ["id07.jpg"], "threeD_fbx": "id07.fbx", "threeD_glb": null, "threeD_size": 4141376, "threeD_glb_size": 0}, {"id": "id08", "twoD": ["id08.jpg"], "threeD_fbx": "id08.fbx", "threeD_glb": null, "threeD_size": 2997040, "threeD_glb_size": 0}, {"id": "id09", "twoD": ["id09_1.jpg", "id09_2.jpg", "id09_3.jpg"], "threeD_fbx": "id09.fbx", "threeD_glb": null, "threeD_size": 3979872, "threeD_glb_size": 0}, {"id": "id10", "twoD": ["id10.jpg"], "threeD_fbx": "id10.fbx", "threeD_glb": null, "threeD_size": 3438640, "threeD_glb_size": 0}, {"id": "id11", "twoD": ["id11.jpg"], "threeD_fbx": "id11.fbx", "threeD_glb": null, "threeD_size": 1581392, "threeD_glb_size": 0}, {"id": "id12", "twoD": ["id12.jpg"], "threeD_fbx": "id12.fbx", "threeD_glb": null, "threeD_size": 3675712, "threeD_glb_size": 0}, {"id": "id13", "twoD": ["id13.jpg"], "threeD_fbx": "id13.fbx", "threeD_glb": null, "threeD_size": 1069664, "threeD_glb_size": 0}, {"id": "id14", "twoD": ["id14.jpg"], "threeD_fbx": "id14.fbx", "threeD_glb": null, "threeD_size": 1488096, "threeD_glb_size": 0}, {"id": "id15", "twoD": ["id15.jpg"], "threeD_fbx": "id15.fbx", "threeD_glb": null, "threeD_size": 8583408, "threeD_glb_size": 0}, {"id": "id16", "twoD": ["id16.jpg"], "threeD_fbx": "id16.fbx", "threeD_glb": null, "threeD_size": 6309440, "threeD_glb_size": 0}, {"id": "id17", "twoD": ["id17.jpg"], "threeD_fbx": "id17.fbx", "threeD_glb": null, "threeD_size": 2478112, "threeD_glb_size": 0}, {"id": "id18", "twoD": ["id18.jpg"], "threeD_fbx": "id18.fbx", "threeD_glb": null, "threeD_size": 2010800, "threeD_glb_size": 0}, {"id": "id19", "twoD": ["id19.jpg"], "threeD_fbx": "id19.fbx", "threeD_glb": null, "threeD_size": 1502944, "threeD_glb_size": 0}, {"id": "id20", "twoD": ["id20.jpg"], "threeD_fbx": "id20.fbx", "threeD_glb": null, "threeD_size": 4181824, "threeD_glb_size": 0}, {"id": "id21", "twoD": ["id21.jpg"], "threeD_fbx": "id21.fbx", "threeD_glb": null, "threeD_size": 6528160, "threeD_glb_size": 0}, {"id": "id22", "twoD": ["id22_1.jpg", "id22_2.jpg", "id22_3.jpg"], "threeD_fbx": "id22.fbx", "threeD_glb": null, "threeD_size": 2097936, "threeD_glb_size": 0}, {"id": "id23", "twoD": ["id23.jpg"], "threeD_fbx": "id23.fbx", "threeD_glb": null, "threeD_size": 3979216, "threeD_glb_size": 0}, {"id": "id24", "twoD": ["id24.jpg"], "threeD_fbx": "id24.fbx", "threeD_glb": null, "threeD_size": 3751440, "threeD_glb_size": 0}, {"id": "id25", "twoD": ["id25_1.jpg", "id25_2.jpg", "id25_3.jpg"], "threeD_fbx": "id25.fbx", "threeD_glb": null, "threeD_size": 2225296, "threeD_glb_size": 0}, {"id": "id26", "twoD": ["id26.jpg"], "threeD_fbx": "id26.fbx", "threeD_glb": null, "threeD_size": 2664032, "threeD_glb_size": 0}, {"id": "id27", "twoD": ["id27.jpg"], "threeD_fbx": "id27.fbx", "threeD_glb": null, "threeD_size": 2394480, "threeD_glb_size": 0}, {"id": "id28", "twoD": ["id28_1.jpg", "id28_2.jpg", "id28_3.jpg"], "threeD_fbx": "id28.fbx", "threeD_glb": null, "threeD_size": 11336416, "threeD_glb_size": 0}, {"id": "id29", "twoD": ["id29_1.jpg", "id29_2.jpg"], "threeD_fbx": "id29.fbx", "threeD_glb": null, "threeD_size": 6666528, "threeD_glb_size": 0}, {"id": "id30", "twoD": ["id30.jpg"], "threeD_fbx": "id30.fbx", "threeD_glb": null, "threeD_size": 3052304, "threeD_glb_size": 0}], "exp2": [{"id": "101", "twoD": ["101.jpg"], "threeD_fbx": "101.fbx", "threeD_glb": null, "threeD_size": 7207536, "threeD_glb_size": 0}, {"id": "102", "twoD": ["102.jpg"], "threeD_fbx": "102.fbx", "threeD_glb": null, "threeD_size": 16065216, "threeD_glb_size": 0}, {"id": "103", "twoD": ["103.jpg"], "threeD_fbx": "103.fbx", "threeD_glb": null, "threeD_size": 16580032, "threeD_glb_size": 0}, {"id": "104", "twoD": ["104.jpg"], "threeD_fbx": "104.fbx", "threeD_glb": null, "threeD_size": 7000064, "threeD_glb_size": 0}, {"id": "105", "twoD": ["105.jpg"], "threeD_fbx": "105.fbx", "threeD_glb": null, "threeD_size": 9125840, "threeD_glb_size": 0}, {"id": "106", "twoD": ["106.jpg"], "threeD_fbx": "106.fbx", "threeD_glb": null, "threeD_size": 22478128, "threeD_glb_size": 0}, {"id": "107", "twoD": ["107_1.jpg", "107_2.jpg", "107_3.jpg", "107_4.jpg", "107_5.jpg", "107_6.jpg", "107_7.jpg", "107_8.jpg"], "threeD_fbx": "107.fbx", "threeD_glb": null, "threeD_size": 12204096, "threeD_glb_size": 0}, {"id": "108", "twoD": ["108.jpg"], "threeD_fbx": "108.fbx", "threeD_glb": null, "threeD_size": 7126128, "threeD_glb_size": 0}, {"id": "109", "twoD": ["109.jpg"], "threeD_fbx": "109.fbx", "threeD_glb": null, "threeD_size": 12492752, "threeD_glb_size": 0}, {"id": "110", "twoD": ["110.jpg"], "threeD_fbx": "110.fbx", "threeD_glb": null, "threeD_size": 16479840, "threeD_glb_size": 0}, {"id": "111", "twoD": ["111.jpg"], "threeD_fbx": "111.fbx", "threeD_glb": null, "threeD_size": 7803840, "threeD_glb_size": 0}, {"id": "112", "twoD": ["112.jpg"], "threeD_fbx": "112.fbx", "threeD_glb": null, "threeD_size": 16404016, "threeD_glb_size": 0}, {"id": "113", "twoD": ["113.jpg"], "threeD_fbx": "113.fbx", "threeD_glb": null, "threeD_size": 9060240, "threeD_glb_size": 0}, {"id": "114", "twoD": ["114.jpg"], "threeD_fbx": "114.fbx", "threeD_glb": null, "threeD_size": 8038320, "threeD_glb_size": 0}, {"id": "115", "twoD": ["115.jpg"], "threeD_fbx": "115.fbx", "threeD_glb": null, "threeD_size": 14549392, "threeD_glb_size": 0}, {"id": "116", "twoD": ["116.jpg"], "threeD_fbx": "116.fbx", "threeD_glb": null, "threeD_size": 7548640, "threeD_glb_size": 0}, {"id": "117", "twoD": ["117.jpg"], "threeD_fbx": "117.fbx", "threeD_glb": null, "threeD_size": 14049424, "threeD_glb_size": 0}, {"id": "118", "twoD": ["118.jpg"], "threeD_fbx": "118.fbx", "threeD_glb": null, "threeD_size": 19487664, "threeD_glb_size": 0}, {"id": "119", "twoD": ["119.jpg"], "threeD_fbx": "119.fbx", "threeD_glb": null, "threeD_size": 8448288, "threeD_glb_size": 0}, {"id": "120", "twoD": ["120.jpg"], "threeD_fbx": "120.fbx", "threeD_glb": null, "threeD_size": 15930544, "threeD_glb_size": 0}, {"id": "121", "twoD": ["121.jpg"], "threeD_fbx": "121.fbx", "threeD_glb": null, "threeD_size": 10564256, "threeD_glb_size": 0}, {"id": "122", "twoD": ["122.jpg"], "threeD_fbx": "122.fbx", "threeD_glb": null, "threeD_size": 54713856, "threeD_glb_size": 0}, {"id": "123", "twoD": ["123.jpg"], "threeD_fbx": "123.fbx", "threeD_glb": null, "threeD_size": 20967760, "threeD_glb_size": 0}, {"id": "124", "twoD": ["124.jpg"], "threeD_fbx": "124.fbx", "threeD_glb": null, "threeD_size": 5724672, "threeD_glb_size": 0}, {"id": "125", "twoD": ["125.jpg"], "threeD_fbx": "125.fbx", "threeD_glb": null, "threeD_size": 10335376, "threeD_glb_size": 0}, {"id": "126", "twoD": ["126.jpg"], "threeD_fbx": "126.fbx", "threeD_glb": null, "threeD_size": 22080608, "threeD_glb_size": 0}, {"id": "127", "twoD": ["127.jpg"], "threeD_fbx": "127.fbx", "threeD_glb": null, "threeD_size": 6555248, "threeD_glb_size": 0}, {"id": "128", "twoD": ["128.jpg"], "threeD_fbx": "128.fbx", "threeD_glb": null, "threeD_size": 17130352, "threeD_glb_size": 0}, {"id": "129", "twoD": ["129.jpg"], "threeD_fbx": null, "threeD_glb": null, "threeD_size": 0, "threeD_glb_size": 0}, {"id": "130", "twoD": ["130.jpg"], "threeD_fbx": "130.fbx", "threeD_glb": null, "threeD_size": 8677200, "threeD_glb_size": 0}, {"id": "131", "twoD": ["131.jpg"], "threeD_fbx": null, "threeD_glb": null, "threeD_size": 0, "threeD_glb_size": 0}, {"id": "132", "twoD": ["132.jpg"], "threeD_fbx": "132.fbx", "threeD_glb": null, "threeD_size": 15926896, "threeD_glb_size": 0}, {"id": "133", "twoD": ["133.jpg"], "threeD_fbx": "133.fbx", "threeD_glb": null, "threeD_size": 9443536, "threeD_glb_size": 0}, {"id": "134", "twoD": ["134.jpg"], "threeD_fbx": "134.fbx", "threeD_glb": null, "threeD_size": 9564400, "threeD_glb_size": 0}, {"id": "135", "twoD": ["135.jpg"], "threeD_fbx": "135.fbx", "threeD_glb": null, "threeD_size": 6476800, "threeD_glb_size": 0}, {"id": "136", "twoD": ["136.jpg"], "threeD_fbx": "136.fbx", "threeD_glb": null, "threeD_size": 4121472, "threeD_glb_size": 0}, {"id": "137", "twoD": ["137.jpg"], "threeD_fbx": "137.fbx", "threeD_glb": null, "threeD_size": 10414608, "threeD_glb_size": 0}, {"id": "138", "twoD": ["138.jpg"], "threeD_fbx": "138.fbx", "threeD_glb": null, "threeD_size": 15573024, "threeD_glb_size": 0}, {"id": "139", "twoD": ["139.jpg"], "threeD_fbx": "139.fbx", "threeD_glb": null, "threeD_size": 9390800, "threeD_glb_size": 0}, {"id": "140", "twoD": ["140.jpg"], "threeD_fbx": "140.fbx", "threeD_glb": null, "threeD_size": 11414944, "threeD_glb_size": 0}, {"id": "141", "twoD": ["141.jpg"], "threeD_fbx": "141.fbx", "threeD_glb": null, "threeD_size": 5462704, "threeD_glb_size": 0}]}
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const DATA_URL = 'docs/data/sketchmaps.json';
+const PATH_PREFIX = 'raw_data';
+
+let DATA = null;
+let currentExp = 'exp1';
+
+const grid = document.getElementById('grid');
+const info = document.getElementById('info');
+const btn1 = document.getElementById('btn-exp1');
+const btn2 = document.getElementById('btn-exp2');
+
+btn1.addEventListener('click', () => switchExp('exp1'));
+btn2.addEventListener('click', () => switchExp('exp2'));
+
+function switchExp(e) {
+  currentExp = e;
+  btn1.setAttribute('aria-pressed', String(e === 'exp1'));
+  btn2.setAttribute('aria-pressed', String(e === 'exp2'));
+  renderGrid();
+}
+
+function thumbForCard(item, exp) {
+  if (item.twoD && item.twoD.length > 0) {
+    return `${PATH_PREFIX}/${exp}/sketchmaps/2D/${item.twoD[0]}`;
+  }
+  return null;
+}
+
+function fmtMB(b) {
+  if (!b) return '';
+  return (b / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+function renderGrid() {
+  const items = DATA[currentExp];
+  info.textContent = `${items.length} participants`;
+  grid.innerHTML = '';
+  for (const item of items) {
+    const card = document.createElement('div');
+    card.className = 'smcard';
+    const thumbUrl = thumbForCard(item, currentExp);
+    const tags = [];
+    if (item.twoD.length > 0) tags.push(`<span class="tag">2D&times;${item.twoD.length}</span>`);
+    if (item.threeD_fbx || item.threeD_glb) tags.push(`<span class="tag">3D</span>`);
+    card.innerHTML = `
+      <div class="thumb" ${thumbUrl ? `style="background-image:url('${thumbUrl}')"` : ''}></div>
+      <div class="meta"><span class="id">${item.id}</span><span class="tags">${tags.join('')}</span></div>
+    `;
+    card.addEventListener('click', () => openViewer(item, currentExp));
+    grid.appendChild(card);
+  }
+}
+
+// ---- Modal viewer ----
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modal-title');
+const modalClose = document.getElementById('modal-close');
+const twoDThumbs = document.getElementById('twod-thumbs');
+const twoDBody = document.getElementById('twod-body');
+const twoDCount = document.getElementById('twod-count');
+const threeDBody = document.getElementById('threeD-body');
+const threeDSize = document.getElementById('threeD-size');
+
+modalClose.addEventListener('click', closeViewer);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeViewer(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeViewer(); });
+
+let threeJsState = null;
+
+function openViewer(item, exp) {
+  modalTitle.textContent = `${exp.toUpperCase()} — participant ${item.id}`;
+  modal.classList.add('open');
+
+  // 2D pane
+  twoDThumbs.innerHTML = '';
+  twoDBody.innerHTML = '';
+  twoDCount.textContent = item.twoD.length > 1 ? `(${item.twoD.length} pages)` : '';
+  if (item.twoD.length === 0) {
+    twoDBody.innerHTML = '<span class="loading">No 2D sketch.</span>';
+  } else {
+    item.twoD.forEach((fname, idx) => {
+      const url = `${PATH_PREFIX}/${exp}/sketchmaps/2D/${fname}`;
+      if (item.twoD.length > 1) {
+        const t = document.createElement('img');
+        t.src = url; t.alt = fname;
+        if (idx === 0) t.setAttribute('aria-selected', 'true');
+        t.addEventListener('click', () => {
+          twoDThumbs.querySelectorAll('img').forEach(x => x.removeAttribute('aria-selected'));
+          t.setAttribute('aria-selected', 'true');
+          showTwoD(url, fname);
+        });
+        twoDThumbs.appendChild(t);
+      }
+    });
+    showTwoD(`${PATH_PREFIX}/${exp}/sketchmaps/2D/${item.twoD[0]}`, item.twoD[0]);
+  }
+
+  // 3D pane
+  disposeThreeJs();
+  const baseUrl = `${PATH_PREFIX}/${exp}/sketchmaps/3D/`;
+  if (item.threeD_glb) {
+    threeDSize.textContent = `${item.threeD_glb} (${fmtMB(item.threeD_glb_size)})`;
+    threeDBody.innerHTML = '<span class="loading">Loading 3D sketch&hellip;</span>';
+    loadModel(baseUrl + item.threeD_glb, 'glb');
+  } else if (item.threeD_fbx) {
+    threeDSize.textContent = `${item.threeD_fbx} (${fmtMB(item.threeD_size)})`;
+    threeDBody.innerHTML = '<span class="loading">Loading 3D sketch&hellip;</span>';
+    loadModel(baseUrl + item.threeD_fbx, 'fbx');
+  } else {
+    threeDSize.textContent = '';
+    threeDBody.innerHTML = '<span class="loading">No 3D sketch.</span>';
+  }
+}
+
+function showTwoD(url, label) {
+  twoDBody.innerHTML = '';
+  const img = document.createElement('img');
+  img.src = url; img.alt = label;
+  img.addEventListener('click', () => img.classList.toggle('zoomed'));
+  twoDBody.appendChild(img);
+}
+
+function closeViewer() {
+  modal.classList.remove('open');
+  disposeThreeJs();
+}
+
+function disposeThreeJs() {
+  if (!threeJsState) return;
+  cancelAnimationFrame(threeJsState.raf);
+  threeJsState.renderer.dispose();
+  threeJsState.renderer.forceContextLoss();
+  threeJsState.renderer.domElement.remove();
+  if (threeJsState.ro) threeJsState.ro.disconnect();
+  threeJsState = null;
+}
+
+function loadModel(url, kind) {
+  const container = threeDBody;
+  container.innerHTML = '';
+  container.style.padding = '0';
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf3f1ec);
+
+  const width = container.clientWidth || 600;
+  const height = container.clientHeight || 400;
+
+  const camera = new THREE.PerspectiveCamera(50, width / height, 0.01, 5000);
+  camera.position.set(3, 3, 5);
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(width, height);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  container.appendChild(renderer.domElement);
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8d8a82, 1.0));
+  const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 7); scene.add(dir);
+
+  let gridHelper = new THREE.GridHelper(20, 20, 0xbbb7af, 0xddd9d1);
+  scene.add(gridHelper);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+
+  const state = { renderer, scene, camera, controls, raf: 0, container, model: null };
+  threeJsState = state;
+
+  function animate() {
+    state.raf = requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  const ro = new ResizeObserver(() => {
+    const w = container.clientWidth, h = container.clientHeight;
+    if (w && h) {
+      renderer.setSize(w, h);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+  });
+  ro.observe(container);
+  state.ro = ro;
+
+  const loader = kind === 'glb' ? makeGltfLoader() : new FBXLoader();
+  const onLoaded = (objectOrGltf) => {
+      const object = objectOrGltf.scene ? objectOrGltf.scene : objectOrGltf;
+      object.traverse((c) => {
+        if (c.isLine) {
+          c.material = new THREE.LineBasicMaterial({
+            color: c.material && c.material.color ? c.material.color : 0x222222,
+            vertexColors: c.material && c.material.vertexColors,
+          });
+        }
+        if (c.isMesh && c.material) {
+          if (Array.isArray(c.material)) c.material.forEach(m => m.side = THREE.DoubleSide);
+          else c.material.side = THREE.DoubleSide;
+        }
+      });
+
+      const box = new THREE.Box3().setFromObject(object);
+      const size = box.getSize(new THREE.Vector3());
+      const center = box.getCenter(new THREE.Vector3());
+      object.position.sub(center);
+
+      const maxDim = Math.max(size.x, size.y, size.z) || 1;
+      const fov = camera.fov * (Math.PI / 180);
+      const distance = (maxDim / 2) / Math.tan(fov / 2) * 1.8;
+      camera.position.set(distance, distance * 0.7, distance);
+      camera.lookAt(0, 0, 0);
+      camera.near = distance / 500;
+      camera.far = distance * 20;
+      camera.updateProjectionMatrix();
+      controls.target.set(0, 0, 0);
+      controls.update();
+
+      scene.remove(gridHelper);
+      gridHelper = new THREE.GridHelper(maxDim * 3, 20, 0xbbb7af, 0xddd9d1);
+      gridHelper.position.y = -size.y / 2;
+      scene.add(gridHelper);
+
+      scene.add(object);
+      state.model = object;
+  };
+  const onProgress = (progress) => {
+      if (progress.lengthComputable) {
+        const pct = ((progress.loaded / progress.total) * 100).toFixed(0);
+        threeDSize.textContent = threeDSize.textContent.replace(/\s*\(loading[^)]*\)/, '') + ` (loading ${pct}%)`;
+      }
+  };
+  const onError = (err) => {
+      console.error(err);
+      container.innerHTML = '<span class="err">Could not load 3D sketch. Try downloading from the repository.</span>';
+  };
+  loader.load(url, onLoaded, onProgress, onError);
+}
+
+function makeGltfLoader() {
+  const l = new GLTFLoader();
+  const draco = new DRACOLoader();
+  draco.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/libs/draco/');
+  l.setDRACOLoader(draco);
+  return l;
+}
+
+// ---- Boot ----
+// Prefer the embedded JSON (works from file:// and over HTTP).
+// Fall back to fetching docs/data/sketchmaps.json if the embed is absent.
+const embedded = document.getElementById('sketchmaps-data');
+if (embedded) {
+  try {
+    DATA = JSON.parse(embedded.textContent);
+    renderGrid();
+  } catch (e) {
+    info.textContent = 'Could not parse embedded sketch-map index.';
+    console.error(e);
+  }
+} else {
+  fetch(DATA_URL)
+    .then(r => r.json())
+    .then(d => { DATA = d; renderGrid(); })
+    .catch(e => {
+      info.textContent = 'Could not load sketch-map index.';
+      console.error(e);
+    });
+}
+</script>
+
+</body>
+</html>
