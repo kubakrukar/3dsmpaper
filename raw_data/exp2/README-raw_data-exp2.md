@@ -65,32 +65,15 @@ Unity version --> 2022.3.11f1
 Gravity Sketch version --> 6.1.6
 
 
-# Notes on Participants:
+# Excluded participants
 
-*those marked with '!' were excluded from the analyses*
+The following participants were excluded from the analyses reported in the manuscript:
 
-102 --> has drawn 2 sketches next to each other in gravity sketch. first one was in 2D somehow and she was not satisfied about and after understanding some tools on how to control the triggers, she drew another one in 3D but mentioned she now Forgot!
+| ID  | Reason for exclusion                                                          |
+|-----|-------------------------------------------------------------------------------|
+| 118 | did not complete the protocol                                                 |
+| 123 | drew the route in the reverse direction during recall                         |
+| 129 | did not complete the 3D (VR) drawing condition                                |
+| 131 | did not complete the 3D (VR) drawing condition                                |
 
-103 --> mentioned that drawing in VR was easier to memorize because you draw in the same environment you saw before but in paper was harder to remember the turns.
-
-104 --> Started by drawing the Route
-
-108 --> Drew kind of 2D in sketch gravity, it's visible from the starting point
-
-111 --> Drew kind of 2D in sketch gravity, it's visible from the starting point
-
-115 --> Started by drawing the Landamrks and refere their location to each other
-
-! 118 --> He took about an hour for the test. It was a bit challenging explaining him everything and makeing sure he understands. Like he was just pressing everz buttons at once and wasnt pazing attention to what i am saying and what the tutorial is telling him.
-
-119 --> Started by drawing the route and it was easier later to put every thing. Nice technique.
-
-! 123 --> drew the route in the backward direction differently than in forward direction
-
-! 129 --> Had a bad motion sickness, needed to take a 10 minutes break while being in the environment and couldn't be able to finish the last 30 seconds of the route but was able to point to the objects' location and uderstand the environment, draw it in paper but i said she doesn't have to draw in VR bcs she was sick.
-
-! 131 --> Bad motion sickness, couldn't take the whole trip. I asked her to draw on paper
-
-134 --> In VR, he drew 3D but from single angle, same as in paper.
-
-135 --> chose 2D bcs he told it's hard to draw in 3D, he is a pilot.
+All other participant IDs are present in the analysis dataset.
