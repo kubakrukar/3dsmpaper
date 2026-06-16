@@ -4,7 +4,7 @@
 
 Code, data, and sketch-map gallery for:
 
-> Krukar, J., Aly, A., Baecker, L., Heming, L., Zhao, J., & Schwering, A. *3D Environments Require 3D Visualisations: The Limitations of 2D Sketch Maps in Capturing Spatial Knowledge.* International Journal of Geographical Information Science (under revision).
+> Krukar, J., Aly, A., Baecker, L., Heming, L. M., Zhao, J., & Schwering, A. (2026). 3D environments require 3D visualisations: The limitations of 2D sketch maps in capturing spatial knowledge. *International Journal of Geographical Information Science*, 1–33. https://doi.org/10.1080/13658816.2026.2684650
 
 A browsable landing page with a side-by-side viewer for every 2D / 3D sketch is published at: **https://kubakrukar.github.io/3dsmpaper/**
 
@@ -52,45 +52,7 @@ Code and text are integrated: in order to reproduce any figure or result from th
    ```
 3. Knit `manuscript.Rmd`. Output: `manuscript.pdf` with all figures, tables, and statistics.
 
-Generating the Bayesian models from scratch takes roughly two hours on an M2 MacBook; cached fits live in `models/` (gitignored — regenerate by knitting).
-
-## Landing page (GitHub Pages)
-
-The repository ships with a self-contained landing page at `index.html` summarising the problem, method, results, and offering a side-by-side 2D / 3D viewer for every sketch map. The 3D viewer uses Three.js with `FBXLoader` and runs entirely in the browser — no build step.
-
-**To publish it via GitHub Pages:**
-
-1. Push the repository to GitHub.
-2. *Repository → Settings → Pages*. Set *Source* to *Deploy from a branch*, branch `main`, folder `/ (root)`. Save.
-3. After about a minute the site is live at `https://<user>.github.io/<repo>/`.
-
-The page reads `docs/data/sketchmaps.json`, which lists every participant and their files. If you add, remove, or rename sketches, regenerate it:
-
-```bash
-python3 tools/generate_sketchmap_index.py
-```
-
-### Optional: convert FBX to GLB for faster loading
-
-FBX files from Gravity Sketch are large (5–50 MB each). Converting them to Draco-compressed GLB typically shrinks them 5–10× and the page will load them in preference to the FBX. Run with Blender's bundled Python:
-
-```bash
-blender --background --python tools/convert_fbx_to_glb.py
-python3 tools/generate_sketchmap_index.py   # refresh the index
-```
-
-The FBX files stay in place for archival purposes.
-
-## DOI / Zenodo deposit
-
-The repository is configured for automatic archival on Zenodo on every GitHub Release:
-
-1. Log in to [Zenodo](https://zenodo.org/) with your GitHub account.
-2. Go to *Settings → GitHub*, find this repository, and flip the switch to **On**.
-3. On GitHub, create a release (`v1.0.0`, etc.).
-4. Zenodo mints a versioned DOI plus a concept DOI that always resolves to the latest version. Update the badge at the top of this README with the concept DOI.
-
-If the dataset grows past GitHub's 1 GB soft limit, host the heavier sketch-map files on Zenodo (no individual-file size cap) and point the landing page at the Zenodo URLs in `docs/data/sketchmaps.json`.
+Generating the Bayesian models from scratch takes roughly two hours on an M2 MacBook.
 
 ## Documentation
 
